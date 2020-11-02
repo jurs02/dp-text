@@ -1,0 +1,77 @@
+\chapter{Natural language processing}
+Natural language is any language thas has not been specially constructed but rather has evolved naturally through use and is  ``aquired by its users without special instructions as a normal part of the process of maturization and socialization''.\cite{lyons_1991}. These languages such as English, Arabic, Vietnamese or Hindi differ from non-natural language, which are artificially constructed for specific uses, like for example programming languages or symbolic languages used for studying logic.
+
+Natural language processing (NLP) is ``an interdisciplinary domain which is concerned with understanding natural languages as well as using them to enable human–computer interaction''.\cite{nlp_definition} The field of applications of NLP is far reaching and includes use cases such as:
+\begin{itemize}
+\item Identifying spam e-mails\cite{nlp_tasks}
+\item Chatbots for customer support and engagement\cite{nlp_uc_b}
+\item Improvement in clinical documentation\cite{nlp_uc_h}	
+\end{itemize}
+and many others. An overview of the usage of NLP can be seen on table \ref{tab01:nlp_tasks}.
+
+\begin{table}[htbp!]
+\begin{tabular}{|p{\dimexpr0.2\textwidth-2\tabcolsep-\arrayrulewidth\relax}|p{\dimexpr0.2\textwidth-2\tabcolsep-\arrayrulewidth\relax}|p{\dimexpr0.2\textwidth-2\tabcolsep-\arrayrulewidth\relax}|p{\dimexpr0.2\textwidth-2\tabcolsep-\arrayrulewidth\relax}|p{\dimexpr0.2\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\hline
+\textbf{Word Tagging}     & \textbf{Sentence Parsing} & \textbf{Text Classification} & \textbf{Text Pair Matching} & \textbf{Text Generation} \\ \hline
+Word segmentation         & Constituency parsing      & Sentiment analysis           & Semantic textual similarity & Language modeling        \\ \hline
+Shallow syntax-chucking   & Semantic parsing          & Text classification          & Natural language inference  & Machine translation      \\ \hline
+Named entity recognition  & Dependency parsing        & Temporal processing          & Relation prediction         & Simplification           \\ \hline
+Part-of-speech tagging    &                           & Coreference resolution       &                             & Summarization            \\ \hline
+Semantic role labeling    &                           &                              &                             & Dialogue                 \\ \hline
+Word sense disambiguation &                           &                              &                             & Question answering       \\ \hline
+\end{tabular}
+\caption{Breakdown of various NLP tasks performed by modern NLP software\cite{nlp_uc_b}}\label{tab01:nlp_tasks}
+\end{table}
+It is also a very hard task, given the fact that natural languages do not adhere to the strict rules non-natural languages usually do. 
+\begin{quote}
+Human language is highly ambiguous\ldots It is also ever changing and evolving. People are great at producing language and understanding language, and are capable of expressing, perceiving, and interpreting very elaborate and nuanced meanings. At the same time, while we humans are great users of language, we are also very poor at formally understanding and describing the rules that govern language. \hfill \parencite[Page 1]{nlp_lang_rules}
+
+\end{quote}
+
+In fact, the ``imitation game'', a test developped by Alan Turing in the 50's as a test of artificial intelligence, relies on the ability of a computer program to impersonate a human in a written conversation.\cite{turing}
+
+
+Because of it's potential, NLP has been studied for decades (in fact the first proposals for machine-translation pre-date the invention of the digital computer\cite{nlp_history}). 
+
+This chapter serves as an introduction to the field of natural language processing, first describing the common tasks of NLP and then introducing some frequently used tools and methods.
+\section{Common tasks in natural language processing}
+With many machine learning (ML) and data mining tasks, we work with data in a form of a large table, where each row represents one object and each column represents a property of the objects. Most ML methods are therefore designed to work with these tables. 
+
+When it comes to texts in natural language, they are in their raw form just a series of characters. In order to add some structure to this unstructured data, we usually perform a number of preprocessing steps, which allow us to transform the text into a representation better suited for our needs. This section focuses on the most common preprocessing steps of natural language processing.
+
+\subsection{Tokenization}
+The goal of tokenization is to separate the text into smaller units and it's ``a fundamental step in both traditional NLP methods\ldots and advanced deep learning-based architectures''.\cite{tokenization}
+
+The text may be segmented into paragraphs but most commonly tokenization refers to splitting the text into sentences and words. 
+
+Tokenization can remove punctuation too, but that may cause issues such as wrongly splitting up abbreviations with periods (e.g. dr.), where the period following that abbreviation should be considered as part of the same token and not be removed.\cite{nlp_tasks}
+
+\subsection{Stop words removal}
+Some words which often appear in analyzed document have little informational value and can be excluded. This process is called stop words removal. Stop words removal includes getting rid of common language articles, pronouns and prepositions such as “and”, “the” or “to” in English and other words which may be considered insignificant.\cite{nlp_tasks}
+
+Generally the more often a word or a term appears in a collection of documents, the lesser informational value it has. Therefore the strategy for creating a list of stop words is to sort the terms by total number of times ech term appears in the document collection and pick the most frequent terms as stop words.\cite{stopwords}
+
+Stop words removal is an especially important step in the field of information retrieval, where excluding words with little informational value tends to have a huge impact on the speed of these systems as well as the volume of data that has to be stored.
+
+\subsection{Lemmatization and Stemming}
+Since documents use different forms of a word, we often need to reduce the inflectional forms and sometimes derivationally related forms of a word to a common base form. This is especially important (and difficult) with synthetic languages which can be defined as `a`ny language in which syntactic relations within sentences are expressed by inflection (the change in the form of a word that indicates distinctions of tense, person, gender, number, mood, voice, and case) or by agglutination (word formation by means of morpheme, or word unit, clustering). Latin is an example of an inflected language; Hungarian and Finnish are examples of agglutinative languages.''\cite{synthetic_lang}.
+
+The two techniques of text normalization are stemming and lemmatization.
+\subsubsection{Stemming}
+The algorithms knows as stemmers produce ``stems'' of a word by cutting off the beginning and the end of the word, usually by usining a list of common prefixes and suffixes.\cite{stemming_vs_lemmatization}
+
+It is a crude heuristic process, which is why the produced stems often do not correspond to the morphological root of the word.  If given the token \textit{saw}, stemming might return \textit{saw} (or possibly just \textit{s}, whereas lemmatization (described in the next section) would likely return either \textit{see} or \textit{saw} depending on whether the use of the token was as a verb or a noun.\cite{stemming_vs_lemmatization_twd}
+
+\subsubsection{Lemmatization}
+Lemmatization is a process of applying morphological analysis to words in order to remove inflectional endings and transform the words into their base or dictionary forms called ``lemmas''. Lemmas unlike stems are actual language words.\cite{stopwords} 
+
+In lemmatization the normalization depends on the part-of-speech of a word so it either has the be automatically determined in the previous step (the process of automatically determining the part-of-speech of a word in a sentece is described in section INSERT) or this context has to be supplied in another way. 
+
+Lemmatization is more sophisticated than stemming, producing more accurate results and meaningful tokens by considering the context, however it has is tradeoffs. Compared to stemming, the process of lemmatization is slower and significantly harder to implement.
+\subsection{Part-of-speech tagging}
+Part-of-speech tagging (POS) is the process of assigning part-of-speech tags to words in a sentence. A POS tag is a label assigned to each token in a document to indicate the part of speech  and often also other grammatical categories such as tense or number (plural/singular).\cite{pos}
+
+Because POS taggers usually tend to take into account different grammatical categories, their tag set is usually larger that the number of part-of-speech categories of the language they are intended for. In English, there are frequently listed and tought eight parts of speech (noun, pronoun, verb, adjective, adverb, preposition, conjunction, article and interjection), but the commonly used Penn Treebank tagset contains 36 POS tags and 12 other tags (for punctuation and currency symbols).\cite{penn_treebank}
+\section{Tools for natural language processing}
+\subsection{Python's NLTK library}
+\subsubsection{Wordnet}

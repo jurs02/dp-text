@@ -1,0 +1,1002 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{liu_2015}{book}{}
+      \name{author}{1}{}{%
+        {{hash=9c6fb2af2964f3126cfd4e505a38daca}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Bing},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{9c6fb2af2964f3126cfd4e505a38daca}
+      \strng{fullhash}{9c6fb2af2964f3126cfd4e505a38daca}
+      \strng{bibnamehash}{9c6fb2af2964f3126cfd4e505a38daca}
+      \strng{authorbibnamehash}{9c6fb2af2964f3126cfd4e505a38daca}
+      \strng{authornamehash}{9c6fb2af2964f3126cfd4e505a38daca}
+      \strng{authorfullhash}{9c6fb2af2964f3126cfd4e505a38daca}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-1-107-01789-4}
+      \field{title}{Sentiment analysis: mining opinions, sentiments, and emotions}
+      \field{year}{2015}
+    \endentry
+    \entry{schouten_2016}{article}{}
+      \name{author}{2}{}{%
+        {{hash=262d83ac1f9322e504d02fed363ba7c0}{%
+           family={{Schouten}},
+           familyi={S\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=3d09dbe91c1058df8978aa1b85d6a83a}{%
+           family={{Frasincar}},
+           familyi={F\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{52ccce5dfc28b622619b46d6452a3211}
+      \strng{fullhash}{52ccce5dfc28b622619b46d6452a3211}
+      \strng{bibnamehash}{52ccce5dfc28b622619b46d6452a3211}
+      \strng{authorbibnamehash}{52ccce5dfc28b622619b46d6452a3211}
+      \strng{authornamehash}{52ccce5dfc28b622619b46d6452a3211}
+      \strng{authorfullhash}{52ccce5dfc28b622619b46d6452a3211}
+      \field{sortinit}{9}
+      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{2326-3865}
+      \field{journaltitle}{IEEE Transactions on Knowledge and Data Engineering}
+      \field{number}{3}
+      \field{title}{Survey on Aspect-Level Sentiment Analysis}
+      \field{volume}{28}
+      \field{year}{2016}
+      \field{pages}{813\bibrangedash 830}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1109/TKDE.2015.2485209
+      \endverb
+    \endentry
+    \entry{hu_liu_2015}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=7cd9b75f90e5002cc7ff5ad1ae674f20}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={Minqing},
+           giveni={M\bibinitperiod}}}%
+        {{hash=9c6fb2af2964f3126cfd4e505a38daca}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Bing},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {San Jose, California}%
+      }
+      \list{publisher}{1}{%
+        {AAAI Press}%
+      }
+      \strng{namehash}{fc86aaa4dce9cced6d44892901354af2}
+      \strng{fullhash}{fc86aaa4dce9cced6d44892901354af2}
+      \strng{bibnamehash}{fc86aaa4dce9cced6d44892901354af2}
+      \strng{authorbibnamehash}{fc86aaa4dce9cced6d44892901354af2}
+      \strng{authornamehash}{fc86aaa4dce9cced6d44892901354af2}
+      \strng{authorfullhash}{fc86aaa4dce9cced6d44892901354af2}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 19th National Conference on Artifical Intelligence}
+      \field{isbn}{0-262-51183-5}
+      \field{series}{AAAI'04}
+      \field{title}{Mining Opinion Features in Customer Reviews}
+      \field{year}{2004}
+      \field{pages}{755\bibrangedash 760}
+      \range{pages}{6}
+      \verb{urlraw}
+      \verb http://dl.acm.org/citation.cfm?id=1597148.1597269
+      \endverb
+      \verb{url}
+      \verb http://dl.acm.org/citation.cfm?id=1597148.1597269
+      \endverb
+    \endentry
+    \entry{NB}{inbook}{}
+      \name{author}{1}{}{%
+        {{hash=e8db1f8c6580b19b526a67b14ba3989b}{%
+           family={Webb},
+           familyi={W\bibinitperiod},
+           given={Geoffrey\bibnamedelima I.},
+           giveni={G\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=e94495f7b9c258a3a6722a976198d15b}{%
+           family={Sammut},
+           familyi={S\bibinitperiod},
+           given={Claude},
+           giveni={C\bibinitperiod}}}%
+        {{hash=e8db1f8c6580b19b526a67b14ba3989b}{%
+           family={Webb},
+           familyi={W\bibinitperiod},
+           given={Geoffrey\bibnamedelima I.},
+           giveni={G\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Boston, MA}%
+      }
+      \list{publisher}{1}{%
+        {Springer US}%
+      }
+      \strng{namehash}{e8db1f8c6580b19b526a67b14ba3989b}
+      \strng{fullhash}{e8db1f8c6580b19b526a67b14ba3989b}
+      \strng{bibnamehash}{e8db1f8c6580b19b526a67b14ba3989b}
+      \strng{authorbibnamehash}{e8db1f8c6580b19b526a67b14ba3989b}
+      \strng{authornamehash}{e8db1f8c6580b19b526a67b14ba3989b}
+      \strng{authorfullhash}{e8db1f8c6580b19b526a67b14ba3989b}
+      \strng{editorbibnamehash}{86ce679d4e3555e1b847cc508681a6ad}
+      \strng{editornamehash}{86ce679d4e3555e1b847cc508681a6ad}
+      \strng{editorfullhash}{86ce679d4e3555e1b847cc508681a6ad}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Encyclopedia of Machine Learning}
+      \field{isbn}{978-0-387-30164-8}
+      \field{title}{Na{ï}ve Bayes}
+      \field{year}{2010}
+      \field{pages}{713\bibrangedash 714}
+      \range{pages}{2}
+      \verb{doi}
+      \verb 10.1007/978-0-387-30164-8_576
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-0-387-30164-8_576
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-0-387-30164-8_576
+      \endverb
+    \endentry
+    \entry{bagofwords}{book}{}
+      \name{author}{2}{}{%
+        {{hash=bd33d7a70284b5ead9c7985cb5c9929c}{%
+           family={Jurafsky},
+           familyi={J\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=f9a9b23864bfb154d68897e7817cedf0}{%
+           family={Martin},
+           familyi={M\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{8a24a4a884cc78038552a0852b5b239d}
+      \strng{fullhash}{8a24a4a884cc78038552a0852b5b239d}
+      \strng{bibnamehash}{8a24a4a884cc78038552a0852b5b239d}
+      \strng{authorbibnamehash}{8a24a4a884cc78038552a0852b5b239d}
+      \strng{authornamehash}{8a24a4a884cc78038552a0852b5b239d}
+      \strng{authorfullhash}{8a24a4a884cc78038552a0852b5b239d}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3rd ed. draft}
+      \field{month}{09}
+      \field{title}{Speech and Language Processing}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://web.stanford.edu/~jurafsky/slp3/
+      \endverb
+      \verb{url}
+      \verb https://web.stanford.edu/~jurafsky/slp3/
+      \endverb
+    \endentry
+    \entry{wordnet}{article}{}
+      \name{author}{1}{}{%
+        {{hash=5bf483e0d0c0d430be37dd8a34215614}{%
+           family={{Princeton University}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Princeton University}%
+      }
+      \strng{namehash}{5bf483e0d0c0d430be37dd8a34215614}
+      \strng{fullhash}{5bf483e0d0c0d430be37dd8a34215614}
+      \strng{bibnamehash}{5bf483e0d0c0d430be37dd8a34215614}
+      \strng{authorbibnamehash}{5bf483e0d0c0d430be37dd8a34215614}
+      \strng{authornamehash}{5bf483e0d0c0d430be37dd8a34215614}
+      \strng{authorfullhash}{5bf483e0d0c0d430be37dd8a34215614}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{WordNet A Lexical Database for English}
+      \field{title}{About WordNet}
+      \field{year}{2010}
+      \verb{urlraw}
+      \verb https://wordnet.princeton.edu/
+      \endverb
+      \verb{url}
+      \verb https://wordnet.princeton.edu/
+      \endverb
+    \endentry
+    \entry{sentimentr}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=ec3c4b5200e4f059691fac5ea8fcbf90}{%
+           family={Rinker},
+           familyi={R\bibinitperiod},
+           given={Tyler},
+           giveni={T\bibinitperiod}}}%
+        {{hash=ac149bcd683a561a218e8dc1c1529489}{%
+           family={Spinu},
+           familyi={S\bibinitperiod},
+           given={Vitalie},
+           giveni={V\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Zenodo}%
+      }
+      \strng{namehash}{14cd09234fc3115c30aa85e0634e328b}
+      \strng{fullhash}{14cd09234fc3115c30aa85e0634e328b}
+      \strng{bibnamehash}{14cd09234fc3115c30aa85e0634e328b}
+      \strng{authorbibnamehash}{14cd09234fc3115c30aa85e0634e328b}
+      \strng{authornamehash}{14cd09234fc3115c30aa85e0634e328b}
+      \strng{authorfullhash}{14cd09234fc3115c30aa85e0634e328b}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{12}
+      \field{title}{sentimentr}
+      \field{version}{0.4.0}
+      \field{year}{2016}
+      \verb{doi}
+      \verb 10.5281/zenodo.222103
+      \endverb
+      \verb{urlraw}
+      \verb https://github.com/trinker/sentimentr
+      \endverb
+      \verb{url}
+      \verb https://github.com/trinker/sentimentr
+      \endverb
+    \endentry
+    \entry{ding_hu_liu}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=6e8c3a0b3e78bf597cc8b65aaf1ad1f8}{%
+           family={Ding},
+           familyi={D\bibinitperiod},
+           given={Xiaowen},
+           giveni={X\bibinitperiod}}}%
+        {{hash=9c6fb2af2964f3126cfd4e505a38daca}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Bing},
+           giveni={B\bibinitperiod}}}%
+        {{hash=16ca15dce2d20f951fd28d316df0d0c1}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Philip\bibnamedelima S.},
+           giveni={P\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Palo Alto, California, USA}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{f703f1dc8416099d6e7f9fa5b5802afb}
+      \strng{fullhash}{f703f1dc8416099d6e7f9fa5b5802afb}
+      \strng{bibnamehash}{f703f1dc8416099d6e7f9fa5b5802afb}
+      \strng{authorbibnamehash}{f703f1dc8416099d6e7f9fa5b5802afb}
+      \strng{authornamehash}{f703f1dc8416099d6e7f9fa5b5802afb}
+      \strng{authorfullhash}{f703f1dc8416099d6e7f9fa5b5802afb}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2008 International Conference on Web Search and Data Mining}
+      \field{isbn}{978-1-59593-927-2}
+      \field{series}{WSDM '08}
+      \field{title}{A Holistic Lexicon-based Approach to Opinion Mining}
+      \field{year}{2008}
+      \field{pages}{231\bibrangedash 240}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1145/1341531.1341561
+      \endverb
+      \verb{urlraw}
+      \verb http://doi.acm.org/10.1145/1341531.1341561
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/1341531.1341561
+      \endverb
+    \endentry
+    \entry{carenini_2005}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=5d3c2a6a43c619967069a9836e461892}{%
+           family={Carenini},
+           familyi={C\bibinitperiod},
+           given={Giuseppe},
+           giveni={G\bibinitperiod}}}%
+        {{hash=601e20c03c57b398561a9afd7fc45519}{%
+           family={Ng},
+           familyi={N\bibinitperiod},
+           given={Raymond\bibnamedelima T.},
+           giveni={R\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=2f415fbfe7217acc57867947def28de4}{%
+           family={Zwart},
+           familyi={Z\bibinitperiod},
+           given={Ed},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Banff, Alberta, Canada}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{2824dde70b96d908a217f1eb179f259f}
+      \strng{fullhash}{2824dde70b96d908a217f1eb179f259f}
+      \strng{bibnamehash}{2824dde70b96d908a217f1eb179f259f}
+      \strng{authorbibnamehash}{2824dde70b96d908a217f1eb179f259f}
+      \strng{authornamehash}{2824dde70b96d908a217f1eb179f259f}
+      \strng{authorfullhash}{2824dde70b96d908a217f1eb179f259f}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 3rd International Conference on Knowledge Capture}
+      \field{isbn}{1-59593-163-5}
+      \field{series}{K-CAP '05}
+      \field{title}{Extracting Knowledge from Evaluative Text}
+      \field{year}{2005}
+      \field{pages}{11\bibrangedash 18}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1145/1088622.1088626
+      \endverb
+      \verb{urlraw}
+      \verb http://doi.acm.org/10.1145/1088622.1088626
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/1088622.1088626
+      \endverb
+    \endentry
+    \entry{asghar_2019}{article}{}
+      \name{author}{5}{}{%
+        {{hash=e31678e503ba026a0aaafd12b51c4895}{%
+           family={Asghar},
+           familyi={A\bibinitperiod},
+           given={Dr.\bibnamedelimi Muhammad},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=385cdcfaa64657d6bd7cb13ef03e1a59}{%
+           family={Khan},
+           familyi={K\bibinitperiod},
+           given={Aurangzeb},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d16d48edfdfe2b151a034c792d96b2f4}{%
+           family={Zahra},
+           familyi={Z\bibinitperiod},
+           given={Rabail},
+           giveni={R\bibinitperiod}}}%
+        {{hash=0d462ad7fd290f896ea02e83e8ec603c}{%
+           family={Ahmad},
+           familyi={A\bibinitperiod},
+           given={Shakeel},
+           giveni={S\bibinitperiod}}}%
+        {{hash=aef761918488a61a652b13ddbe883312}{%
+           family={Kundi},
+           familyi={K\bibinitperiod},
+           given={Fazal},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{7dbbce313921fac199889784ce97e382}
+      \strng{fullhash}{7dbbce313921fac199889784ce97e382}
+      \strng{bibnamehash}{7dbbce313921fac199889784ce97e382}
+      \strng{authorbibnamehash}{7dbbce313921fac199889784ce97e382}
+      \strng{authornamehash}{7dbbce313921fac199889784ce97e382}
+      \strng{authorfullhash}{7dbbce313921fac199889784ce97e382}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Cluster Computing}
+      \field{month}{05}
+      \field{title}{Aspect-based opinion mining framework using heuristic patterns}
+      \field{volume}{22}
+      \field{year}{2019}
+      \verb{doi}
+      \verb 10.1007/s10586-017-1096-9
+      \endverb
+    \endentry
+    \entry{lyons_1991}{inbook}{}
+      \name{author}{1}{}{%
+        {{hash=e38f14ab2ff17a9258b8d917aa1679fd}{%
+           family={Lyons},
+           familyi={L\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{e38f14ab2ff17a9258b8d917aa1679fd}
+      \strng{fullhash}{e38f14ab2ff17a9258b8d917aa1679fd}
+      \strng{bibnamehash}{e38f14ab2ff17a9258b8d917aa1679fd}
+      \strng{authorbibnamehash}{e38f14ab2ff17a9258b8d917aa1679fd}
+      \strng{authornamehash}{e38f14ab2ff17a9258b8d917aa1679fd}
+      \strng{authorfullhash}{e38f14ab2ff17a9258b8d917aa1679fd}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Natural Language and Universal Grammar: Essays in Linguistic Theory}
+      \field{title}{Language, speech and writing}
+      \field{volume}{1}
+      \field{year}{1991}
+      \field{pages}{1\bibrangedash 11}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1017/CBO9781139165877.003
+      \endverb
+    \endentry
+    \entry{nlp_definition}{incollection}{}
+      \name{author}{2}{}{%
+        {{hash=da21b6170d1c61e63ee5e5a0515e7cdf}{%
+           family={Gudivada},
+           familyi={G\bibinitperiod},
+           given={Venkat\bibnamedelima N.},
+           giveni={V\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=ad9664af40dd8f86cfb8f92a0b0fa37d}{%
+           family={Arbabifard},
+           familyi={A\bibinitperiod},
+           given={Kamyar},
+           giveni={K\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=da21b6170d1c61e63ee5e5a0515e7cdf}{%
+           family={Gudivada},
+           familyi={G\bibinitperiod},
+           given={Venkat\bibnamedelima N.},
+           giveni={V\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=b3b521ef6e3d8b384d5dfa756c36cae4}{%
+           family={Rao},
+           familyi={R\bibinitperiod},
+           given={C.R.},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{75f00d0dd1b0e0207fbca72f2880828a}
+      \strng{fullhash}{75f00d0dd1b0e0207fbca72f2880828a}
+      \strng{bibnamehash}{75f00d0dd1b0e0207fbca72f2880828a}
+      \strng{authorbibnamehash}{75f00d0dd1b0e0207fbca72f2880828a}
+      \strng{authornamehash}{75f00d0dd1b0e0207fbca72f2880828a}
+      \strng{authorfullhash}{75f00d0dd1b0e0207fbca72f2880828a}
+      \strng{editorbibnamehash}{012d162932365b6853b48378f370bb47}
+      \strng{editornamehash}{012d162932365b6853b48378f370bb47}
+      \strng{editorfullhash}{012d162932365b6853b48378f370bb47}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This chapter provides an annotated listing of various resources for natural language processing research and applications development. Resources include corpora, software libraries and frameworks, and workflow systems.}
+      \field{booktitle}{Computational Analysis and Understanding of Natural Languages: Principles, Methods and Applications}
+      \field{issn}{0169-7161}
+      \field{series}{Handbook of Statistics}
+      \field{title}{Chapter 3 - Open-Source Libraries, Application Frameworks, and Workflow Systems for NLP}
+      \field{volume}{38}
+      \field{year}{2018}
+      \field{pages}{31\bibrangedash 50}
+      \range{pages}{20}
+      \verb{doi}
+      \verb https://doi.org/10.1016/bs.host.2018.07.007
+      \endverb
+      \verb{urlraw}
+      \verb http://www.sciencedirect.com/science/article/pii/S0169716118300221
+      \endverb
+      \verb{url}
+      \verb http://www.sciencedirect.com/science/article/pii/S0169716118300221
+      \endverb
+      \keyw{Natural language processing,Natural language understanding,Information retrieval,Open-source libraries,Workflow systems,Annotated corpora}
+    \endentry
+    \entry{nlp_tasks}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=77fc1c92ed0ae02d5c8e8e9d0dc282b9}{%
+           family={Yse},
+           familyi={Y\bibinitperiod},
+           given={Diego\bibnamedelima Lopez},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{77fc1c92ed0ae02d5c8e8e9d0dc282b9}
+      \strng{fullhash}{77fc1c92ed0ae02d5c8e8e9d0dc282b9}
+      \strng{bibnamehash}{77fc1c92ed0ae02d5c8e8e9d0dc282b9}
+      \strng{authorbibnamehash}{77fc1c92ed0ae02d5c8e8e9d0dc282b9}
+      \strng{authornamehash}{77fc1c92ed0ae02d5c8e8e9d0dc282b9}
+      \strng{authorfullhash}{77fc1c92ed0ae02d5c8e8e9d0dc282b9}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{online, accessed 02-November-2020}
+      \field{title}{Your Guide to Natural Language Processing (NLP)}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://towardsdatascience.com/your-guide-to-natural-language-processing-nlp-48ea2511f6e1
+      \endverb
+      \verb{url}
+      \verb https://towardsdatascience.com/your-guide-to-natural-language-processing-nlp-48ea2511f6e1
+      \endverb
+    \endentry
+    \entry{nlp_uc_b}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=1af1aa20329aaffcd346618ce9ed5cb9}{%
+           family={Iorin},
+           familyi={I\bibinitperiod},
+           given={Ilia},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{1af1aa20329aaffcd346618ce9ed5cb9}
+      \strng{fullhash}{1af1aa20329aaffcd346618ce9ed5cb9}
+      \strng{bibnamehash}{1af1aa20329aaffcd346618ce9ed5cb9}
+      \strng{authorbibnamehash}{1af1aa20329aaffcd346618ce9ed5cb9}
+      \strng{authornamehash}{1af1aa20329aaffcd346618ce9ed5cb9}
+      \strng{authorfullhash}{1af1aa20329aaffcd346618ce9ed5cb9}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{online, accessed 02-November-2020}
+      \field{title}{Natural Language Processing (NLP) Use Cases for Business Optimization}
+      \verb{urlraw}
+      \verb https://mobidev.biz/blog/natural-language-processing-nlp-use-cases-business
+      \endverb
+      \verb{url}
+      \verb https://mobidev.biz/blog/natural-language-processing-nlp-use-cases-business
+      \endverb
+    \endentry
+    \entry{nlp_uc_h}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=cc867a698ccc3d5bf26a1ad13bab8d2e}{%
+           family={Techlabs},
+           familyi={T\bibinitperiod},
+           given={Maruti},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{cc867a698ccc3d5bf26a1ad13bab8d2e}
+      \strng{fullhash}{cc867a698ccc3d5bf26a1ad13bab8d2e}
+      \strng{bibnamehash}{cc867a698ccc3d5bf26a1ad13bab8d2e}
+      \strng{authorbibnamehash}{cc867a698ccc3d5bf26a1ad13bab8d2e}
+      \strng{authornamehash}{cc867a698ccc3d5bf26a1ad13bab8d2e}
+      \strng{authorfullhash}{cc867a698ccc3d5bf26a1ad13bab8d2e}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{online, accessed 02-November-2020}
+      \field{title}{Top 12 Use Cases of Natural Language Processing in Healthcare}
+      \verb{urlraw}
+      \verb https://marutitech.com/use-cases-of-natural-language-processing-in-healthcare/
+      \endverb
+      \verb{url}
+      \verb https://marutitech.com/use-cases-of-natural-language-processing-in-healthcare/
+      \endverb
+    \endentry
+    \entry{nlp_lang_rules}{article}{}
+      \name{author}{1}{}{%
+        {{hash=33b00f3e2f4f1bb310f1cf8d4a4c500a}{%
+           family={Goldberg},
+           familyi={G\bibinitperiod},
+           given={Yoav},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{33b00f3e2f4f1bb310f1cf8d4a4c500a}
+      \strng{fullhash}{33b00f3e2f4f1bb310f1cf8d4a4c500a}
+      \strng{bibnamehash}{33b00f3e2f4f1bb310f1cf8d4a4c500a}
+      \strng{authorbibnamehash}{33b00f3e2f4f1bb310f1cf8d4a4c500a}
+      \strng{authornamehash}{33b00f3e2f4f1bb310f1cf8d4a4c500a}
+      \strng{authorfullhash}{33b00f3e2f4f1bb310f1cf8d4a4c500a}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Synthesis Lectures on Human Language Technologies}
+      \field{number}{1}
+      \field{title}{Neural Network Methods for Natural Language Processing}
+      \field{volume}{10}
+      \field{year}{2017}
+      \field{pages}{1\bibrangedash 309}
+      \range{pages}{309}
+      \verb{doi}
+      \verb 10.2200/S00762ED1V01Y201703HLT037
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.2200/S00762ED1V01Y201703HLT037
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.2200/S00762ED1V01Y201703HLT037
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.2200/S00762ED1V01Y201703HLT037
+      \endverb
+    \endentry
+    \entry{turing}{article}{}
+      \name{author}{1}{}{%
+        {{hash=a0c12e7cf80dbccc7fe8fd0b80f92a48}{%
+           family={Turing},
+           familyi={T\bibinitperiod},
+           given={Alan\bibnamedelima M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{a0c12e7cf80dbccc7fe8fd0b80f92a48}
+      \strng{fullhash}{a0c12e7cf80dbccc7fe8fd0b80f92a48}
+      \strng{bibnamehash}{a0c12e7cf80dbccc7fe8fd0b80f92a48}
+      \strng{authorbibnamehash}{a0c12e7cf80dbccc7fe8fd0b80f92a48}
+      \strng{authornamehash}{a0c12e7cf80dbccc7fe8fd0b80f92a48}
+      \strng{authorfullhash}{a0c12e7cf80dbccc7fe8fd0b80f92a48}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mind}
+      \field{number}{October}
+      \field{title}{Computing Machinery and Intelligence}
+      \field{volume}{59}
+      \field{year}{1950}
+      \field{pages}{433\bibrangedash 460}
+      \range{pages}{28}
+      \verb{doi}
+      \verb 10.1093/mind/LIX.236.433
+      \endverb
+    \endentry
+    \entry{nlp_history}{book}{}
+      \name{author}{1}{}{%
+        {{hash=d118e668de6174cb76fe83c37f577ff7}{%
+           family={Hutchins},
+           familyi={H\bibinitperiod},
+           given={W.\bibnamedelimi J.},
+           giveni={W\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {USA}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley \& Sons, Inc.}%
+      }
+      \strng{namehash}{d118e668de6174cb76fe83c37f577ff7}
+      \strng{fullhash}{d118e668de6174cb76fe83c37f577ff7}
+      \strng{bibnamehash}{d118e668de6174cb76fe83c37f577ff7}
+      \strng{authorbibnamehash}{d118e668de6174cb76fe83c37f577ff7}
+      \strng{authornamehash}{d118e668de6174cb76fe83c37f577ff7}
+      \strng{authorfullhash}{d118e668de6174cb76fe83c37f577ff7}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{0470203137}
+      \field{title}{Machine Translation: Past, Present, Future}
+      \field{year}{1986}
+    \endentry
+    \entry{tokenization}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=e4e306fe0b21597d46ed881ede1c93a3}{%
+           family={Pai},
+           familyi={P\bibinitperiod},
+           given={Aravind},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{e4e306fe0b21597d46ed881ede1c93a3}
+      \strng{fullhash}{e4e306fe0b21597d46ed881ede1c93a3}
+      \strng{bibnamehash}{e4e306fe0b21597d46ed881ede1c93a3}
+      \strng{authorbibnamehash}{e4e306fe0b21597d46ed881ede1c93a3}
+      \strng{authornamehash}{e4e306fe0b21597d46ed881ede1c93a3}
+      \strng{authorfullhash}{e4e306fe0b21597d46ed881ede1c93a3}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{online, accessed 02-November-2020}
+      \field{title}{What is Tokenization in NLP? Here’s All You Need To Know}
+      \verb{urlraw}
+      \verb https://www.analyticsvidhya.com/blog/2020/05/what-is-tokenization-nlp/
+      \endverb
+      \verb{url}
+      \verb https://www.analyticsvidhya.com/blog/2020/05/what-is-tokenization-nlp/
+      \endverb
+    \endentry
+    \entry{stopwords}{book}{}
+      \name{author}{3}{}{%
+        {{hash=016fc1e04b3b878ce0ba16c74854c0f6}{%
+           family={Manning},
+           familyi={M\bibinitperiod},
+           given={Christopher\bibnamedelima D.},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=68f523934985e2f967ab2b15f4ded07c}{%
+           family={Raghavan},
+           familyi={R\bibinitperiod},
+           given={Prabhakar},
+           giveni={P\bibinitperiod}}}%
+        {{hash=9a80de0e5ec6df57363aaf321a5d05be}{%
+           family={Schütze},
+           familyi={S\bibinitperiod},
+           given={Hinrich},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{8386fb4c9fe30ff867c3eaf749f4aeeb}
+      \strng{fullhash}{8386fb4c9fe30ff867c3eaf749f4aeeb}
+      \strng{bibnamehash}{8386fb4c9fe30ff867c3eaf749f4aeeb}
+      \strng{authorbibnamehash}{8386fb4c9fe30ff867c3eaf749f4aeeb}
+      \strng{authornamehash}{8386fb4c9fe30ff867c3eaf749f4aeeb}
+      \strng{authorfullhash}{8386fb4c9fe30ff867c3eaf749f4aeeb}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Introduction to Information Retrieval}
+      \field{year}{2008}
+      \verb{doi}
+      \verb 10.1017/CBO9780511809071
+      \endverb
+    \endentry
+    \entry{synthetic_lang}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=f643d177a2d41639cadbd610d8e89974}{%
+           family={Encyclopaedia\bibnamedelima Britannica},
+           familyi={E\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={The\bibnamedelima Editors},
+           giveni={T\bibinitperiod\bibinitdelim E\bibinitperiod},
+           prefix={of},
+           prefixi={o\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Encyclopædia Britannica}%
+      }
+      \strng{namehash}{f643d177a2d41639cadbd610d8e89974}
+      \strng{fullhash}{f643d177a2d41639cadbd610d8e89974}
+      \strng{bibnamehash}{f643d177a2d41639cadbd610d8e89974}
+      \strng{authorbibnamehash}{f643d177a2d41639cadbd610d8e89974}
+      \strng{authornamehash}{f643d177a2d41639cadbd610d8e89974}
+      \strng{authorfullhash}{f643d177a2d41639cadbd610d8e89974}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{online, accessed 03-November-2020}
+      \field{title}{Synthetic language}
+      \verb{urlraw}
+      \verb https://www.britannica.com/topic/synthetic-language
+      \endverb
+      \verb{url}
+      \verb https://www.britannica.com/topic/synthetic-language
+      \endverb
+    \endentry
+    \entry{stemming_vs_lemmatization}{misc}{}
+      \name{author}{3}{}{%
+        {{hash=139b881ef52338119af31ab2c0c36149}{%
+           family={García},
+           familyi={G\bibinitperiod},
+           given={Cabanilles},
+           giveni={C\bibinitperiod},
+           suffix={Clara},
+           suffixi={C\bibinitperiod}}}%
+        {{hash=dc0116b49ff86106fa4b692ba7df3827}{%
+           family={Pedro},
+           familyi={P\bibinitperiod},
+           given={Juan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=13b8fae098f523cfe8d3da5b6579966f}{%
+           family={Ramirez},
+           familyi={R\bibinitperiod},
+           given={Benjamín},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{680eec2f1b7c65cce580c54761911a7d}
+      \strng{fullhash}{680eec2f1b7c65cce580c54761911a7d}
+      \strng{bibnamehash}{680eec2f1b7c65cce580c54761911a7d}
+      \strng{authorbibnamehash}{680eec2f1b7c65cce580c54761911a7d}
+      \strng{authornamehash}{680eec2f1b7c65cce580c54761911a7d}
+      \strng{authorfullhash}{680eec2f1b7c65cce580c54761911a7d}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{online, accessed 03-November-2020}
+      \field{title}{What is the difference between stemming and lemmatization?}
+      \verb{urlraw}
+      \verb https://blog.bitext.com/what-is-the-difference-between-stemming-and-lemmatization/
+      \endverb
+      \verb{url}
+      \verb https://blog.bitext.com/what-is-the-difference-between-stemming-and-lemmatization/
+      \endverb
+    \endentry
+    \entry{stemming_vs_lemmatization_twd}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=54db87aa4b77f35c95e1a3f82e290009}{%
+           family={Beri},
+           familyi={B\bibinitperiod},
+           given={Aditya},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{54db87aa4b77f35c95e1a3f82e290009}
+      \strng{fullhash}{54db87aa4b77f35c95e1a3f82e290009}
+      \strng{bibnamehash}{54db87aa4b77f35c95e1a3f82e290009}
+      \strng{authorbibnamehash}{54db87aa4b77f35c95e1a3f82e290009}
+      \strng{authornamehash}{54db87aa4b77f35c95e1a3f82e290009}
+      \strng{authorfullhash}{54db87aa4b77f35c95e1a3f82e290009}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{online, accessed 03-November-2020}
+      \field{title}{Stemming vs Lemmatization}
+      \field{year}{2014}
+      \verb{urlraw}
+      \verb https://towardsdatascience.com/stemming-vs-lemmatization-2daddabcb221
+      \endverb
+      \verb{url}
+      \verb https://towardsdatascience.com/stemming-vs-lemmatization-2daddabcb221
+      \endverb
+    \endentry
+    \entry{pos}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=3c39ed968d0227e04e7eaf582d94e769}{%
+           family={Engine},
+           familyi={E\bibinitperiod},
+           given={Sketch},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{3c39ed968d0227e04e7eaf582d94e769}
+      \strng{fullhash}{3c39ed968d0227e04e7eaf582d94e769}
+      \strng{bibnamehash}{3c39ed968d0227e04e7eaf582d94e769}
+      \strng{authorbibnamehash}{3c39ed968d0227e04e7eaf582d94e769}
+      \strng{authornamehash}{3c39ed968d0227e04e7eaf582d94e769}
+      \strng{authorfullhash}{3c39ed968d0227e04e7eaf582d94e769}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{online, accessed 03-November-2020}
+      \field{title}{POS tags}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.sketchengine.eu/blog/pos-tags/
+      \endverb
+      \verb{url}
+      \verb https://www.sketchengine.eu/blog/pos-tags/
+      \endverb
+    \endentry
+    \entry{penn_treebank}{article}{}
+      \name{author}{3}{}{%
+        {{hash=0cdb2e70e07a512c6d563b3dac6b9829}{%
+           family={Marcus},
+           familyi={M\bibinitperiod},
+           given={Mitchell\bibnamedelima P.},
+           giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=70c3bd2fb69d1b113d0d84c8f65670d5}{%
+           family={Marcinkiewicz},
+           familyi={M\bibinitperiod},
+           given={Mary\bibnamedelima Ann},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=1a6b1a60e440837f7e64b04d28996d76}{%
+           family={Santorini},
+           familyi={S\bibinitperiod},
+           given={Beatrice},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, MA, USA}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{9c50d2c6780480b34e1c1aef73b24221}
+      \strng{fullhash}{9c50d2c6780480b34e1c1aef73b24221}
+      \strng{bibnamehash}{9c50d2c6780480b34e1c1aef73b24221}
+      \strng{authorbibnamehash}{9c50d2c6780480b34e1c1aef73b24221}
+      \strng{authornamehash}{9c50d2c6780480b34e1c1aef73b24221}
+      \strng{authorfullhash}{9c50d2c6780480b34e1c1aef73b24221}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0891-2017}
+      \field{journaltitle}{Comput. Linguist.}
+      \field{month}{6}
+      \field{number}{2}
+      \field{title}{Building a Large Annotated Corpus of English: The Penn Treebank}
+      \field{volume}{19}
+      \field{year}{1993}
+    \endentry
+    \entry{nltk_np}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b55a74b13b63c8911d5697900148ec94}{%
+           family={Karimkhan},
+           familyi={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{b55a74b13b63c8911d5697900148ec94}
+      \strng{fullhash}{b55a74b13b63c8911d5697900148ec94}
+      \strng{bibnamehash}{b55a74b13b63c8911d5697900148ec94}
+      \strng{authorbibnamehash}{b55a74b13b63c8911d5697900148ec94}
+      \strng{authornamehash}{b55a74b13b63c8911d5697900148ec94}
+      \strng{authorfullhash}{b55a74b13b63c8911d5697900148ec94}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{online, accessed 30-October-2020}
+      \field{title}{Extracting the noun phrases using nltk}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://gist.github.com/karimkhanp/4b7626a933759d0113d54b09acef24bf#file-noun_phrase_extractor-py-L34
+      \endverb
+      \verb{url}
+      \verb https://gist.github.com/karimkhanp/4b7626a933759d0113d54b09acef24bf#file-noun_phrase_extractor-py-L34
+      \endverb
+    \endentry
+    \entry{nltk_ps}{book}{}
+      \name{author}{3}{}{%
+        {{hash=a6ad72a87713a430f7335c5656da28f1}{%
+           family={Bird},
+           familyi={B\bibinitperiod},
+           given={Steven},
+           giveni={S\bibinitperiod}}}%
+        {{hash=95e002ca584c2d8d701c96f08c6d589f}{%
+           family={Klein},
+           familyi={K\bibinitperiod},
+           given={Ewan},
+           giveni={E\bibinitperiod}}}%
+        {{hash=2814798d9a65d66800fc6e2ec5ad7483}{%
+           family={Loper},
+           familyi={L\bibinitperiod},
+           given={Edward},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {O'Reilly Media, Inc.}%
+      }
+      \strng{namehash}{f0999d1f539a44b08b01482038a721f8}
+      \strng{fullhash}{f0999d1f539a44b08b01482038a721f8}
+      \strng{bibnamehash}{f0999d1f539a44b08b01482038a721f8}
+      \strng{authorbibnamehash}{f0999d1f539a44b08b01482038a721f8}
+      \strng{authornamehash}{f0999d1f539a44b08b01482038a721f8}
+      \strng{authorfullhash}{f0999d1f539a44b08b01482038a721f8}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1st}
+      \field{isbn}{0596516495}
+      \field{title}{Natural Language Processing with Python}
+      \field{year}{2009}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

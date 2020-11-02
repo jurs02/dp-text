@@ -1,0 +1,74 @@
+%%% Titulní strana práce a další povinné informační strany
+
+%%% Titulní strana práce
+
+\pagestyle{empty}
+\hypersetup{pageanchor=false}
+
+\begin{center}
+\Huge\sffamily
+Prague University of Economics and Business\\
+Faculty of Informatics and Statistics
+
+\vspace{\stretch{1}}
+
+\includegraphics[width=.3\textwidth]{img/logo-FIS}
+
+\vspace{\stretch{2}}
+
+\bfseries\NazevPrace
+
+\vspace{8mm}
+\mdseries\TypPrace
+
+\vspace{8mm}
+\large
+\begin{tabular}{rl}
+Study program: & \StudijniProgram \\
+\noalign{\vspace{2mm}}
+Field of study: & \StudijniObor \\
+\end{tabular}
+
+\vspace{\stretch{8}}
+
+\begin{tabular}{rl}
+Author: & \AutorPrace \\
+\noalign{\vspace{2mm}}
+Supervisor: & \Vedouci \\
+\end{tabular}
+
+\vspace{8mm}
+Prague, \DatumOdevzdani
+\end{center}
+
+
+%%% Poděkování
+\hypersetup{pageanchor=true}
+\cleardoublepage
+\pagestyle{plain}
+\openright
+\vspace*{\fill}
+\section*{Acknowledgements}
+\noindent
+\Podekovani
+\vspace{1cm}
+
+
+%%% Povinná informační strana bakalářské práce
+\openright
+\section*{Abstract}
+\noindent
+\Abstrakt
+\subsection*{Keywords}
+\noindent
+\KlicovaSlova
+
+\bigskip\bigskip\bigskip
+\section*{Abstrakt}
+\noindent
+\AbstraktEN
+\subsection*{Klíčová slova}
+\noindent
+\KlicovaSlovaEN
+
+\openright
