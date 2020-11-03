@@ -2,6 +2,45 @@
 \section{Source of data}
 \section{Data preprocessing}
 \subsection{Chosen aspects for extraction}
+\begin{landscape}
+\begin{table}[p]
+\centering
+\caption{Proposed mapping between generic review metrics and form fields of KE conferences
+\label{table:conf}
+}
+\setlength{\defaultaddspace}{.33333\defaultaddspace}
+\begin{tabular}
+    {   
+        L{15mm} | % gencat 
+        L{18mm}  % ecai
+        L{12mm}  % ekaw   
+        L{60mm}  % eswc
+        L{20mm}  % fois
+        L{18mm}  % ijcai
+        L{25mm}  % iswc
+        L{16mm}  % kr     
+    }
+     \toprule
+Review metric	&	ECAI (2016)	&	EKAW (2020)	&	ESWC (2018)	&	FOIS (2016)	&	IJCAI (2019) &	ISWC, SEMANTiCS (2018)	&	KR (2014)	\\
+     \toprule
+Relevance	&	Relevance	&	NA	&	Relevance to ESWC	&	NA	&	Relevance	&	Appropriateness	&	Relevance of the paper to KR	\\
+\midrule
+Novelty	&	Originality	&	Novelty	&	Novelty of the proposed solution	&	Novelty or innovation	&	Originality	&	Originality / innovativeness	&	Novelty of the contribution	\\
+\midrule
+Technical quality	&	Technical quality &	Technical soundness and depth &	Correctness and completeness of the proposed solution; Demonstration and discussion of the properties of the proposed approach	&	Scientific or technical quality	&	Technical quality	& Implementation and soundness	&	Technical quality	\\
+\midrule
+State of the art	&	Scholarship	&	NA	&	Evaluation of the state-of-the-art	&	References	&	Scholarship	&	Related work	&		Discussion of related work	\\
+\midrule
+Evaluation	&	NA	&	NA	&	Reproducibility and generality of the experimental study	&	NA	&	NA	&	Evaluation	&	NA	\\
+\midrule
+Significance	&	Significance	&	NA	&	NA	&	NA	&	Significance	&	Impact of ideas and results	&	NA	\\
+\midrule
+Presentation	&	Presentation quality	&	Clarity and quality of writing	&	NA	&	Presentation &	Clarity and quality of writing	&	Clarity and quality of writing	&		Quality of the presentation	\\
+     \bottomrule
+\end{tabular}
+\end{table}
+
+\end{landscape}
 \subsection{Data preprocessing for aspect vocabulary extraction}
 \subsection{Data preprocessing for sentiment vocabulary extraction}
 \subsection{Interesting findings during the preprocessing phase}

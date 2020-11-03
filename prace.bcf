@@ -1976,16 +1976,20 @@
     <bcf:citekey order="39">nlp_history</bcf:citekey>
     <bcf:citekey order="40">tokenization</bcf:citekey>
     <bcf:citekey order="41">nlp_tasks</bcf:citekey>
-    <bcf:citekey order="42">nlp_tasks</bcf:citekey>
-    <bcf:citekey order="43">stopwords</bcf:citekey>
-    <bcf:citekey order="44">synthetic_lang</bcf:citekey>
-    <bcf:citekey order="45">stemming_vs_lemmatization</bcf:citekey>
-    <bcf:citekey order="46">stemming_vs_lemmatization_twd</bcf:citekey>
+    <bcf:citekey order="42">tokenization_mgl</bcf:citekey>
+    <bcf:citekey order="43">tokenization_twd</bcf:citekey>
+    <bcf:citekey order="44">tokenization_mgl</bcf:citekey>
+    <bcf:citekey order="45">tokenization_twd</bcf:citekey>
+    <bcf:citekey order="46">nlp_tasks</bcf:citekey>
     <bcf:citekey order="47">stopwords</bcf:citekey>
-    <bcf:citekey order="48">pos</bcf:citekey>
-    <bcf:citekey order="49">penn_treebank</bcf:citekey>
-    <bcf:citekey order="50">nltk_np</bcf:citekey>
-    <bcf:citekey order="51">nltk_ps</bcf:citekey>
+    <bcf:citekey order="48">synthetic_lang</bcf:citekey>
+    <bcf:citekey order="49">stemming_vs_lemmatization</bcf:citekey>
+    <bcf:citekey order="50">stemming_vs_lemmatization_twd</bcf:citekey>
+    <bcf:citekey order="51">stopwords</bcf:citekey>
+    <bcf:citekey order="52">pos</bcf:citekey>
+    <bcf:citekey order="53">penn_treebank</bcf:citekey>
+    <bcf:citekey order="54">nltk_np</bcf:citekey>
+    <bcf:citekey order="55">nltk_ps</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

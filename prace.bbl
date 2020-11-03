@@ -728,6 +728,62 @@
       \verb https://www.analyticsvidhya.com/blog/2020/05/what-is-tokenization-nlp/
       \endverb
     \endentry
+    \entry{tokenization_mgl}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=5c8b60d10e21a39537cd773990506ece}{%
+           family={Mujtaba},
+           familyi={M\bibinitperiod},
+           given={Hussain},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{5c8b60d10e21a39537cd773990506ece}
+      \strng{fullhash}{5c8b60d10e21a39537cd773990506ece}
+      \strng{bibnamehash}{5c8b60d10e21a39537cd773990506ece}
+      \strng{authorbibnamehash}{5c8b60d10e21a39537cd773990506ece}
+      \strng{authornamehash}{5c8b60d10e21a39537cd773990506ece}
+      \strng{authorfullhash}{5c8b60d10e21a39537cd773990506ece}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{online, accessed 03-November-2020}
+      \field{title}{Tokenising into Words and Sentences | What is Tokenization and it’s Definition?}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://www.mygreatlearning.com/blog/tokenization/
+      \endverb
+      \verb{url}
+      \verb https://www.mygreatlearning.com/blog/tokenization/
+      \endverb
+    \endentry
+    \entry{tokenization_twd}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b83a47c4ddc510fa3028be3262b4a0cb}{%
+           family={Chakravarthy},
+           familyi={C\bibinitperiod},
+           given={Srinivas},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{b83a47c4ddc510fa3028be3262b4a0cb}
+      \strng{fullhash}{b83a47c4ddc510fa3028be3262b4a0cb}
+      \strng{bibnamehash}{b83a47c4ddc510fa3028be3262b4a0cb}
+      \strng{authorbibnamehash}{b83a47c4ddc510fa3028be3262b4a0cb}
+      \strng{authornamehash}{b83a47c4ddc510fa3028be3262b4a0cb}
+      \strng{authorfullhash}{b83a47c4ddc510fa3028be3262b4a0cb}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{online, accessed 03-November-2020}
+      \field{title}{Tokenization for Natural Language Processing}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://towardsdatascience.com/tokenization-for-natural-language-processing-a179a891bad4
+      \endverb
+      \verb{url}
+      \verb https://towardsdatascience.com/tokenization-for-natural-language-processing-a179a891bad4
+      \endverb
+    \endentry
     \entry{stopwords}{book}{}
       \name{author}{3}{}{%
         {{hash=016fc1e04b3b878ce0ba16c74854c0f6}{%
@@ -850,8 +906,8 @@
       \strng{authorbibnamehash}{54db87aa4b77f35c95e1a3f82e290009}
       \strng{authornamehash}{54db87aa4b77f35c95e1a3f82e290009}
       \strng{authorfullhash}{54db87aa4b77f35c95e1a3f82e290009}
-      \field{sortinit}{4}
-      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{online, accessed 03-November-2020}
@@ -878,8 +934,8 @@
       \strng{authorbibnamehash}{3c39ed968d0227e04e7eaf582d94e769}
       \strng{authornamehash}{3c39ed968d0227e04e7eaf582d94e769}
       \strng{authorfullhash}{3c39ed968d0227e04e7eaf582d94e769}
-      \field{sortinit}{4}
-      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{online, accessed 03-November-2020}
@@ -922,8 +978,8 @@
       \strng{authorbibnamehash}{9c50d2c6780480b34e1c1aef73b24221}
       \strng{authornamehash}{9c50d2c6780480b34e1c1aef73b24221}
       \strng{authorfullhash}{9c50d2c6780480b34e1c1aef73b24221}
-      \field{sortinit}{4}
-      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0891-2017}

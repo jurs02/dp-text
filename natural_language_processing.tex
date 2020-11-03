@@ -46,6 +46,19 @@ The text may be segmented into paragraphs but most commonly tokenization refers 
 
 Tokenization can remove punctuation too, but that may cause issues such as wrongly splitting up abbreviations with periods (e.g. dr.), where the period following that abbreviation should be considered as part of the same token and not be removed.\cite{nlp_tasks}
 
+There are different techniques of tokenization, their usage depends on the language and the purpose of tokenzation, so this section provides examples of some commonly used tokenizers.
+\subsubsection{White space tokenization}
+White space tokenization splits the text into tokens based on white spaces, such as tabulation characters, spaces, newline characters etc.. 
+
+Although this is a fast and easy way to implement tokenisation, this technique only works in languages where meaningful units are separated by spaces e.g  English, but even then, it does not work well for open compound words such as \textit{living room} or \textit{full moon}.\cite{tokenization_mgl}
+\subsubsection{Dictionary based tokenization}
+Dictionary based tokenization uses a dictionary of tokens to segment the text. If the token is not found in the dictionary, special rules are applied to tokenize it.\cite{tokenization_twd}
+
+For languages without spaces between words, there is an additional step of word segmentation where we find sequences of characters that have a certain meaning.\cite{tokenization_mgl}
+\subsubsection{Regular expression tokenization}
+Regular expression tokenizers are rule based tokenizers, which use regular expressions to control the tokenization of text into tokens.\cite{tokenization_twd}
+
+It's useful technique when you want more control over the tokenization of the text by creating your own regular expression by which the text is tokenized.
 \subsection{Stop words removal}
 Some words which often appear in analyzed document have little informational value and can be excluded. This process is called stop words removal. Stop words removal includes getting rid of common language articles, pronouns and prepositions such as “and”, “the” or “to” in English and other words which may be considered insignificant.\cite{nlp_tasks}
 
