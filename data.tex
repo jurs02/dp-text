@@ -1,47 +1,67 @@
-\chapter{Analysed data}
+\chapter{Analyzed data}
 \section{Source of data}
-\section{Data preprocessing}
-\subsection{Chosen aspects for extraction}
-\begin{landscape}
-\begin{table}[p]
-\centering
-\caption{Proposed mapping between generic review metrics and form fields of KE conferences
-\label{table:conf}
-}
-\setlength{\defaultaddspace}{.33333\defaultaddspace}
-\begin{tabular}
-    {   
-        L{15mm} | % gencat 
-        L{18mm}  % ecai
-        L{12mm}  % ekaw   
-        L{60mm}  % eswc
-        L{20mm}  % fois
-        L{18mm}  % ijcai
-        L{25mm}  % iswc
-        L{16mm}  % kr     
-    }
-     \toprule
-Review metric	&	ECAI (2016)	&	EKAW (2020)	&	ESWC (2018)	&	FOIS (2016)	&	IJCAI (2019) &	ISWC, SEMANTiCS (2018)	&	KR (2014)	\\
-     \toprule
-Relevance	&	Relevance	&	NA	&	Relevance to ESWC	&	NA	&	Relevance	&	Appropriateness	&	Relevance of the paper to KR	\\
-\midrule
-Novelty	&	Originality	&	Novelty	&	Novelty of the proposed solution	&	Novelty or innovation	&	Originality	&	Originality / innovativeness	&	Novelty of the contribution	\\
-\midrule
-Technical quality	&	Technical quality &	Technical soundness and depth &	Correctness and completeness of the proposed solution; Demonstration and discussion of the properties of the proposed approach	&	Scientific or technical quality	&	Technical quality	& Implementation and soundness	&	Technical quality	\\
-\midrule
-State of the art	&	Scholarship	&	NA	&	Evaluation of the state-of-the-art	&	References	&	Scholarship	&	Related work	&		Discussion of related work	\\
-\midrule
-Evaluation	&	NA	&	NA	&	Reproducibility and generality of the experimental study	&	NA	&	NA	&	Evaluation	&	NA	\\
-\midrule
-Significance	&	Significance	&	NA	&	NA	&	NA	&	Significance	&	Impact of ideas and results	&	NA	\\
-\midrule
-Presentation	&	Presentation quality	&	Clarity and quality of writing	&	NA	&	Presentation &	Clarity and quality of writing	&	Clarity and quality of writing	&		Quality of the presentation	\\
-     \bottomrule
-\end{tabular}
-\end{table}
+As was previously mentioned, the data analyzed in this work are reviews of submissions to conferences focused on semantic technology. Namely from five different conferences --  EKAW 2018, ESWC 2018, ESWC 2019, ISWC 2017 and ISWC 2018.
 
-\end{landscape}
+The data for each conference was sourced differently, mainly because with the exception of the ESWC 2019 conference, these reviews are not publicly available.
+
+Data from EKAW 2018 ware gathered with the help of the programme committee co-chair Chiara Ghidini and my supervisor. The reviewers were asked to give consent to the use of their reviews, being able to choose between two levels of consent:
+\begin{itemize}
+\item \textbf{Level 1}: I am giving a consent to using my EKAW 2018 review text/score in an anonymized form for the purposes of a sentiment analysis study      YES / NO
+\item \textbf{Level 2}: I am giving a consent to using my EKAW 2018 text in a snippet published for illustrative purposes, after the elimination of potentially identity-revealing named entities      YES / NO
+\end{itemize}
+
+As a result I was able to obtain 247 review, where only 17 reviewers gave permission on level 1, the rest gave permission on both levels.
+
+The data from the ISWC 2017 and ISWC 2018 were gathered in a similar manner, resulting in 11 and 20 reviews respectively.
+
+I also was provided with a small dataset of the ESWC 2018 reviews by Vojtěch Svátek, consisting of a total of 6 reviews of two different papers.
+
+The ESWC 2019 data was publicly available through a SPARQL endpoint at \url{https://metadata.2019.eswc-conferences.org/sparql}. The server hosting the SPARQL endpoint recently went down and apparently will not be made available anytime soon, but I have managed to gather some data when the server was still functional. 
+
+
+\section{Data preprocessing}
 \subsection{Data preprocessing for aspect vocabulary extraction}
+Fist I tokenize each review into sentences. Then, each sentence goes through word tokenzation using the \texttt{word\_tokenize} function from NLTK and each token is assigned a POS tag with the \texttt{pos\_tag} function.
+
+Because the reviews are sometimes not formatted correctly the tokenization might lead to a wrong output. For example there might not be a space after a punctuation symbol (like a period) and as a result the tokenizer does not separate the punctuation symbol from the next word. For that reason all characters which are not alphanumerical or are not a hyphen are replaced by an empty string in each token.
+
+All tokens are then lemmatized using the \texttt{WordNetLemmatizer}. No stopwords are removed in the preprocessing, as only nouns, noun phrases and adjectives are extracted, so there is no significant overlap with any traditional stopwords and some stopwords, such as prepositions are necessary for noun phrase identification.
 \subsection{Data preprocessing for sentiment vocabulary extraction}
-\subsection{Interesting findings during the preprocessing phase}
-\section{Previous research on conference paper reviews}
+Because I am using the Na\"ive Bayes classifier for sentiment vocabulary extraction, a dataset consisting of 1000 review sentences (taken from the ESWC 2019 dataset) was created. Because reviewers often express two different sentiments in a single sentence, such as ``Overall it is a very good paper, but there are some limitations.'', sentences like these had to be split in two -- the positive and the negative part. As was described in section INSERT, the Na\"ive Bayes classifier treats a text as a bag of words with an assigned label, there is no syntactic or semantic analysis applied and so a dual polarity in a single example would not be appropriately handled.
+
+Each sentence was labeled with either positive or negative sentiment by me as well as another annotator (independently as to not influence each other). 
+The results of the two sets of annotations were then compared and it was found that the label did not match for 8 sentences. This was firstly because some sentences described both positive and negative sentiment and were not split correctly which led to each annotator choosing a different sentiment for the entire sentence. This was corrected by only keeping a part of the sentence expressing a single opinion polarity. Secondly, the opposing annotations were in some cases a result of a lack of context for the sentence when each sentence is annotated separately. This was fixed by looking at the original review and choosing the appropriate polarity based on the context. Finally some sentences were labeled incorrectly due to a simple mistake of the annotator.
+
+When creating the lexicon, first all contractions are expanded, then the review is tokenized into words and assigned a POS tag. Because only words with a high enough frequency are kept, I have also decided to remove stopwords, based on my own stopword list. The NLTK corpus also includes a dictionary of stopwords, however it  includes words that I expected to have a noticeable influence on the polarity of a sentence such as ``should'' which rarely points to a positive sentiment in reviews. The list of stopwords that were used is:
+\begin{lstlisting}
+["the", "be", "of", "a", "to", "and", "in", "it", "i", "this", 
+ "that", "do", "for", "on", "have"]
+\end{lstlisting}
+
+The tokens were again lemmatized, with the exception of adjectives. In this task especially adjectives needed to be kept in the same form as they were originally written in the review, as the distinction between for example ``good'' and ``better'' might be important for the polarity of the adjective. 
+
+It is important to note that the \texttt{WordNetLemmatizer} that is used for lemmatization is based on the WordNet POS tag set, which is significantly smaller that the Treebank tag set that is used for POS tagging. Because the POS tagger uses the Treebank tag set, all POS tags are transformed into WordNet tags using the function on figure \ref{img:tb_wn}. For example all Treebank tags that refer to verbs begin with ``V'' and they all get transformed into the single tag that WordNet has for verbs.
+\begin{figure}
+\centering
+
+\begin{tabular}{c}
+
+\begin{lstlisting}
+def get_wordnet_pos(pos_tag):
+
+    if pos_tag.startswith('J'):
+        return wn.ADJ
+    elif pos_tag.startswith('V'):
+        return wn.VERB
+    elif pos_tag.startswith('N'):
+        return wn.NOUN
+    elif pos_tag.startswith('R'):
+        return wn.ADV
+    else:
+        return wn.NOUN
+\end{lstlisting}
+\end{tabular}
+\caption{Transformation between Treebank and WordNet POS tag sets}\label{img:tb_wn}
+\end{figure}
+
+

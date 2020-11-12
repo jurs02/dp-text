@@ -35,8 +35,12 @@
 \usepackage{booktabs}       % lepší vodorovné linky v tabulkách
 \usepackage{listings}
 \usepackage{xcolor}
-\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{float}
+\usepackage{tabularx}
+
+\usepackage[vlined, boxed]{algorithm2e}
 \usepackage[most]{tcolorbox}
+\usepackage{pgf-umlcd}
 \lstdefinestyle{base}{
   language=sh,
   emptylines=1,
@@ -76,6 +80,8 @@ listing only,listing options={language=sh,style=base}}
 % vyznaceni odstavcu
 \parindent=0pt
 \parskip=11pt
+%potlačení figure-algorithm erroru
+\newcommand{\removelatexerror}{\let\@latex@error\@gobble}
 
 % zakaz vdov a sirotku - jednoradkovych pocatku ci koncu odstavcu na prechodu mezi strankami
 \clubpenalty=1000

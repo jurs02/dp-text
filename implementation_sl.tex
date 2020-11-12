@@ -1,3 +1,55 @@
 \chapter{Creation of sentiment lexicon}
+Through some initial experimentation with various existing sentiment lexicons such as the SenticNet sentiment lexicon and the NLTK's SentiWordNet sentiment lexicon I discovered that these universal sentiment lexicons are not well suited for application on the domain of conference paper reviews.
+
+One issue is that both of these sentiment lexicons assign sentiment polarity on a scale. Therefore most dictionary words have a certain sentiment polarity which I considered inappropriate in this task, as I did not want words which would generally be considered neutral to somehow skew the polarity of words that might actually be important. These words often have a polarity around the center of the polarity interval (for example if the polarity is assigned on a scale from -1 to 1 they usually have polarity somewhere around 0) and could be removed by using some polarity threshold, but that might also lead to losing some words that are actually important for sentiment classification in this domain. For example in SenticNet, the word ``clarification'' has polarity of -0.09, but it is often used in sentences such as ``The section about experimental results needs some clarification..'' where the sentiment is clearly negative.
+
+Another possible issue with pre-made sentiment lexicons is that they mostly do not include punctuation. I believe that punctuation might have great semantic significance in conference paper reviews, as they are often written in plaintext and punctuation is used to compensate for the lack of usual formatting styles such as bullet points. 
+
+
+For that reason, I have decided to create my own sentiment lexicon. This chapter describes the process of compiling a sentiment lexicon from a set of annotated sentences taken from reviews using the Na\"ive Bayes classifier.
 \section{Implementation of sentiment lexicon generation using Naive Bayes}
+The Na\"ive Bayes classifier, as described in section \ref{sec:NBC} is a probabilistic classifier which needs a training dataset of labeled data in order to determine the influence of different evidences on the class. The obtainment of this dataset is described in section INSERT.
+
+I have used the NLTK's implementation of the classifier. Of all the lemmatized tokens in the reviews I limited the number of tokens the classifier needs to process (the tokens are considered features by the algorithm, each token being transformed into a column where the value of the column for each row representing a review is true or false depending on the presence of the token in the review) to 450. This was achieved thanks to the \texttt{FreqDist} class from the NLTK's \texttt{probability} module.
+
+To dataset of labeled review sentences was split to have a testing dataset 50 example sentences to determine the accuracy of the classifier and the rest of sentences was used for training. The test dataset is fairly small, but I considered it far more preferable to leave most examples to the training dataset to produce a hopefully more accurate sentiment lexicon, even though the trade-off is not being able to judge the created lexicon in great detail at this phase. 
+
+That being said, the accuracy of the classifier on the testing dataset was 0.8, meaning 80 \% of sentences were classified correctly. 
+
+The classifier allows us to get a list of features which have the highest contribution to classification through its \texttt{show\_most\_informative\_features} method which based on the number we specify as its argument outputs a list of features with their ratio of occurrences in negative and positive sentences. The output when applied to the training data can be seen on table \ref{tab:nbc_output}. We can see that it is more that 21 times more likely that the word ``easy'' occurs in a sentence labeled as \textit{positive} while a question mark occurs far more often in negative sentences, as was expected in section INSERT.
+
+\begin{table}[htbp!]
+\caption{Output of the Na\"ive Bayes classifier}\label{tab:nbc_output}
+\centering
+\begin{tabular}{lll}
+\textbf{Most Informative Features} &                   &            \\
+easy = True                        & positi : negati = & 21.3 : 1.0 \\
+interesting = True                 & positi : negati = & 15.2 : 1.0 \\
+topic = True                       & positi : negati = & 13.6 : 1.0 \\
+? = True                           & negati : positi = & 11.5 : 1.0 \\
+what = True                        & negati : positi = & 10.8 : 1.0 \\
+sound = True                       & positi : negati = & 10.6 : 1.0 \\
+community = True                   & positi : negati = & 9.8 : 1.0  \\
+but = True                         & negati : positi = & 9.0 : 1.0  \\
+not = True                         & negati : positi = & 8.0 : 1.0  \\
+idea = True                        & positi : negati = & 8.0 : 1.0  \\
+interest = True                    & positi : negati = & 7.8 : 1.0  \\
+clearly = True                     & positi : negati = & 7.4 : 1.0  \\
+well = True                        & positi : negati = & 7.3 : 1.0  \\
+me = True                          & negati : positi = & 7.3 : 1.0  \\
+bring = True                       & positi : negati = & 6.7 : 1.0 
+\end{tabular}
+\end{table}
+I have then adjusted the \texttt{show\_most\_informative\_features} method to create a function which transforms these ratios of occurrences in sentences with positive or negative sentiments into a sentiment lexicon. 
+
+Each of the most informative tokens is given a value of -1 or +1 depending on if they occur more often in negative or positive sentences (where -1 corresponds to negative sentiment and  +1 corresponds to positive sentiment). 
+
 \section{Created sentiment lexicon}
+From the list of most informative features I chose the top 88 words to include to the sentiment lexicon (setting the ratio threshold at 2.6 : 1.0). 
+
+I decided to compare the results with the SenticNet sentiment lexicon, to see what is the level of agreement between the two lexicons and found that in 13 cases, the polarity of the sentiment of words found in both lexicons differed and in 31 cases a word from my lexicon was not found in SenticNet. Surprisingly not all the words that were not found in SenticNet were not found due to the aforementioned lack of punctuation in SenticNet or because these words could truly be considered neutral, SenticNet was missing some words which I would consider fairly meaningful in sentiment analysis such as \textit{rather} or \textit{should}.
+
+I also included a list of 38 positive and 62 negative words compiled manually during the process of labeling the training dataset. The resulting sentiment lexicon contains 171 sentiment words out of which 79 have positive polarity of +1 and 92 have a negative polarity of -1.
+
+
+

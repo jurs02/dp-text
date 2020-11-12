@@ -1,1 +1,60 @@
 \chapter{Evaluation of results}
+
+\section{Evaluation using reviews with numerical scores}
+The reviews from ISWC 2018 contain numerical scores for a wide range of criteria as was mentioned in section \ref{sec:rev_structure}. I have decided to compare the numerical scores outputted by the sentiment analysis algorithm with the ground-truth scores taken from the reviews. Because the ISWC set of criteria is more detailed that the set of criteria the algorithm works with, it was necessary to create a mapping between them which you can see on table \ref{tab:mapping_numerical}. 
+
+\begin{table}[!htb]
+\caption{Mapping between the chosen set of criteria and ISWC 2018 criteria}
+\centering
+\label{tab:mapping_numerical}
+\begin{tabular}{ll}
+\textbf{Algorithm's criteria} & \textbf{ISWC 2018 criteria}    \\ \hline
+relevance                     & appropriateness                \\
+novelty                       & originality/innovativeness     \\
+                              & impact of ideas and results    \\
+technical quality             & implementation and soundness   \\
+state of the art              & related work                   \\
+evaluation                    & evaluation                     \\
+presentation                  & clarity and quality of writing
+\end{tabular}
+\end{table}
+
+The numerical output was evaluated using the mean absolute error function (MSE), which measures the absolute average distance between the real data $Y$ and the predicted data $\bar{Y}$:
+
+$$MSE = \frac{1}{n} \times \sum_{i=1}^{n} \lvert Y_{i} - \bar{Y_{i}} \rvert$$
+
+The MAE was calculated separately for each criterion to see if the algorithm perform better or worse for some them. The default range of [1;5] for scores outputted by the algorithm was matched to the [-2;2] range of the ISWC reviews. Because the algorithm outputs ``n/a'' instead of a number for criteria for which no sentiment value was found, I have also calculated the number of times the ``n/a'' value occurs for each criterion.
+
+The results of the numerical evaluation carried over the 20 ISWC 2018 reviews can be seen on table \ref{tab:eval_numerical}. It is clear that the algorithm often struggles with finding any criterion score, especially when it comes to relevance, novelty and technical quality. Even when it does give a numerical score it is often fairly off. This could have several explanation. Firstly it is possible that when reviewers have the option of expressing their opinion numerically, they sometimes do not feel to also give a more elaborate explanation. The second explanation is that the algorithm simply does not perform well when it comes to discovering aspect expressions and/or sentiment words. This is studied more closely in the next section, where the results are evaluated on the sentence level. 
+
+Another issue might be the way in which the numerical scores are estimated -- each time an aspect expression is discovered and assigned a polarity of +1 or -1 the value is added to the respective criterion score. Finally the scores are averaged by the number of times a value was added and normalized to a given score range. Therefore if for a criterion only one aspect expression is found with a given polarity the final score will always be an extreme in the score range, but that is a much rarer occurrence in the scores given by human reviewers. To check if this might be the issue I have tried to change the normalization of polarity to four different values, where a criterion is added a score of +1 if the orientation of an aspect expression is higher than 0.5, a score of +0.5 if the orientation is higher that 0 and analogously the -0.5 and -1 scores for negative orientations. The results after that change can be seen on table \ref{tab:eval_numerical_granular}. It is apparent that this leads to better results and so a more fine-grained approach to polarity is necessary.
+
+\begin{table}[!htb]
+\caption{Results of the numerical evaluation of ISWC 2018 reviews}
+\label{tab:eval_numerical}
+\centering
+\begin{tabular}{l|l|l}
+\textbf{Criterion} & \textbf{MAE} & \textbf{Number of missing values} \\ \hline
+relevance          & 1.25         & 12                                \\
+novelty            & 2.25          & 14                                \\
+technical quality  & 2.375         & 12                                \\
+state of the art   & 1.0          & 6                                 \\
+evaluation         & 1.7          & 3                                 \\
+presentation       & 1.09          & 9                                
+\end{tabular}
+\end{table}
+
+\begin{table}[!htb]
+\caption{Results of the numerical evaluation of ISWC 2018 reviews using a more granular approach to polarity}
+\label{tab:eval_numerical_granular}
+\centering
+\begin{tabular}{l|l|l}
+\textbf{Criterion} & \textbf{MAE} & \textbf{Number of missing values} \\ \hline
+relevance          & 0.87         & 12                                \\
+novelty            & 1.58          & 14                                \\
+technical quality  & 1.5         & 12                                \\
+state of the art   & 0.74         & 6                                 \\
+evaluation         & 1.05          & 3                                 \\
+presentation       & 0.81          & 9                                
+\end{tabular}
+\end{table}

@@ -36,8 +36,8 @@
       \strng{authorbibnamehash}{9c6fb2af2964f3126cfd4e505a38daca}
       \strng{authornamehash}{9c6fb2af2964f3126cfd4e505a38daca}
       \strng{authorfullhash}{9c6fb2af2964f3126cfd4e505a38daca}
-      \field{sortinit}{4}
-      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{978-1-107-01789-4}
@@ -63,8 +63,8 @@
       \strng{authorbibnamehash}{52ccce5dfc28b622619b46d6452a3211}
       \strng{authornamehash}{52ccce5dfc28b622619b46d6452a3211}
       \strng{authorfullhash}{52ccce5dfc28b622619b46d6452a3211}
-      \field{sortinit}{9}
-      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{2326-3865}
@@ -104,8 +104,8 @@
       \strng{authorbibnamehash}{fc86aaa4dce9cced6d44892901354af2}
       \strng{authornamehash}{fc86aaa4dce9cced6d44892901354af2}
       \strng{authorfullhash}{fc86aaa4dce9cced6d44892901354af2}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{sortinit}{7}
+      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the 19th National Conference on Artifical Intelligence}
@@ -262,8 +262,8 @@
       \strng{authorbibnamehash}{14cd09234fc3115c30aa85e0634e328b}
       \strng{authornamehash}{14cd09234fc3115c30aa85e0634e328b}
       \strng{authorfullhash}{14cd09234fc3115c30aa85e0634e328b}
-      \field{sortinit}{2}
-      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{12}
@@ -446,8 +446,8 @@
       \strng{authorbibnamehash}{e38f14ab2ff17a9258b8d917aa1679fd}
       \strng{authornamehash}{e38f14ab2ff17a9258b8d917aa1679fd}
       \strng{authorfullhash}{e38f14ab2ff17a9258b8d917aa1679fd}
-      \field{sortinit}{3}
-      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Natural Language and Universal Grammar: Essays in Linguistic Theory}
@@ -497,8 +497,8 @@
       \strng{editorbibnamehash}{012d162932365b6853b48378f370bb47}
       \strng{editornamehash}{012d162932365b6853b48378f370bb47}
       \strng{editorfullhash}{012d162932365b6853b48378f370bb47}
-      \field{sortinit}{3}
-      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This chapter provides an annotated listing of various resources for natural language processing research and applications development. Resources include corpora, software libraries and frameworks, and workflow systems.}
@@ -535,8 +535,8 @@
       \strng{authorbibnamehash}{77fc1c92ed0ae02d5c8e8e9d0dc282b9}
       \strng{authornamehash}{77fc1c92ed0ae02d5c8e8e9d0dc282b9}
       \strng{authorfullhash}{77fc1c92ed0ae02d5c8e8e9d0dc282b9}
-      \field{sortinit}{3}
-      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{online, accessed 02-November-2020}
@@ -715,8 +715,8 @@
       \strng{authorbibnamehash}{e4e306fe0b21597d46ed881ede1c93a3}
       \strng{authornamehash}{e4e306fe0b21597d46ed881ede1c93a3}
       \strng{authorfullhash}{e4e306fe0b21597d46ed881ede1c93a3}
-      \field{sortinit}{4}
-      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{online, accessed 02-November-2020}
@@ -742,8 +742,8 @@
       \strng{authorbibnamehash}{5c8b60d10e21a39537cd773990506ece}
       \strng{authornamehash}{5c8b60d10e21a39537cd773990506ece}
       \strng{authorfullhash}{5c8b60d10e21a39537cd773990506ece}
-      \field{sortinit}{4}
-      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{online, accessed 03-November-2020}
@@ -906,8 +906,8 @@
       \strng{authorbibnamehash}{54db87aa4b77f35c95e1a3f82e290009}
       \strng{authornamehash}{54db87aa4b77f35c95e1a3f82e290009}
       \strng{authorfullhash}{54db87aa4b77f35c95e1a3f82e290009}
-      \field{sortinit}{5}
-      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{online, accessed 03-November-2020}
@@ -934,8 +934,8 @@
       \strng{authorbibnamehash}{3c39ed968d0227e04e7eaf582d94e769}
       \strng{authornamehash}{3c39ed968d0227e04e7eaf582d94e769}
       \strng{authorfullhash}{3c39ed968d0227e04e7eaf582d94e769}
-      \field{sortinit}{5}
-      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{online, accessed 03-November-2020}
@@ -990,32 +990,6 @@
       \field{volume}{19}
       \field{year}{1993}
     \endentry
-    \entry{nltk_np}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=b55a74b13b63c8911d5697900148ec94}{%
-           family={Karimkhan},
-           familyi={K\bibinitperiod}}}%
-      }
-      \strng{namehash}{b55a74b13b63c8911d5697900148ec94}
-      \strng{fullhash}{b55a74b13b63c8911d5697900148ec94}
-      \strng{bibnamehash}{b55a74b13b63c8911d5697900148ec94}
-      \strng{authorbibnamehash}{b55a74b13b63c8911d5697900148ec94}
-      \strng{authornamehash}{b55a74b13b63c8911d5697900148ec94}
-      \strng{authorfullhash}{b55a74b13b63c8911d5697900148ec94}
-      \field{sortinit}{5}
-      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{online, accessed 30-October-2020}
-      \field{title}{Extracting the noun phrases using nltk}
-      \field{year}{2016}
-      \verb{urlraw}
-      \verb https://gist.github.com/karimkhanp/4b7626a933759d0113d54b09acef24bf#file-noun_phrase_extractor-py-L34
-      \endverb
-      \verb{url}
-      \verb https://gist.github.com/karimkhanp/4b7626a933759d0113d54b09acef24bf#file-noun_phrase_extractor-py-L34
-      \endverb
-    \endentry
     \entry{nltk_ps}{book}{}
       \name{author}{3}{}{%
         {{hash=a6ad72a87713a430f7335c5656da28f1}{%
@@ -1051,6 +1025,358 @@
       \field{isbn}{0596516495}
       \field{title}{Natural Language Processing with Python}
       \field{year}{2009}
+    \endentry
+    \entry{wordnet_counts}{misc}{}
+      \list{publisher}{1}{%
+        {Guru99}%
+      }
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labeltitlesource}{title}
+      \field{note}{online, accessed 09-November-2020}
+      \field{title}{WordNet with NLTK: Finding Synonyms for words in Python}
+      \verb{urlraw}
+      \verb https://www.guru99.com/wordnet-nltk.html
+      \endverb
+      \verb{url}
+      \verb https://www.guru99.com/wordnet-nltk.html
+      \endverb
+    \endentry
+    \entry{nltk_docs}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=c161bf0cce970edbc7c89e174bb83aee}{%
+           family={Project},
+           familyi={P\bibinitperiod},
+           given={NLTK},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{c161bf0cce970edbc7c89e174bb83aee}
+      \strng{fullhash}{c161bf0cce970edbc7c89e174bb83aee}
+      \strng{bibnamehash}{c161bf0cce970edbc7c89e174bb83aee}
+      \strng{authorbibnamehash}{c161bf0cce970edbc7c89e174bb83aee}
+      \strng{authornamehash}{c161bf0cce970edbc7c89e174bb83aee}
+      \strng{authorfullhash}{c161bf0cce970edbc7c89e174bb83aee}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{online, accessed 09-November-2020}
+      \field{title}{nltk.corpus.reader package}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb http://www.nltk.org/api/nltk.corpus.reader.html?highlight=wordnet#nltk.corpus.reader.wordnet.Lemma.synset
+      \endverb
+      \verb{url}
+      \verb http://www.nltk.org/api/nltk.corpus.reader.html?highlight=wordnet#nltk.corpus.reader.wordnet.Lemma.synset
+      \endverb
+    \endentry
+    \entry{wordnet_howto}{misc}{}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labeltitlesource}{title}
+      \field{note}{online, accessed 09-November-2020}
+      \field{title}{WordNet Interface}
+      \verb{urlraw}
+      \verb https://www.nltk.org/howto/wordnet.html
+      \endverb
+      \verb{url}
+      \verb https://www.nltk.org/howto/wordnet.html
+      \endverb
+    \endentry
+    \entry{spacy}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=4ad08ae3aa04438c4c0d8bcdc53691e6}{%
+           family={Kakarla},
+           familyi={K\bibinitperiod},
+           given={Swaathi},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ActiveState}%
+      }
+      \strng{namehash}{4ad08ae3aa04438c4c0d8bcdc53691e6}
+      \strng{fullhash}{4ad08ae3aa04438c4c0d8bcdc53691e6}
+      \strng{bibnamehash}{4ad08ae3aa04438c4c0d8bcdc53691e6}
+      \strng{authorbibnamehash}{4ad08ae3aa04438c4c0d8bcdc53691e6}
+      \strng{authornamehash}{4ad08ae3aa04438c4c0d8bcdc53691e6}
+      \strng{authorfullhash}{4ad08ae3aa04438c4c0d8bcdc53691e6}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{online, accessed 09-November-2020}
+      \field{title}{Natural Language Processing: NLTK Vs SpaCy}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://www.activestate.com/blog/natural-language-processing-nltk-vs-spacy/
+      \endverb
+      \verb{url}
+      \verb https://www.activestate.com/blog/natural-language-processing-nltk-vs-spacy/
+      \endverb
+    \endentry
+    \entry{eswc}{misc}{}
+      \list{publisher}{1}{%
+        {Semantic Technology Institute International}%
+      }
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labeltitlesource}{title}
+      \field{note}{online, accessed 03-November-2020}
+      \field{title}{Mission}
+      \verb{urlraw}
+      \verb https://www.eswc-conferences.org/
+      \endverb
+      \verb{url}
+      \verb https://www.eswc-conferences.org/
+      \endverb
+    \endentry
+    \entry{eswc_topics}{book}{}
+      \list{language}{1}{%
+        {eng}%
+      }
+      \list{organization}{1}{%
+        {Extended Semantic Web Conference (9th : 2012 : Ērakleion, Greece)}%
+      }
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This book constitutes the refereed proceedings of the 9th Extended Semantic Web Conference, ESWC 2012, held in Heraklion, Crete, Greece, in May 2012. The 53 revised full papers presented were carefully reviewed and selected from 212 submissions. They are organized in tracks on linked open data, machine learning, natural language processing and information retrieval, ontologies, reasoning, semantic data management, services, processes, and cloud computing, social Web and Web science, in-use and industrial, digital libraries and cultural heritage, and e-government. The book also includes 13 PhD papers presented at the PhD Symposium.}
+      \field{edition}{1st ed. 2012.}
+      \field{isbn}{3-642-30284-X}
+      \field{series}{Information Systems and Applications, incl. Internet/Web, and HCI ; 7295}
+      \field{title}{The Semantic Web: Research and Applications 9th Extended Semantic Web Conference, ESWC 2012, Heraklion, Crete, Greece, May 27-31, 2012, Proceedings}
+      \field{year}{2012}
+      \keyw{Information systems; Artificial intelligence; Computer Communication Networks; Database management; Computer science; Information Systems and Communication Service; Artificial Intelligence; Information Systems Applications (incl. Internet); Computer Communication Networks; Database Management; User Interfaces and Human Computer Interaction}
+    \endentry
+    \entry{ekaw}{misc}{}
+      \list{publisher}{1}{%
+        {Knowledge Media Institute}%
+      }
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labeltitlesource}{title}
+      \field{note}{online, accessed 04-November-2020}
+      \field{title}{About}
+      \verb{urlraw}
+      \verb http://ekaw.org/
+      \endverb
+      \verb{url}
+      \verb http://ekaw.org/
+      \endverb
+    \endentry
+    \entry{ekaw_2020}{misc}{}
+      \list{publisher}{1}{%
+        {EKAW 2020}%
+      }
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{labeltitlesource}{title}
+      \field{note}{online, accessed 04-November-2020}
+      \field{title}{22nd International Conference on Knowledge Engineering and Knowledge Management}
+      \verb{urlraw}
+      \verb https://ekaw2020.inf.unibz.it/
+      \endverb
+      \verb{url}
+      \verb https://ekaw2020.inf.unibz.it/
+      \endverb
+    \endentry
+    \entry{iswc}{misc}{}
+      \list{publisher}{1}{%
+        {SWSA (Semantic Web Science Association)}%
+      }
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{labeltitlesource}{title}
+      \field{note}{online, accessed 04-November-2020}
+      \field{title}{International Semantic Web Conference (ISWC)}
+      \verb{urlraw}
+      \verb http://swsa.semanticweb.org/content/international-semantic-web-conference-iswc
+      \endverb
+      \verb{url}
+      \verb http://swsa.semanticweb.org/content/international-semantic-web-conference-iswc
+      \endverb
+    \endentry
+    \entry{svatek_strossa}{article}{}
+      \name{author}{2}{}{%
+        {{hash=e2d43731514b2552feea00471e63ce59}{%
+           family={Svátek},
+           familyi={S\bibinitperiod},
+           given={Vojtěch},
+           giveni={V\bibinitperiod}}}%
+        {{hash=5c9a7ffd3ba0c249ac1b915588061583}{%
+           family={Strossa},
+           familyi={S\bibinitperiod},
+           given={Petr},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{652396127553742d17434cd4347c3d32}
+      \strng{fullhash}{652396127553742d17434cd4347c3d32}
+      \strng{bibnamehash}{652396127553742d17434cd4347c3d32}
+      \strng{authorbibnamehash}{652396127553742d17434cd4347c3d32}
+      \strng{authornamehash}{652396127553742d17434cd4347c3d32}
+      \strng{authorfullhash}{652396127553742d17434cd4347c3d32}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Let’s Get the Best Papers to the Finish Line: Ontological and Pictorial Representation of Review Scores}
+      \field{year}{2019}
+    \endentry
+    \entry{nano_peer}{misc}{}
+      \name{author}{3}{}{%
+        {{hash=acdf90b0c9628aed2239525c21cb6b59}{%
+           family={Bucur},
+           familyi={B\bibinitperiod},
+           given={Cristina-Iulia},
+           giveni={C\bibinithyphendelim I\bibinitperiod}}}%
+        {{hash=74d3522e91542051f26a4f98e94e2dc2}{%
+           family={Kuhn},
+           familyi={K\bibinitperiod},
+           given={Tobias},
+           giveni={T\bibinitperiod}}}%
+        {{hash=aa76518d97fc458315b83c88100a64bb}{%
+           family={Ceolin},
+           familyi={C\bibinitperiod},
+           given={Davide},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{024e1b730984b564c9860f1a0f4f6be5}
+      \strng{fullhash}{024e1b730984b564c9860f1a0f4f6be5}
+      \strng{bibnamehash}{024e1b730984b564c9860f1a0f4f6be5}
+      \strng{authorbibnamehash}{024e1b730984b564c9860f1a0f4f6be5}
+      \strng{authornamehash}{024e1b730984b564c9860f1a0f4f6be5}
+      \strng{authorfullhash}{024e1b730984b564c9860f1a0f4f6be5}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.DL}
+      \field{eprinttype}{arXiv}
+      \field{title}{Peer Reviewing Revisited: Assessing Research with Interlinked Semantic Comments}
+      \field{year}{2019}
+      \verb{eprint}
+      \verb 1910.03218
+      \endverb
+    \endentry
+    \entry{socal}{article}{}
+      \name{author}{5}{}{%
+        {{hash=526e3977ea0506edeeda6f8f10202c88}{%
+           family={Taboada},
+           familyi={T\bibinitperiod},
+           given={Maite},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f8373635576e8526761bbc29a73438be}{%
+           family={Brooke},
+           familyi={B\bibinitperiod},
+           given={Julian},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b24a9d0157455ac06c836dee996019a1}{%
+           family={Tofiloski},
+           familyi={T\bibinitperiod},
+           given={Milan},
+           giveni={M\bibinitperiod}}}%
+        {{hash=52899ba6a6a41bf3192f404676d671f0}{%
+           family={Voll},
+           familyi={V\bibinitperiod},
+           given={Kimberly},
+           giveni={K\bibinitperiod}}}%
+        {{hash=7f828a6fcd93a49e661f891a647db505}{%
+           family={Stede},
+           familyi={S\bibinitperiod},
+           given={Manfred},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{4fb6d5cae98480a5aeca06e9ee0e8d75}
+      \strng{fullhash}{4fb6d5cae98480a5aeca06e9ee0e8d75}
+      \strng{bibnamehash}{4fb6d5cae98480a5aeca06e9ee0e8d75}
+      \strng{authorbibnamehash}{4fb6d5cae98480a5aeca06e9ee0e8d75}
+      \strng{authornamehash}{4fb6d5cae98480a5aeca06e9ee0e8d75}
+      \strng{authorfullhash}{4fb6d5cae98480a5aeca06e9ee0e8d75}
+      \field{sortinit}{7}
+      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computational Linguistics}
+      \field{number}{2}
+      \field{title}{Lexicon-Based Methods for Sentiment Analysis}
+      \field{volume}{37}
+      \field{year}{2011}
+      \field{pages}{267\bibrangedash 307}
+      \range{pages}{41}
+      \verb{doi}
+      \verb 10.1162/COLI\_a\_00049
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1162/COLI_a_00049
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1162/COLI_a_00049
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1162/COLI_a_00049
+      \endverb
+    \endentry
+    \entry{nanopublications}{misc}{}
+      \name{author}{3}{}{%
+        {{hash=acdf90b0c9628aed2239525c21cb6b59}{%
+           family={Bucur},
+           familyi={B\bibinitperiod},
+           given={Cristina-Iulia},
+           giveni={C\bibinithyphendelim I\bibinitperiod}}}%
+        {{hash=74d3522e91542051f26a4f98e94e2dc2}{%
+           family={Kuhn},
+           familyi={K\bibinitperiod},
+           given={Tobias},
+           giveni={T\bibinitperiod}}}%
+        {{hash=aa76518d97fc458315b83c88100a64bb}{%
+           family={Ceolin},
+           familyi={C\bibinitperiod},
+           given={Davide},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{024e1b730984b564c9860f1a0f4f6be5}
+      \strng{fullhash}{024e1b730984b564c9860f1a0f4f6be5}
+      \strng{bibnamehash}{024e1b730984b564c9860f1a0f4f6be5}
+      \strng{authorbibnamehash}{024e1b730984b564c9860f1a0f4f6be5}
+      \strng{authornamehash}{024e1b730984b564c9860f1a0f4f6be5}
+      \strng{authorfullhash}{024e1b730984b564c9860f1a0f4f6be5}
+      \field{sortinit}{7}
+      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.DL}
+      \field{eprinttype}{arXiv}
+      \field{title}{A Unified Nanopublication Model for Effective and User-Friendly Access to the Elements of Scientific Publishing}
+      \field{year}{2020}
+      \verb{eprint}
+      \verb 2006.06348
+      \endverb
+    \endentry
+    \entry{nltk_np}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b55a74b13b63c8911d5697900148ec94}{%
+           family={Karimkhan},
+           familyi={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{b55a74b13b63c8911d5697900148ec94}
+      \strng{fullhash}{b55a74b13b63c8911d5697900148ec94}
+      \strng{bibnamehash}{b55a74b13b63c8911d5697900148ec94}
+      \strng{authorbibnamehash}{b55a74b13b63c8911d5697900148ec94}
+      \strng{authornamehash}{b55a74b13b63c8911d5697900148ec94}
+      \strng{authorfullhash}{b55a74b13b63c8911d5697900148ec94}
+      \field{sortinit}{7}
+      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{online, accessed 30-October-2020}
+      \field{title}{Extracting the noun phrases using nltk}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://gist.github.com/karimkhanp/4b7626a933759d0113d54b09acef24bf#file-noun_phrase_extractor-py-L34
+      \endverb
+      \verb{url}
+      \verb https://gist.github.com/karimkhanp/4b7626a933759d0113d54b09acef24bf#file-noun_phrase_extractor-py-L34
+      \endverb
     \endentry
   \enddatalist
 \endrefsection

@@ -3,23 +3,49 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Taxonomy for aspect-level sentiment analysis \cite {schouten_2016}\relax }}{17}{figure.caption.8}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Taxonomy for aspect-level sentiment analysis}}{17}{figure.caption.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Intuition of the multinomial naive Bayes classifier applied to a movie review. \cite {bagofwords}\relax }}{18}{figure.caption.10}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Intuition of the multinomial naive Bayes classifier applied to a movie review}}{18}{figure.caption.10}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Algorithm for similarity measurement between two terms\relax }}{39}{figure.caption.26}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces The results of the model expert annotations}}{38}{figure.caption.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces The interactive process of user validation of proposed aspect taxonomy.\relax }}{41}{figure.caption.27}
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Transformation between Treebank and WordNet POS tag sets\relax }}{43}{figure.caption.27}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.1}{\ignorespaces ESWC 2018 review structure\relax }}{51}{figure.caption.29}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Algorithm for similarity measurement between two terms\relax }}{52}{figure.caption.30}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.3}{\ignorespaces The interactive process of user validation of proposed aspect taxonomy.\relax }}{53}{figure.caption.31}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Review class diagram\relax }}{59}{figure.caption.33}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Example output of the \texttt {print\_results} method of the \texttt {Review} class\relax }}{60}{figure.caption.34}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Sentence class diagram\relax }}{60}{figure.caption.35}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.4}{\ignorespaces OpinionWord class diagram\relax }}{61}{figure.caption.36}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.5}{\ignorespaces CriterionScore class diagram\relax }}{62}{figure.caption.37}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Taxonomy class diagram\relax }}{62}{figure.caption.38}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Aspect class diagram\relax }}{63}{figure.caption.39}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.8}{\ignorespaces opinion\_orientation algorithm\relax }}{64}{figure.caption.40}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.9}{\ignorespaces apply\_intra\_sentence\_rules algorithm\relax }}{65}{figure.caption.41}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

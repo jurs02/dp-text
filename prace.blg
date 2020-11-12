@@ -1,14 +1,14 @@
 [0] Config.pm:302> INFO - This is Biber 2.9
 [0] Config.pm:305> INFO - Logfile is 'prace.blg'
-[25] biber:313> INFO - === Út lis  3, 2020, 09:27:42
-[45] Biber.pm:371> INFO - Reading 'prace.bcf'
-[99] Biber.pm:857> INFO - Found 29 citekeys in bib section 0
-[112] Biber.pm:3981> INFO - Processing section 0
-[121] Biber.pm:4154> INFO - Looking for bibtex format file 'literatura.bib' for section 0
-[123] bibtex.pm:1468> INFO - LaTeX decoding ...
-[160] bibtex.pm:1294> INFO - Found BibTeX data source 'literatura.bib'
-[322] UCollate.pm:68> INFO - Overriding locale 'cs_CZ' defaults 'variable = shifted' with 'variable = non-ignorable'
-[322] UCollate.pm:68> INFO - Overriding locale 'cs_CZ' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[322] Biber.pm:3809> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'cs_CZ'
-[342] bbl.pm:617> INFO - Writing 'prace.bbl' with encoding 'UTF-8'
-[351] bbl.pm:720> INFO - Output to prace.bbl
+[23] biber:313> INFO - === Čt lis 12, 2020, 11:06:36
+[41] Biber.pm:371> INFO - Reading 'prace.bcf'
+[94] Biber.pm:857> INFO - Found 42 citekeys in bib section 0
+[106] Biber.pm:3981> INFO - Processing section 0
+[114] Biber.pm:4154> INFO - Looking for bibtex format file 'literatura.bib' for section 0
+[116] bibtex.pm:1468> INFO - LaTeX decoding ...
+[163] bibtex.pm:1294> INFO - Found BibTeX data source 'literatura.bib'
+[347] UCollate.pm:68> INFO - Overriding locale 'cs_CZ' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[347] UCollate.pm:68> INFO - Overriding locale 'cs_CZ' defaults 'variable = shifted' with 'variable = non-ignorable'
+[347] Biber.pm:3809> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'cs_CZ'
+[370] bbl.pm:617> INFO - Writing 'prace.bbl' with encoding 'UTF-8'
+[383] bbl.pm:720> INFO - Output to prace.bbl
