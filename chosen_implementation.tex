@@ -1,0 +1,21 @@
+\chapter{Chosen methods of aspect-based sentiment analysis}
+\label{sec:chosen_methods}
+The next few chapters are about the preprocessing of data and implementation of all the necessary steps of the aspect-based sentiment analysis. In this brief chapter the goal is to describe the chosen methods that were used to give the reader an overall idea of how the sentiment analysis system works before each step is explained in more detail.
+
+Instead of using traditional machine learning methods, the more linguistic-based methods were used as machine learning methods are, as was previously mentioned, not well suited for the task of sentiment analysis on the aspect level. Also, not much research was done in terms of aspect based analysis over conference reviews, and the more linguistic-based methods allow a more hands-on exploration of the data in this specific domain.
+
+The sentiment analysis method is a variation of the holistic lexicon-based approach (see section \ref{sec:holistic_approach}), which expects an existing list of aspect expressions as well as a sentiment lexicon. To extract aspect expression, the taxonomy approach is used (as explained in section \ref{sec:taxonomy}), where the aspects at the top of the hierarchy represent the criteria and all the terms at the second level represent aspect expressions belonging to the criteria. The chosen set of criteria is as follows:
+\begin{itemize}
+\item Relevance -- relevance of the work to the conference
+\item Novelty -- covers novelty of the work as well as its significance and impact
+\item Technical quality -- the technical quality of the work
+\item State of the art -- if proper research was done on the topic 
+\item Presentation -- how well written the paper is, grammar
+\item Evaluation -- if the evaluation was carried out properly
+\end{itemize}
+
+As some criteria were hard to distinguish even for human annotators, novelty is designed to also cover similar criteria such as significance and impact. Novelty and significance (or impact) may not be equivalent in meaning, however they are often related and influence one another (for example in sentences such as \textit{``In my opinion though the paper does not have a scientific contribution but is a guide\ldots.''}) therefore for simplicity they were joined into one criterion.  
+
+ In order to create a sentiment lexicon for the domain of conference reviews, the Na\"ive Bayes classifier (see section \ref{sec:NBC}) is trained and its output is used to get a lexicon of sentiment/opinion words alongside their polarity. 
+
+The holistic lexicon-based approach is also combined with the sentimentr method (described in section \ref{sec:sentimentr}), which is more complex in the handling of sentiment modifiers than the holistic approach by itself. Instead of using the sentimentr implementation by the authors of the method, the algorithm is implemented based on the sentimentr description provided by the thesis' supervisor as a study material which is available in the attachments, as it allows for a better control of the input and output. The only significant deviation from the study guide as well as the original sentimentr implementation is that negation only influences words that come after it in the sentence. Although it is possible for negation to inverse the polarity of a word that precedes it in a sentence (consider the phrase \textit{``I think not.''}) it is much more common for the negation to come first and it was found that this change in the algorithm works better for the analyzed texts. Also the more common negation with the auxiliary ``do'' such as \textit{``I do not think\ldots''} puts more emphasis on the personal opinion of the speaker while \textit{``I think not.''} is more of a generalized statement \cite{do_not}, and recognizing the reviewer's opinion is the more relevant task.

@@ -19,6 +19,55 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
+    \entry{pictoreview_iswc}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=e2d43731514b2552feea00471e63ce59}{%
+           family={Svátek},
+           familyi={S\bibinitperiod},
+           given={Vojtěch},
+           giveni={V\bibinitperiod}}}%
+        {{hash=163a483c54aa886c1803c92b056eaf38}{%
+           family={Juranková},
+           familyi={J\bibinitperiod},
+           given={Sára},
+           giveni={S\bibinitperiod}}}%
+        {{hash=7c2ede2566f6b529b65b20400e4ab16d}{%
+           family={Šalda},
+           familyi={Š\bibinitperiod},
+           given={Radomír},
+           giveni={R\bibinitperiod}}}%
+        {{hash=5c9a7ffd3ba0c249ac1b915588061583}{%
+           family={Strossa},
+           familyi={S\bibinitperiod},
+           given={Petr},
+           giveni={P\bibinitperiod}}}%
+        {{hash=043622e5ad615b6e72afcfea9e28e39d}{%
+           family={Vondra},
+           familyi={V\bibinitperiod},
+           given={Zdeněk},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{5fafc3750e18cf6951077fbcb6cf05e1}
+      \strng{fullhash}{5fafc3750e18cf6951077fbcb6cf05e1}
+      \strng{bibnamehash}{5fafc3750e18cf6951077fbcb6cf05e1}
+      \strng{authorbibnamehash}{5fafc3750e18cf6951077fbcb6cf05e1}
+      \strng{authornamehash}{5fafc3750e18cf6951077fbcb6cf05e1}
+      \strng{authorfullhash}{5fafc3750e18cf6951077fbcb6cf05e1}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the ISWC 2020 Demos and Industry Tracks: From Novel Ideas to Industrial Practice co-located with 19th International Semantic Web Conference (ISWC 2020)}
+      \field{note}{online, accessed 2-November-2020}
+      \field{title}{Creating and Exploiting the Mappings from Conference Review Forms to a Generic Set of Review Criteria}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb http://ceur-ws.org/Vol-2721/paper567.pdf
+      \endverb
+      \verb{url}
+      \verb http://ceur-ws.org/Vol-2721/paper567.pdf
+      \endverb
+    \endentry
     \entry{liu_2015}{book}{}
       \name{author}{1}{}{%
         {{hash=9c6fb2af2964f3126cfd4e505a38daca}{%
@@ -36,13 +85,41 @@
       \strng{authorbibnamehash}{9c6fb2af2964f3126cfd4e505a38daca}
       \strng{authornamehash}{9c6fb2af2964f3126cfd4e505a38daca}
       \strng{authorfullhash}{9c6fb2af2964f3126cfd4e505a38daca}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{978-1-107-01789-4}
       \field{title}{Sentiment analysis: mining opinions, sentiments, and emotions}
       \field{year}{2015}
+    \endentry
+    \entry{liu_2006}{book}{}
+      \name{author}{1}{}{%
+        {{hash=9c6fb2af2964f3126cfd4e505a38daca}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Bing},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{9c6fb2af2964f3126cfd4e505a38daca}
+      \strng{fullhash}{9c6fb2af2964f3126cfd4e505a38daca}
+      \strng{bibnamehash}{9c6fb2af2964f3126cfd4e505a38daca}
+      \strng{authorbibnamehash}{9c6fb2af2964f3126cfd4e505a38daca}
+      \strng{authornamehash}{9c6fb2af2964f3126cfd4e505a38daca}
+      \strng{authorfullhash}{9c6fb2af2964f3126cfd4e505a38daca}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{3540378812}
+      \field{title}{Web Data Mining: Exploring Hyperlinks, Contents, and Usage Data (Data-Centric Systems and Applications)}
+      \field{year}{2006}
     \endentry
     \entry{schouten_2016}{article}{}
       \name{author}{2}{}{%
@@ -63,8 +140,8 @@
       \strng{authorbibnamehash}{52ccce5dfc28b622619b46d6452a3211}
       \strng{authornamehash}{52ccce5dfc28b622619b46d6452a3211}
       \strng{authorfullhash}{52ccce5dfc28b622619b46d6452a3211}
-      \field{sortinit}{6}
-      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{2326-3865}
@@ -104,8 +181,8 @@
       \strng{authorbibnamehash}{fc86aaa4dce9cced6d44892901354af2}
       \strng{authornamehash}{fc86aaa4dce9cced6d44892901354af2}
       \strng{authorfullhash}{fc86aaa4dce9cced6d44892901354af2}
-      \field{sortinit}{7}
-      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
+      \field{sortinit}{9}
+      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the 19th National Conference on Artifical Intelligence}
@@ -121,6 +198,127 @@
       \verb{url}
       \verb http://dl.acm.org/citation.cfm?id=1597148.1597269
       \endverb
+    \endentry
+    \entry{Kumar2020}{inbook}{}
+      \name{author}{2}{}{%
+        {{hash=c4665f76db9bd49e7d08a82359ed197b}{%
+           family={Kumar},
+           familyi={K\bibinitperiod},
+           given={Ashish},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4a464862805914bc9d9311f6ad3f6b22}{%
+           family={Sharan},
+           familyi={S\bibinitperiod},
+           given={Aditi},
+           giveni={A\bibinitperiod}}}%
+      }
+      \name{editor}{4}{}{%
+        {{hash=de22da6dea55bf4028bfa2978de77a1b}{%
+           family={Agarwal},
+           familyi={A\bibinitperiod},
+           given={Basant},
+           giveni={B\bibinitperiod}}}%
+        {{hash=65b0f40f17c69d1483949b07e9597e9d}{%
+           family={Nayak},
+           familyi={N\bibinitperiod},
+           given={Richi},
+           giveni={R\bibinitperiod}}}%
+        {{hash=680e5752d1cb7c4dae7e120a7d0dc101}{%
+           family={Mittal},
+           familyi={M\bibinitperiod},
+           given={Namita},
+           giveni={N\bibinitperiod}}}%
+        {{hash=6fa301c52fc87c23bd84cfa45e396f0b}{%
+           family={Patnaik},
+           familyi={P\bibinitperiod},
+           given={Srikanta},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Singapore}%
+      }
+      \list{publisher}{1}{%
+        {Springer Singapore}%
+      }
+      \strng{namehash}{49b42d0bafe55369b88087a02243b1ce}
+      \strng{fullhash}{49b42d0bafe55369b88087a02243b1ce}
+      \strng{bibnamehash}{49b42d0bafe55369b88087a02243b1ce}
+      \strng{authorbibnamehash}{49b42d0bafe55369b88087a02243b1ce}
+      \strng{authornamehash}{49b42d0bafe55369b88087a02243b1ce}
+      \strng{authorfullhash}{49b42d0bafe55369b88087a02243b1ce}
+      \strng{editorbibnamehash}{21d8d467d42f64714defde6441193491}
+      \strng{editornamehash}{21d8d467d42f64714defde6441193491}
+      \strng{editorfullhash}{21d8d467d42f64714defde6441193491}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Opinions are key influencers of almost all human practices. One can easily find a number of opinions about any product or services in the form of product reviews. These product reviews are available in a tremendous amount. It is not feasible or even impossible to go through each review and make a concise decision about any product. Aspect-based sentiment analysis (ABSA) comes as a solution to this problem. It gives an approach to examine online reviews and provides a summary based on these reviews. Machine learning techniques have been broadly utilized for ABSA. Recently with the evolution of processing power of computers and digitization of the society, deep learning is taking off. Deep learning methods produced state-of-the-art results in various NLP tasks without intensive feature engineering. In this chapter, we present an introduction about ABSA following a comprehensive overview of various deep learning models used in the field of ABSA.}
+      \field{booktitle}{Deep Learning-Based Approaches for Sentiment Analysis}
+      \field{isbn}{978-981-15-1216-2}
+      \field{title}{Deep Learning-Based Frameworks for Aspect-Based Sentiment Analysis}
+      \field{year}{2020}
+      \field{pages}{139\bibrangedash 158}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1007/978-981-15-1216-2_6
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-981-15-1216-2_6
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-981-15-1216-2_6
+      \endverb
+    \endentry
+    \entry{bing_dl_survey}{article}{}
+      \name{author}{3}{}{%
+        {{hash=f4a4cbf770add19c206827116c68732e}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Lei},
+           giveni={L\bibinitperiod}}}%
+        {{hash=d40715daabe18f3238281befdb32fb12}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Shuai},
+           giveni={S\bibinitperiod}}}%
+        {{hash=9c6fb2af2964f3126cfd4e505a38daca}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Bing},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{683ae8fc3f8eaf80b1690e87411964fb}
+      \strng{fullhash}{683ae8fc3f8eaf80b1690e87411964fb}
+      \strng{bibnamehash}{683ae8fc3f8eaf80b1690e87411964fb}
+      \strng{authorbibnamehash}{683ae8fc3f8eaf80b1690e87411964fb}
+      \strng{authornamehash}{683ae8fc3f8eaf80b1690e87411964fb}
+      \strng{authorfullhash}{683ae8fc3f8eaf80b1690e87411964fb}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Deep learning has emerged as a powerful machine learning technique that learns multiple layers of representations or features of the data and produces state-of-the-art prediction results. Along with the success of deep learning in many application domains, deep learning is also used in sentiment analysis in recent years. This paper gives an overview of deep learning and then provides a comprehensive survey of its current applications in sentiment analysis. This article is categorized under: Fundamental Concepts of Data and Knowledge > Data Concepts Algorithmic Development > Text Mining}
+      \field{journaltitle}{WIREs Data Mining and Knowledge Discovery}
+      \field{number}{4}
+      \field{title}{Deep learning for sentiment analysis: A survey}
+      \field{volume}{8}
+      \field{year}{2018}
+      \field{pages}{e1253}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb https://doi.org/10.1002/widm.1253
+      \endverb
+      \verb{eprint}
+      \verb https://onlinelibrary.wiley.com/doi/pdf/10.1002/widm.1253
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/widm.1253
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/widm.1253
+      \endverb
+      \keyw{data mining,deep learning,machine learning,natural language processing,neural network,opinion mining,sentiment analysis,survey}
     \endentry
     \entry{NB}{inbook}{}
       \name{author}{1}{}{%
@@ -535,8 +733,8 @@
       \strng{authorbibnamehash}{77fc1c92ed0ae02d5c8e8e9d0dc282b9}
       \strng{authornamehash}{77fc1c92ed0ae02d5c8e8e9d0dc282b9}
       \strng{authorfullhash}{77fc1c92ed0ae02d5c8e8e9d0dc282b9}
-      \field{sortinit}{2}
-      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{online, accessed 02-November-2020}
@@ -742,8 +940,8 @@
       \strng{authorbibnamehash}{5c8b60d10e21a39537cd773990506ece}
       \strng{authornamehash}{5c8b60d10e21a39537cd773990506ece}
       \strng{authorfullhash}{5c8b60d10e21a39537cd773990506ece}
-      \field{sortinit}{3}
-      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{online, accessed 03-November-2020}
@@ -820,6 +1018,76 @@
       \verb{doi}
       \verb 10.1017/CBO9780511809071
       \endverb
+    \endentry
+    \entry{pos}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=3c39ed968d0227e04e7eaf582d94e769}{%
+           family={Engine},
+           familyi={E\bibinitperiod},
+           given={Sketch},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{3c39ed968d0227e04e7eaf582d94e769}
+      \strng{fullhash}{3c39ed968d0227e04e7eaf582d94e769}
+      \strng{bibnamehash}{3c39ed968d0227e04e7eaf582d94e769}
+      \strng{authorbibnamehash}{3c39ed968d0227e04e7eaf582d94e769}
+      \strng{authornamehash}{3c39ed968d0227e04e7eaf582d94e769}
+      \strng{authorfullhash}{3c39ed968d0227e04e7eaf582d94e769}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{online, accessed 03-November-2020}
+      \field{title}{POS tags}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.sketchengine.eu/blog/pos-tags/
+      \endverb
+      \verb{url}
+      \verb https://www.sketchengine.eu/blog/pos-tags/
+      \endverb
+    \endentry
+    \entry{penn_treebank}{article}{}
+      \name{author}{3}{}{%
+        {{hash=0cdb2e70e07a512c6d563b3dac6b9829}{%
+           family={Marcus},
+           familyi={M\bibinitperiod},
+           given={Mitchell\bibnamedelima P.},
+           giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=70c3bd2fb69d1b113d0d84c8f65670d5}{%
+           family={Marcinkiewicz},
+           familyi={M\bibinitperiod},
+           given={Mary\bibnamedelima Ann},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=1a6b1a60e440837f7e64b04d28996d76}{%
+           family={Santorini},
+           familyi={S\bibinitperiod},
+           given={Beatrice},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, MA, USA}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{9c50d2c6780480b34e1c1aef73b24221}
+      \strng{fullhash}{9c50d2c6780480b34e1c1aef73b24221}
+      \strng{bibnamehash}{9c50d2c6780480b34e1c1aef73b24221}
+      \strng{authorbibnamehash}{9c50d2c6780480b34e1c1aef73b24221}
+      \strng{authornamehash}{9c50d2c6780480b34e1c1aef73b24221}
+      \strng{authorfullhash}{9c50d2c6780480b34e1c1aef73b24221}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0891-2017}
+      \field{journaltitle}{Comput. Linguist.}
+      \field{month}{6}
+      \field{number}{2}
+      \field{title}{Building a Large Annotated Corpus of English: The Penn Treebank}
+      \field{volume}{19}
+      \field{year}{1993}
     \endentry
     \entry{synthetic_lang}{misc}{}
       \name{author}{1}{}{%
@@ -906,8 +1174,8 @@
       \strng{authorbibnamehash}{54db87aa4b77f35c95e1a3f82e290009}
       \strng{authornamehash}{54db87aa4b77f35c95e1a3f82e290009}
       \strng{authorfullhash}{54db87aa4b77f35c95e1a3f82e290009}
-      \field{sortinit}{4}
-      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{online, accessed 03-November-2020}
@@ -920,75 +1188,33 @@
       \verb https://towardsdatascience.com/stemming-vs-lemmatization-2daddabcb221
       \endverb
     \endentry
-    \entry{pos}{misc}{}
+    \entry{python_best}{misc}{}
       \name{author}{1}{}{%
-        {{hash=3c39ed968d0227e04e7eaf582d94e769}{%
-           family={Engine},
-           familyi={E\bibinitperiod},
-           given={Sketch},
-           giveni={S\bibinitperiod}}}%
+        {{hash=7a547f2d06bd242813f02f22d9b17f76}{%
+           family={Zola},
+           familyi={Z\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
       }
-      \strng{namehash}{3c39ed968d0227e04e7eaf582d94e769}
-      \strng{fullhash}{3c39ed968d0227e04e7eaf582d94e769}
-      \strng{bibnamehash}{3c39ed968d0227e04e7eaf582d94e769}
-      \strng{authorbibnamehash}{3c39ed968d0227e04e7eaf582d94e769}
-      \strng{authornamehash}{3c39ed968d0227e04e7eaf582d94e769}
-      \strng{authorfullhash}{3c39ed968d0227e04e7eaf582d94e769}
-      \field{sortinit}{4}
-      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{online, accessed 03-November-2020}
-      \field{title}{POS tags}
-      \field{year}{2018}
-      \verb{urlraw}
-      \verb https://www.sketchengine.eu/blog/pos-tags/
-      \endverb
-      \verb{url}
-      \verb https://www.sketchengine.eu/blog/pos-tags/
-      \endverb
-    \endentry
-    \entry{penn_treebank}{article}{}
-      \name{author}{3}{}{%
-        {{hash=0cdb2e70e07a512c6d563b3dac6b9829}{%
-           family={Marcus},
-           familyi={M\bibinitperiod},
-           given={Mitchell\bibnamedelima P.},
-           giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
-        {{hash=70c3bd2fb69d1b113d0d84c8f65670d5}{%
-           family={Marcinkiewicz},
-           familyi={M\bibinitperiod},
-           given={Mary\bibnamedelima Ann},
-           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-        {{hash=1a6b1a60e440837f7e64b04d28996d76}{%
-           family={Santorini},
-           familyi={S\bibinitperiod},
-           given={Beatrice},
-           giveni={B\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Cambridge, MA, USA}%
-      }
-      \list{publisher}{1}{%
-        {MIT Press}%
-      }
-      \strng{namehash}{9c50d2c6780480b34e1c1aef73b24221}
-      \strng{fullhash}{9c50d2c6780480b34e1c1aef73b24221}
-      \strng{bibnamehash}{9c50d2c6780480b34e1c1aef73b24221}
-      \strng{authorbibnamehash}{9c50d2c6780480b34e1c1aef73b24221}
-      \strng{authornamehash}{9c50d2c6780480b34e1c1aef73b24221}
-      \strng{authorfullhash}{9c50d2c6780480b34e1c1aef73b24221}
+      \strng{namehash}{7a547f2d06bd242813f02f22d9b17f76}
+      \strng{fullhash}{7a547f2d06bd242813f02f22d9b17f76}
+      \strng{bibnamehash}{7a547f2d06bd242813f02f22d9b17f76}
+      \strng{authorbibnamehash}{7a547f2d06bd242813f02f22d9b17f76}
+      \strng{authornamehash}{7a547f2d06bd242813f02f22d9b17f76}
+      \strng{authorfullhash}{7a547f2d06bd242813f02f22d9b17f76}
       \field{sortinit}{5}
       \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{0891-2017}
-      \field{journaltitle}{Comput. Linguist.}
-      \field{month}{6}
-      \field{number}{2}
-      \field{title}{Building a Large Annotated Corpus of English: The Penn Treebank}
-      \field{volume}{19}
-      \field{year}{1993}
+      \field{note}{online, accessed 15-November-2020}
+      \field{title}{The 5 Best Programming Languages for AI}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.springboard.com/blog/best-programming-language-for-ai/
+      \endverb
+      \verb{url}
+      \verb https://www.springboard.com/blog/best-programming-language-for-ai/
+      \endverb
     \endentry
     \entry{nltk_ps}{book}{}
       \name{author}{3}{}{%
@@ -1137,8 +1363,8 @@
       \list{organization}{1}{%
         {Extended Semantic Web Conference (9th : 2012 : Ērakleion, Greece)}%
       }
-      \field{sortinit}{5}
-      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
       \field{labeltitlesource}{title}
       \field{abstract}{This book constitutes the refereed proceedings of the 9th Extended Semantic Web Conference, ESWC 2012, held in Heraklion, Crete, Greece, in May 2012. The 53 revised full papers presented were carefully reviewed and selected from 212 submissions. They are organized in tracks on linked open data, machine learning, natural language processing and information retrieval, ontologies, reasoning, semantic data management, services, processes, and cloud computing, social Web and Web science, in-use and industrial, digital libraries and cultural heritage, and e-government. The book also includes 13 PhD papers presented at the PhD Symposium.}
       \field{edition}{1st ed. 2012.}
@@ -1152,8 +1378,8 @@
       \list{publisher}{1}{%
         {Knowledge Media Institute}%
       }
-      \field{sortinit}{5}
-      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
       \field{labeltitlesource}{title}
       \field{note}{online, accessed 04-November-2020}
       \field{title}{About}
@@ -1352,6 +1578,52 @@
       \verb 2006.06348
       \endverb
     \endentry
+    \entry{do_not}{article}{}
+      \name{author}{2}{}{%
+        {{hash=992d4d4dc5d587451ceba8fd8d4d2b80}{%
+           family={Sabet},
+           familyi={S\bibinitperiod},
+           given={Peyman\bibnamedelimb G.\bibnamedelimi P.},
+           giveni={P\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=d8c86ef831f7f6b45dd93d52180ff266}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Grace\bibnamedelima Q.},
+           giveni={G\bibinitperiod\bibinitdelim Q\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Boston}%
+      }
+      \list{publisher}{1}{%
+        {De Gruyter Mouton}%
+      }
+      \strng{namehash}{5bd12f54e2b93795ab46c13f9bb47d1d}
+      \strng{fullhash}{5bd12f54e2b93795ab46c13f9bb47d1d}
+      \strng{bibnamehash}{5bd12f54e2b93795ab46c13f9bb47d1d}
+      \strng{authorbibnamehash}{5bd12f54e2b93795ab46c13f9bb47d1d}
+      \strng{authornamehash}{5bd12f54e2b93795ab46c13f9bb47d1d}
+      \strng{authorfullhash}{5bd12f54e2b93795ab46c13f9bb47d1d}
+      \field{sortinit}{7}
+      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Text \& Talk}
+      \field{number}{3}
+      \field{title}{“I don’t think” versus “I think + not”}
+      \field{volume}{37}
+      \field{year}{01 May. 2017}
+      \field{pages}{387\bibrangedash 408}
+      \range{pages}{22}
+      \verb{doi}
+      \verb https://doi.org/10.1515/text-2017-0010
+      \endverb
+      \verb{urlraw}
+      \verb https://www.degruyter.com/view/journals/text/37/3/article-p387.xml
+      \endverb
+      \verb{url}
+      \verb https://www.degruyter.com/view/journals/text/37/3/article-p387.xml
+      \endverb
+    \endentry
     \entry{nltk_np}{misc}{}
       \name{author}{1}{}{%
         {{hash=b55a74b13b63c8911d5697900148ec94}{%
@@ -1376,6 +1648,34 @@
       \endverb
       \verb{url}
       \verb https://gist.github.com/karimkhanp/4b7626a933759d0113d54b09acef24bf#file-noun_phrase_extractor-py-L34
+      \endverb
+    \endentry
+    \entry{nltk_mwe_docs}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=3dcdc3f22f104b667d4fde16e888f13b}{%
+           family={Malouf},
+           familyi={M\bibinitperiod},
+           given={Rob},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{3dcdc3f22f104b667d4fde16e888f13b}
+      \strng{fullhash}{3dcdc3f22f104b667d4fde16e888f13b}
+      \strng{bibnamehash}{3dcdc3f22f104b667d4fde16e888f13b}
+      \strng{authorbibnamehash}{3dcdc3f22f104b667d4fde16e888f13b}
+      \strng{authornamehash}{3dcdc3f22f104b667d4fde16e888f13b}
+      \strng{authorfullhash}{3dcdc3f22f104b667d4fde16e888f13b}
+      \field{sortinit}{7}
+      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{online, accessed 12-November-2020}
+      \field{title}{Source code for nltk.tokenize.mwe}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://www.nltk.org/_modules/nltk/tokenize/mwe.html
+      \endverb
+      \verb{url}
+      \verb https://www.nltk.org/_modules/nltk/tokenize/mwe.html
       \endverb
     \endentry
   \enddatalist

@@ -1,119 +1,113 @@
 \chapter{Natural language processing}
-Natural language is any language thas has not been specially constructed but rather has evolved naturally through use and is  ``aquired by its users without special instructions as a normal part of the process of maturization and socialization''.\cite{lyons_1991}. These languages such as English, Arabic, Vietnamese or Hindi differ from non-natural language, which are artificially constructed for specific uses, like for example programming languages or symbolic languages used for studying logic.
+Natural language is any language that has not been artificially constructed but rather has evolved naturally through use and is  \textit{``acquired by its users without special instructions as a normal part of the process of maturization and socialization''}. \cite[p. 29]{lyons_1991}. These languages such as English, Arabic, Vietnamese or Hindi differ from non-natural languages, which are constructed for specific uses, like for example programming languages or symbolic languages used for studying logic.
 
-Natural language processing (NLP) is ``an interdisciplinary domain which is concerned with understanding natural languages as well as using them to enable human–computer interaction''.\cite{nlp_definition} The field of applications of NLP is far reaching and includes use cases such as:
+Natural language processing (NLP) is \textit{``an interdisciplinary domain which is concerned with understanding natural languages as well as using them to enable human–computer interaction''} \cite[p. 1]{nlp_definition}. The field of applications of NLP is far reaching and includes use cases such as:
 \begin{itemize}
-\item Identifying spam e-mails\cite{nlp_tasks}
-\item Chatbots for customer support and engagement\cite{nlp_uc_b}
-\item Improvement in clinical documentation\cite{nlp_uc_h}	
+\item Identifying spam e-mails \cite{nlp_tasks}
+\item Chatbots for customer support and engagement \cite{nlp_uc_b}
+\item Improvement in clinical documentation \cite{nlp_uc_h}	
 \end{itemize}
-and many others. An overview of the usage of NLP can be seen on table \ref{tab01:nlp_tasks}.
+and many others. An overview of the usage of NLP can be seen in Table \ref{tab01:nlp_tasks}.
 
 \begin{table}[htbp!]
-\caption[NLP tasks]{Breakdown of various NLP tasks performed by modern NLP software\cite{nlp_uc_b}}\label{tab01:nlp_tasks}
+\caption[NLP tasks]{Breakdown of various NLP tasks performed by modern NLP software \cite{nlp_uc_b}}\label{tab01:nlp_tasks}
 \small
-\begin{tabular}{|p{\dimexpr0.2\textwidth-2\tabcolsep-\arrayrulewidth\relax}|p{\dimexpr0.2\textwidth-2\tabcolsep-\arrayrulewidth\relax}|p{\dimexpr0.2\textwidth-2\tabcolsep-\arrayrulewidth\relax}|p{\dimexpr0.2\textwidth-2\tabcolsep-\arrayrulewidth\relax}|p{\dimexpr0.2\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\begin{tabular}{|l|l|l|l|}
 \hline
-\textbf{Word Tagging}     & \textbf{Sentence Parsing} & \textbf{Text Classification} & \textbf{Text Pair Matching} & \textbf{Text Generation} \\ \hline
-Word segmentation         & Constituency parsing      & Sentiment analysis           & Semantic textual similarity & Language modeling        \\ \hline
-Shallow syntax-chucking   & Semantic parsing          & Text classification          & Natural language inference  & Machine translation      \\ \hline
-Named entity recognition  & Dependency parsing        & Temporal processing          & Relation prediction         & Simplification           \\ \hline
-Part-of-speech tagging    &                           & Coreference resolution       &                             & Summarization            \\ \hline
-Semantic role labeling    &                           &                              &                             & Dialogue                 \\ \hline
-Word sense disambiguation &                           &                              &                             & Question answering       \\ \hline
+\textbf{Word Tagging}                                               & \textbf{Sentence Parsing} & \textbf{Text Classification} & \textbf{Text Generation} \\ \hline
+Word segmentation                                                   & Constituency parsing      & Sentiment analysis           & Language modeling        \\ \hline
+Shallow syntax-chunking                                             & Semantic parsing          & Text classification          & Machine translation      \\ \hline
+Named entity recognition                                            & Dependency parsing        & Temporal processing          & Simplification           \\ \hline
+Part-of-speech tagging                                              & -                         & Coreference resolution       & Summarization            \\ \hline
+Semantic role labeling                                              & -                         & -                            & Dialogue                 \\ \hline
+\begin{tabular}[c]{@{}l@{}}Word sense\\ disambiguation\end{tabular} & -                         & -                            & Question answering       \\ \hline
 \end{tabular}
-
 \end{table}
+
 It is also a very hard task, given the fact that natural languages do not adhere to the strict rules non-natural languages usually do. 
-\begin{quote}
-Human language is highly ambiguous\ldots It is also ever changing and evolving. People are great at producing language and understanding language, and are capable of expressing, perceiving, and interpreting very elaborate and nuanced meanings. At the same time, while we humans are great users of language, we are also very poor at formally understanding and describing the rules that govern language. \hfill \parencite[Page 1]{nlp_lang_rules}
+\begin{aquote}{\cite[p. 1]{nlp_lang_rules}}
+\textit{``Human language is highly ambiguous\ldots It is also ever changing and evolving. People are great at producing language and understanding language, and are capable of expressing, perceiving, and interpreting very elaborate and nuanced meanings. At the same time, while we humans are great users of language, we are also very poor at formally understanding and describing the rules that govern language.''}
+\end{aquote}
 
-\end{quote}
-
-In fact, the ``imitation game'', a test developped by Alan Turing in the 50's as a test of artificial intelligence, relies on the ability of a computer program to impersonate a human in a written conversation.\cite{turing}
+In fact, the \textit{imitation game}, a test developed by Alan Turing in the 50's as a test of artificial intelligence, relies on the ability of a computer program to impersonate a human in a written conversation. \cite{turing}
 
 
-Because of its potential, NLP has been studied for decades (in fact the first proposals for machine-translation pre-date the invention of the digital computer\cite{nlp_history}). 
+Because of its potential, NLP has been studied for decades (the first proposals for machine-translation pre-date the invention of the digital computer \cite{nlp_history}). 
 
 This chapter serves as an introduction to the field of natural language processing, first describing the common tasks of NLP and then introducing some frequently used tools and methods.
-\section{Common tasks in natural language processing}
-With many machine learning (ML) and data mining tasks, we work with data in a form of a large table, where each row represents one object and each column represents a property of the objects. Most ML methods are therefore designed to work with these tables. 
+\section{Common tasks in natural language preprocessing}
+With many machine learning and data mining tasks, we work with data in a form of a large table, where each row represents one object and each column represents property of the objects. Most ML methods are therefore designed to work with these tables. 
 
-When it comes to texts in natural language, they are in their raw form just a series of characters. In order to add some structure to this unstructured data, we usually perform a number of preprocessing steps, which allow us to transform the text into a representation better suited for our needs. This section focuses on the most common preprocessing steps of natural language processing.
+When it comes to texts in natural language, they are in their raw form just a series of characters. In order to add some structure to this unstructured data, we usually perform a number of preprocessing steps, which allow us to transform the text into a representation better suited to our needs. This section focuses on the most common preprocessing steps of natural language processing.
 
 \subsection{Tokenization}
-The goal of tokenization is to separate the text into smaller units and it is ``a fundamental step in both traditional NLP methods\ldots and advanced deep learning-based architectures''.\cite{tokenization}
+The goal of tokenization is to separate the text into smaller units and it is \textit{``a fundamental step in both traditional NLP methods\ldots and advanced deep learning-based architectures''} \cite{tokenization}.
+The text may be segmented into paragraphs, but most commonly tokenization refers to splitting the text into sentences and words. 
+Tokenization can remove punctuation too, but that may cause issues such as wrongly splitting up abbreviations with periods (e.g., dr.), where the period following that abbreviation should be considered as part of the same token and not be removed. \cite{nlp_tasks}
 
-The text may be segmented into paragraphs but most commonly tokenization refers to splitting the text into sentences and words. 
-
-Tokenization can remove punctuation too, but that may cause issues such as wrongly splitting up abbreviations with periods (e.g. dr.), where the period following that abbreviation should be considered as part of the same token and not be removed.\cite{nlp_tasks}
-
-There are different techniques of tokenization, their usage depends on the language and the purpose of tokenzation, so this section provides examples of some commonly used tokenizers.
+There are different techniques of tokenization, their usage depends on the language and the purpose of tokenization, so this section provides examples of some commonly used tokenizers.
 \subsubsection{White space tokenization}
-White space tokenization splits the text into tokens based on white spaces, such as tabulation characters, spaces, newline characters etc.. 
+White space tokenization splits the text into tokens based on white spaces, such as tabulation characters, spaces, newline characters etc.
 
-Although this is a fast and easy way to implement tokenisation, this technique only works in languages where meaningful units are separated by spaces e.g  English, but even then, it does not work well for open compound words such as \textit{living room} or \textit{full moon}.\cite{tokenization_mgl}
+Although this is a fast and easy way to implement tokenization, this technique only works in languages where meaningful units are separated by spaces e.g.  English, but even then, it does not work well for open compound words such as \textit{living room} or \textit{full moon}. \cite{tokenization_mgl}
 \subsubsection{Dictionary based tokenization}
-Dictionary based tokenization uses a dictionary of tokens to segment the text. If the token is not found in the dictionary, special rules are applied to tokenize it.\cite{tokenization_twd}
+Dictionary based tokenization uses a dictionary of tokens to segment the text. If the token is not found in the dictionary, special rules are applied to tokenize it. \cite{tokenization_twd}
 
-For languages without spaces between words, there is an additional step of word segmentation where we find sequences of characters that have a certain meaning.\cite{tokenization_mgl}
+For languages without spaces between words, there is an additional step of word segmentation where we find sequences of characters that have a certain meaning. \cite{tokenization_mgl}
 \subsubsection{Regular expression tokenization}
-Regular expression tokenizers are rule based tokenizers, which use regular expressions to control the tokenization of text into tokens.\cite{tokenization_twd}
-
+Regular expression tokenizers are rule based tokenizers, which use regular expressions to control the tokenization of text into tokens. \cite{tokenization_twd}
 It is a useful technique when you want more control over the tokenization of the text by creating your own regular expression by which the text is tokenized.
 \subsection{Stop words removal}
-Some words which often appear in analyzed document have little informational value and can be excluded. This process is called stop words removal. Stop words removal includes getting rid of common language articles, pronouns and prepositions such as “and”, “the” or “to” in English and other words which may be considered insignificant.\cite{nlp_tasks}
+Some words, which often appear in analyzed documents, have little informational value and can be excluded. This process is called stop words removal. Stop words removal includes getting rid of common language articles, pronouns and prepositions such as \textit{and}, \textit{the} or \textit{to} in English and other words that may be considered insignificant. \cite{nlp_tasks}
 
-Generally the more often a word or a term appears in a collection of documents, the lesser informational value it has. Therefore the strategy for creating a list of stop words is to sort the terms by total number of times ech term appears in the document collection and pick the most frequent terms as stop words.\cite{stopwords}
+Generally, the more often a word or a term appears in a collection of documents, the lesser informational value it has. Therefore the strategy for creating a list of stop words is to sort the terms by the total number of times each term appears in the document collection and pick the most frequent terms as stop words. \cite{stopwords}
 
 Stop words removal is an especially important step in the field of information retrieval, where excluding words with little informational value tends to have a huge impact on the speed of these systems as well as the volume of data that has to be stored.
+\subsection{Part-of-speech tagging}
+\label{sec:pos}
+Part-of-speech tagging (POS) is the process of assigning part-of-speech tags to words in a sentence. A POS tag is a label assigned to each token in a document to indicate the part of speech  and often also other grammatical categories such as tense or number (plural/singular). \cite{pos}
 
-\subsection{Lemmatization and Stemming}
-Since documents use different forms of a word, we often need to reduce the inflectional forms and sometimes derivationally related forms of a word to a common base form. This is especially important (and difficult) with synthetic languages which can be defined as `a`ny language in which syntactic relations within sentences are expressed by inflection (the change in the form of a word that indicates distinctions of tense, person, gender, number, mood, voice, and case) or by agglutination (word formation by means of morpheme, or word unit, clustering). Latin is an example of an inflected language; Hungarian and Finnish are examples of agglutinative languages.''\cite{synthetic_lang}.
+Because POS taggers usually tend to take into account different grammatical categories, their tag set tends to be larger that the number of part-of-speech categories of the language they are intended for. In English, there are frequently listed and thought eight parts of speech (noun, pronoun, verb, adjective, adverb, preposition, conjunction, article and interjection), but the commonly used Penn Treebank tagset contains 36 POS tags and 12 other tags (for punctuation and currency symbols). \cite{penn_treebank}
+\subsection{Lemmatization and stemming}
+Since documents use different forms of a word, we often need to reduce the inflectional forms and sometimes the derivationally related forms of a word to a common base form. This is especially important (and difficult) with synthetic languages which can be defined as \textit{``any language in which syntactic relations within sentences are expressed by inflection (the change in the form of a word that indicates distinctions of tense, person, gender, number, mood, voice, and case) or by agglutination (word formation by means of morpheme, or word unit, clustering). Latin is an example of an inflected language; Hungarian and Finnish are examples of agglutinative languages.''} \cite{synthetic_lang}.
 
 The two techniques of text normalization are stemming and lemmatization.
 \subsubsection{Stemming}
-The algorithms knows as stemmers produce ``stems'' of a word by cutting off the beginning and the end of the word, usually by usining a list of common prefixes and suffixes.\cite{stemming_vs_lemmatization}
+The algorithms knows as stemmers produce \textit{stems} of a word by cutting off the beginning and the end of the word, usually by using a list of common prefixes and suffixes. \cite{stemming_vs_lemmatization}
 
-It is a crude heuristic process, which is why the produced stems often do not correspond to the morphological root of the word.  If given the token \textit{saw}, stemming might return \textit{saw} (or possibly just \textit{s}, whereas lemmatization (described in the next section) would likely return either \textit{see} or \textit{saw} depending on whether the use of the token was as a verb or a noun.\cite{stemming_vs_lemmatization_twd}
+It is a crude heuristic process, which is why the produced stems often do not correspond to the morphological root of the word.  If given the token \textit{saw}, stemming might return \textit{saw} (or possibly just \textit{s}, whereas lemmatization (described in the next section) would likely return either \textit{see} or \textit{saw} depending on whether the use of the token was as a verb or a noun. \cite{stemming_vs_lemmatization_twd}
 
 \subsubsection{Lemmatization}
-Lemmatization is a process of applying morphological analysis to words in order to remove inflectional endings and transform the words into their base or dictionary forms called ``lemmas''. Lemmas unlike stems are actual language words.\cite{stopwords} 
+Lemmatization is a process of applying morphological analysis to words in order to remove inflectional endings and transform the words into their base or dictionary forms called \textit{lemmas}. Lemmas unlike stems are actual language words. \cite{stopwords} 
 
-In lemmatization the normalization depends on the part-of-speech of a word so it either has the be automatically determined in the previous step (the process of automatically determining the part-of-speech of a word in a sentence is described in section INSERT) or this context has to be supplied in another way. 
-
+In lemmatization the normalization depends on the part of speech of a word so it either has the be automatically determined in the previous step or this context has to be supplied in another way. 
 Lemmatization is more sophisticated than stemming, producing more accurate results and meaningful tokens by considering the context, however it has is trade-offs. Compared to stemming, the process of lemmatization is slower and significantly harder to implement.
-\subsection{Part-of-speech tagging}
-Part-of-speech tagging (POS) is the process of assigning part-of-speech tags to words in a sentence. A POS tag is a label assigned to each token in a document to indicate the part of speech  and often also other grammatical categories such as tense or number (plural/singular).\cite{pos}
 
-Because POS taggers usually tend to take into account different grammatical categories, their tag set is usually larger that the number of part-of-speech categories of the language they are intended for. In English, there are frequently listed and tought eight parts of speech (noun, pronoun, verb, adjective, adverb, preposition, conjunction, article and interjection), but the commonly used Penn Treebank tagset contains 36 POS tags and 12 other tags (for punctuation and currency symbols).\cite{penn_treebank}
-\section{Tools for natural language processing}
-As Python is ``the leading coding language for NLP because of its simple syntax, structure, and rich text processing tool'' I have decided to program my implementation of chosen aspect-base sentiment analysis method in this language. In this section I want to provide a brief introduction to two of Python's NLP libraries -- NLTK and spaCy.
+\section{Selected (Python-based) NLP tools}
+As Python is \textit{``the leading coding language for NLP because of its simple syntax, structure, and rich text processing tool''} \cite{python_best} it has been chosen as the programming language for the implementation of the aspect-based sentiment analysis. This section provides a brief introduction to two of Python's NLP libraries -- NLTK and spaCy.
 \subsection{Python's NLTK library}
-Python's Natural Language Toolkit (NLTK) is an open source library which contains a wide range of tools and algorithms for building programs aimed at natural language processing. It provides a way to perform standard NLP tasks such as part-of-speech tagging, syntactic parsing or text classification. An overview of some NLTK modules with their functionalities is depicted on figure \ref{tab:nltk_modules}.
+Python's Natural Language Toolkit (NLTK) is an open source library which contains a wide range of tools and algorithms for building programs aimed at natural language processing. It provides a way to perform standard NLP tasks such as part-of-speech tagging, syntactic parsing or text classification. An overview of some NLTK modules with their functionalities is depicted in Table \ref{tab:nltk_modules}.
 
 \begin{table}[!htb]
 \caption[NLTK modules]{Language processing tasks and corresponding NLTK modules with examples of
-functionality\cite{nltk_ps}}\label{tab:nltk_modules}
+functionality \cite{nltk_ps}}\label{tab:nltk_modules}
 
-\begin{tabularx}{\linewidth}{XXX}
-\textbf{Language processing task} & \textbf{NLTK modules}       & \textbf{Functionality}                                       \\ \hline
-Accessing corpora                 & nltk.corpus                 & Standardized interfaces to corpora and lexicons              \\
-String processing                 & nltk.tokenize, nltk.stem    & Tokenizers, sentence tokenizers, stemmers                    \\
-Part-of-speech tagging            & nltk.tag                    & n-gram, backoff, Brill, HMM, TnT                             \\
-Classification                    & nltk.classify, nltk.cluster & Decision tree, maximum entropy, naive Bayes, EM, k-means     \\
-Chunking                          & nltk.chunk                  & Regular expression, n-gram, named entity                     \\
-Parsing                           & nltk.parse                  & Chart, feature-based, unification, probabilistic, dependency \\
-Evaluation metrics                & nltk.metrics                & Precision, recall, agreement coefficients                    \\
-Applications                      & nltk.app, nltk.chat         & Graphical concordancer, parsers, WordNet browser, chatbots   
-                     
-\end{tabularx}
-
+\begin{tabular}{lll}
+\textbf{Language processing task} & \textbf{NLTK modules}                                                  & \textbf{Functionality}                                                                                     \\ \hline
+Accessing corpora                 & nltk.corpus                                                            & \begin{tabular}[c]{@{}l@{}}Standardized interfaces \\ to corpora and lexicons\end{tabular}                 \\
+String processing                 & \begin{tabular}[c]{@{}l@{}}nltk.tokenize, \\ nltk.stem\end{tabular}    & \begin{tabular}[c]{@{}l@{}}Tokenizers, \\ sentence tokenizers,\\ stemmers\end{tabular}                     \\
+Part-of-speech tagging            & nltk.tag                                                               & \begin{tabular}[c]{@{}l@{}}n-gram, backoff, Brill, \\ HMM, TnT\end{tabular}                                \\
+Classification                    & \begin{tabular}[c]{@{}l@{}}nltk.classify, \\ nltk.cluster\end{tabular} & \begin{tabular}[c]{@{}l@{}}Decision tree, \\ maximum entropy, \\ naive Bayes, k-means\end{tabular}         \\
+Chunking                          & nltk.chunk                                                             & \begin{tabular}[c]{@{}l@{}}Regular expression, \\ n-gram, named entity\end{tabular}                        \\
+Parsing                           & nltk.parse                                                             & \begin{tabular}[c]{@{}l@{}}Chart, feature-based, \\ unification, probabilistic, \\ dependency\end{tabular} \\
+Evaluation metrics                & nltk.metrics                                                           & \begin{tabular}[c]{@{}l@{}}Precision, recall, \\ agreement coefficients\end{tabular}                       \\
+Applications                      & nltk.app, nltk.chat                                                    & \begin{tabular}[c]{@{}l@{}}Graphical concordancer, \\ parsers, WordNet browser, \\ chatbots\end{tabular}  
+\end{tabular}
 \end{table}
-\subsubsection{WordNet}
-NLTK also provides a WordNet interface, which is a semantically oriented dictionary of English comprising of 155289 words and 117659 synonym sets\cite{wordnet_counts}.
+\subsubsection{WordNet interface}
+NLTK also provides an interface to WordNet, which is a semantically oriented dictionary of English consisting of 155289 words and 117659 synonym sets \cite{wordnet_counts}.
 
-WordNet allow us to find a list synonyms to a given word, which in the context of WordNet is called a \textit{synset}. In order to get a synset we call the \texttt{synsets()} function with the word for which we wan the synsets as an argument along with an optional part-of-speech tag:
+The WordNet interface allow us to find a list synonyms to a given word, which in the context of WordNet is called a \textit{synset}. In order to get a synset  the \texttt{synsets()} function needs to be called with the word for which the synsets are wanted as an argument along with an optional part-of-speech tag:
 
 \begin{lstlisting}
 	from nltk.corpus import wordnet
@@ -124,31 +118,31 @@ WordNet allow us to find a list synonyms to a given word, which in the context o
 The function outputs a list of synsets:
 
 \begin{lstlisting}
-	[Synset('dog.n.01'), Synset('frump.n.01'), Synset('dog.n.03'), 
-	Synset('cad.n.01'), Synset('frank.n.02'), Synset('pawl.n.01'), 
-	Synset('andiron.n.01'), Synset('chase.v.01')]
+	[Synset('dog.n.01'), Synset('frump.n.01'),
+	 Synset('dog.n.03'), Synset('cad.n.01'),
+	 Synset('frank.n.02'), Synset('pawl.n.01'),
+	 Synset('andiron.n.01'), Synset('chase.v.01')]
 \end{lstlisting}
 
 Each synset is identified with a 3-part name in the form <lemma>.<pos>.<number>, where:
 \begin{itemize}
-\item \textbf{<lemma>} is the the lemma of the word
+\item \textbf{<lemma>} is the lemma of the word
 \item \textbf{<pos>} is a part-of-speech tag
-\item \textbf{<number>} is the sense number used to disambiguate word meanings\cite{nltk_docs}
+\item \textbf{<number>} is the sense number used to disambiguate word meanings \cite{nltk_docs}
 \end{itemize}
 
-WordNet also implements a number of ways how to find similarity between two synsets. Here are some examples along with their description taken from the WordNet howto guide\cite{wordnet_howto} 
+The interface also implements a number of ways how to find similarity between two synsets. Here are some examples along with their description taken from the WordNet interface howto guide \cite{wordnet_howto}: 
 
 \begin{itemize}
-\item \texttt{path\_similarity} returns a score denoting how similar two word senses are, based on the shortest path that connects the senses in the is-a (hypernym/hypnoym) taxonomy.
+\item \texttt{path\_similarity} returns a score denoting how similar two word senses are, based on the shortest path that connects the senses in the is-a (hypernym/hyponym) taxonomy.
 
 \item \texttt{lch\_similarity} returns a score denoting how similar two word senses are, based on the shortest path that connects the senses (as above) and the maximum depth of the taxonomy in which the senses occur.
 
 \item \texttt{wup\_similarity} returns a score denoting how similar two word senses are, based on the depth of the two senses in the taxonomy and that of their Least Common Subsumer (most specific ancestor node). 
 \end{itemize}
 
-Another function WordNet offers is the is the \texttt{derivationally\_related\_forms()} function which allows us to find terms which are in a different syntactic category but have the same root form and are semantically related to a word we supply as an argument.
+Another function WordNet offers is the \texttt{derivationally\_related\_forms()} function which allows us to find terms which are in a different syntactic category but have the same root form and are semantically related to a word we supply as an argument.
 
 \subsection{spaCy}
 spaCy is NLP library for Python and Cython (a programming language written mostly in Python with additional C-inspired syntax). It is a newer library than NLTK, using an object-oriented approach as opposed to NLTK's string approach. Unlike NLTK  it has support for word vectors (multi-dimensional meaning representations of a word) and its processing is generally faster than that of NLTK (due to its Cython implementation). 
-
-Same as NLTK it provides tools for many NLP tasks such as POS tagging, tokenization, measuring similarity between words etc..\cite{spacy}
+Same as NLTK it provides tools for many NLP tasks such as POS tagging, tokenization, measuring similarity between words etc. \cite{spacy}

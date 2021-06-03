@@ -33,23 +33,31 @@
 \def\StudijniProgram{Applied Informatics}
 \def\StudijniObor{Knowledge and Web Technologies}
 
+\def\Prohlaseni{%
+Prohlašuji, že jsem diplomovou práci \uv{Aspect-based sentiment analysis of
+conference review forms} vypracovala samostatně za použití v práci uvedených pramenů a literatury.
+}
 % Nepovinné poděkování (vedoucímu práce, konzultantovi, tomu, kdo
 % zapůjčil software, literaturu apod.)
 \def\Podekovani{%
-Poděkování.
+I would like to thank the thesis' supervisor, prof. Ing. Vojtěch Svátek, Dr., for all his guidance in writing this thesis.
+
+I would also like to acknowledge the suffering my sister had to go through in helping me write this thesis. Few would do what she has done for me.
 }
 
 % Abstrakt (doporučený rozsah cca 150-250 slov; nejedná se o zadání práce)
-\def\Abstrakt{%
-Abstrakt.
+\def\Abstract{%
+The aim of this thesis is to create a system for extracting opinions and sentiment from conference paper reviews and group these opinions by the different criteria a paper is judged on. The theoretical part of the thesis describes the existing methods of sentiment analysis and natural language processing, thus providing necessary context. The reviewing process of conferences focused on semantic technology and the structure of the reviews are explored. A set of criteria is identified, based on the fields of different conference review forms and used as a foundation for the extraction of terms that are used to express these criteria. A sentiment lexicon is created specifically for the domain of conference paper reviews. 
+In the practical section a dictionary-based sentiment lexicon analysis method is implemented and applied to a set of reviews from 3 different conferences. The results are then evaluated by comparing the numerical scores estimated by the algorithm with the numerical scores from the reviews. The outcome is then explored further, by inspecting the accuracy of criterion identification and sentiment analysis on a sentence level. The precision of criterion identification is evaluated at 57.38~\% and the recall at 53.44~\%, while the sentiment polarity is correct in  over 75~\% of cases. The rationale behind this outcome is explained and a set of recommendations is given for future improvements.
+
 }
-\def\AbstraktEN{%
-Abstract.
+\def\Abstrakt{%
+Cílem této práce je  vytvoření systému pro extrakci názorů a sentimentu z recenzí konferenčních příspěvků a seskupování těchto názoru podle kritérií, na základě kterých jsou tyto příspěvky posuzovány pro akceptaci.  Teoretická část práce uvádí existující metody analýzy sentimentu a zpracování přirozeného jazyka. Následně prozkoumává strukturu recenzí z konferencí zaměřených na sémantické technologie a proces, kterým tyto recenze vznikají. Na základě struktury recenzních formulářů z různých konferencí je navržena obecná množina kritérií, která jsou v této práci vytvářeným systémem z recenzních textů extrahována. Ta pak slouží jako báze k extrakci výrazů, které je vyjadřují. Rovněž je vytvořen lexikon slov se sentimentovou polaritou, specifický pro konferenční recenze. Tento lexikon je následně využit pro implementaci metody analýzy sentimentu. Ta je následně aplikována na množinu recenzí ze tří různých konferencí. Výsledky numerických odhadů pro jednotlivá kritéria jsou porovnávány s vlastním číselným hodnocením autorů recenzí. Výstup systému je dále zkoumán na úrovni vět pro zjištění správnosti identifikace kritérií a polarity sentimentu. Výsledná přesnost implementovaného algoritmu při identifikaci kritérií vychází na 57.38~\% a úplnost na 53.44~\%, přičemž  úspěšnost klasifikace sentimentu činí zhruba 75~\%. Dosažené výsledky jsou zhodnoceny a jsou navržena doporučení pro budoucí zlepšení systému.
 }
 
 % 3 až 5 klíčových slov (doporučeno)
-\def\KlicovaSlova{sentiment analysis, coference reviews, aspect-based sentiment analysis}
-\def\KlicovaSlovaEN{analýza sentimentu, recenze konferenčních příspěvků, aspektová analýza sentimentu}
+\def\KeyWords{sentiment analysis, conference submission reviews, aspect-based sentiment analysis}
+\def\KlicovaSlova{analýza sentimentu, recenze konferenčních příspěvků, aspektová analýza sentimentu}
 
 %% Titulní strana a různé povinné informační strany
 \begin{document}
@@ -76,6 +84,7 @@ Abstract.
 \include{sentiment_analysis}
 \include{natural_language_processing}
 \include{domain}
+\include{chosen_implementation}
 \include{data}
 \include{implementation_ae}
 \include{implementation_sl}
@@ -88,10 +97,9 @@ Abstract.
 
 %%% Přílohy k bakalářské práci, existují-li. Každá příloha musí být alespoň jednou
 %%% odkazována z vlastního textu práce. Přílohy se číslují.
-\part*{Attachements}
+\part*{Attachments}
 \appendix
 \include{app01}
-\include{app02}
 % \include{...}
 % \include{...}
 

@@ -1,6 +1,7 @@
 \chapter{Implementation of aspect-based sentiment analysis for conference paper reviews}
+This chapter explains how the final algorithm for sentiment analysis was implemented, using the results of criterion expressions extraction and creation of the sentiment lexicon to build a lexicon-based method for aspect-based sentiment analysis. 
 \section{Design of classes}
-
+To get a more detailed insight in the back-end of the sentiment analysis algorithm, this section describes how the data is processed and stored in classes to keep track of all necessary attributes that might be associated with each object such as the review itself or a particular sentence.
  \subsection{Review}
  \begin{figure}[H]
 \centering
@@ -20,9 +21,9 @@
 \label{img:review}
 \end{figure}
 
-Each review is represented by the \texttt{Review} class. When the class is initiated with its constructor the attribute \texttt{file\_name} is initialized with the file\_name of the review (for the purpose of printing the results). The review text is the tokenized into sentence using NLTK's \texttt{sent\_tokenize} function. To keep track of the numerical scores of the review, which are assigned through the process of sentiment analysis, there is a dictionary \texttt{criteria}, in which the keys of the dictionary are the set of generic criteria as chosen in section INSERT. The values are represented by the \texttt{CriterionScore} class described in section INSERT.
+Each review is represented by the \texttt{Review} class. When the class is initiated with its constructor the attribute \texttt{file\_name} is initialized with the file\_name of the review (for the purpose of printing the results). The review text is the tokenized into sentence using NLTK's \texttt{sent\_tokenize} function. To keep track of the numerical scores of the review, which are assigned through the process of sentiment analysis, there is a dictionary \texttt{criteria}, in which the keys of the dictionary are the set of generic criteria as chosen in chapter \ref{sec:chosen_methods}. The values are represented by the \texttt{CriterionScore} class.
 
-The class has also three methods. The \texttt{add\_score} method accepts the name of a criterion and a sentiment value (-1 or +1) that should be added to the criterion and updates the \texttt{criteria} dictionary accordingly. The \texttt{get\_scores} function returns the final scores for a review in the form of a dictionary where the different criteria are the keys and the values are the numerical scores normalized between 1 and 5. Finally the \texttt{print\_results} function outputs the scores of the review onto the command line in a format shown on figure \ref{img:r_results}.
+The class also has three methods. The \texttt{add\_score} method accepts the name of a criterion and a sentiment value (-1 or +1) that should be added to the criterion and updates the \texttt{criteria} dictionary accordingly. The \texttt{get\_scores} function returns the final scores for a review in the form of a dictionary where the different criteria are the keys and the values are the numerical scores normalized between 1 and 5. Finally the \texttt{print\_results} function outputs the scores of the review onto the command line in a format shown in Figure \ref{img:r_results}.
 \begin{figure}[!htb]
 \centering
 \begin{tabular}{c}
@@ -60,15 +61,15 @@ row233.txt
 \label{img:sentence}
 \end{figure}
 
-The \texttt{Sentence} class represents one sentence from a review. When initialized the original sentence is kept in the \texttt{sentence\_original} attribute for printing purposes, however for the needs of the sentiment analysis the sentence is also tokenized and lemmatized. I have used the \texttt{MWEtokenizer} here as well as NLTK's \texttt{word\_tokenize} function. The \texttt{MWEtokenizer} takes a string in the form of a list of tokens and
-retokenizes it, ``merging multi-word expressions into single tokens, using a lexicon of MWEs'' INSERT. The reason is that because some aspect expression are multi-words expressions, such as ``state of the art'' I need to keep them as single tokens, in order for them to be recognized when matching the sentence against the aspect taxonomy. Therefore each aspect in the taxonomy is added as a multi-word expression to the \texttt{MWEtokenizer} lexicon. 
+The \texttt{Sentence} class represents one sentence from a review. When initialized the original sentence is kept in the \texttt{sentence\_original} attribute for printing purposes, however for the needs of the sentiment analysis the sentence is also tokenized and lemmatized after all contractions are expanded. The \texttt{MWEtokenizer} was decided to be used here as well as NLTK's \texttt{word\_tokenize} function. The \texttt{MWEtokenizer} takes a string in the form of a list of tokens and
+retokenizes it, \textit{``merging multi-word expressions into single tokens, using a lexicon of MWEs''} \cite{nltk_mwe_docs}. The reason is that because some criterion expression are multi-words expressions, such as \textit{related work} they need to be kept as single tokens, in order for them to be recognized when matching the sentence against the aspect taxonomy. Therefore each criterion expression in the taxonomy is added as a multi-word expression to the \texttt{MWEtokenizer} lexicon as well as some of the contraction expansions.
 
-The tokens are also lemmatized, with the exception of adjective to keep words such as ``better'' to be lemmatized to ``good'' (the reasoning behind that was explained in section INSERT).
+The tokens are also lemmatized, with the exception of adjectives to keep words such as \textit{better} to be lemmatized to \textit{good} (the reasoning behind that was explained in section \ref{sec:data_sl}).
 The tokenized and lemmatized sentence is then kept in the \texttt{tokens} attribute of the class and the lemmatized tokens are stringed back together in the \texttt{sentence} attribute. 
 
-For the sentiment analysis algorithm it is also key to know which aspect expressions and which sentiment words the sentence contains. To get a list of aspect expressions I call the \texttt{Taxonomy}'s class method \texttt{get\_aspects}, which compares the tokens it gets as an argument with the taxonomy of aspects and returns the matches as a list of the \texttt{Aspect} class objects. The list of aspect expression is kept in the \texttt{aspects} attribute of the class.
+For the sentiment analysis algorithm it is also essential to know which aspect expressions and which sentiment words the sentence contains. To get a list of aspect expressions the \texttt{Taxonomy}'s class method \texttt{get\_aspects} is called, which compares the tokens it gets as an argument with the taxonomy of criteria expressions and returns the matches as a list of the \texttt{Aspect} class objects. The list of aspect expression is kept in the \texttt{aspects} attribute of the class.
 
-To get a list of sentiment words the \texttt{find\_opinion\_words\_sentiment} function is called, which belongs to the sentimentr module. This function gets a list of tokens as an argument and then for each token that is found in the sentiment lexicon it calculates the polarity value using the sentimentr method (described in section INSERT). It returns a list of (sentiment word, polarity) tuples, which are then used to initialize the \texttt{OpinionWord} class. However if there is an overlap between a sentiment word and an aspect expression, the word is at this point discarded (it may be used in the future, if the orientation of an aspect expression is not found any other way as explained in more detail in section INSERT). The list of sentiment expression is kept in the \texttt{opinion\_words} attribute.
+To get a list of sentiment words the \texttt{find\_opinion\_words\_sentiment} function is called, which belongs to the sentimentr module. This function gets a list of tokens as an argument and then for each token that is found in the sentiment lexicon it calculates the polarity value using the sentimentr method (described in section \ref{sec:sentimentr}). It returns a list of (sentiment word, polarity) tuples, which are then used to initialize the \texttt{OpinionWord} class. However, if there is an overlap between a sentiment word and a criterion expression, the word is at this point discarded (it may be used in the future, if the orientation of an aspect expression is not found). The list of sentiment expressions is kept in the \texttt{opinion\_words} attribute.
 
 If the main part of the sentiment analysis algorithm fails for an aspect expression (it evaluates the polarity at zero) there is a set of rules which try to determine the sentiment in some other ways. The list of aspect expressions which need the further evaluation is kept in the \texttt{unoriented\_aspects} attribute to which these aspects are continuously added as the review is analyzed.
 
@@ -76,7 +77,7 @@ To keep a track of which criteria a sentence is focused on as well as the polari
 
 The \texttt{Sentence} class contains a single method, \texttt{print\_results}, which allows the user to see the results of the analysis on a more fine-grained level than the \texttt{print\_results} method of the \texttt{Review} class. It prints the original sentence and for each criterion in the sentence shows if the polarity of the opinion on the criterion is positive, negative or neutral.
 
-
+\newpage
 \subsection{OpinionWord}
 \begin{figure}[H]
 \centering
@@ -106,7 +107,7 @@ The \texttt{OpinionWord} class represent an opinion/sentiment word with the name
 \label{img:criterionscore}
 \end{figure}
 
-The \texttt{CriterionScore} class is to keep track of the six main criteria which the reviews are evaluated by. The \texttt{criterion} string attribute is assigned the name of the criterion, the \texttt{score} attribute keeps track of the numerical score of the criterion and the \texttt{count} attribute counts the number of times new value is added to the \texttt{score}. Any time an aspect expression belonging to the criterion is discovered in a sentence and its orientation is evaluated by the sentiment analysis algorithm it is added to the \texttt{score} attribute so the \texttt{count} attribute allows as to count the average value so all scores are normalized.
+The \texttt{CriterionScore} class is to keep track of the six main criteria which the reviews are evaluated by. The \texttt{criterion} string attribute is assigned the name of the criterion, the \texttt{score} attribute keeps track of the numerical score of the criterion and the \texttt{count} attribute counts the number of times new value is added to the \texttt{score}. Any time an aspect expression belonging to the criterion is discovered in a sentence and its orientation is evaluated by the sentiment analysis algorithm it is added to the \texttt{score} attribute so the \texttt{count} attribute allows as to count the average value so that all scores are normalized.
 
 \subsection{Taxonomy}
 \begin{figure}[H]
@@ -126,7 +127,7 @@ The \texttt{CriterionScore} class is to keep track of the six main criteria whic
 \label{img:taxonomyclass}
 \end{figure}
 
-The \texttt{Taxonomy} class represents the taxonomy created in INSERT. The class is initiated only once, when the taxonomy is loaded from the JSON file in which it was saved during the taxonomy generation phase. The \texttt{aspects} attribute is a python dictionary which follows the same structure as the JSON (see figure INSERT).  For simplicity of other operation the \texttt{criteria} attributes keeps a list of all the main criteria/metrics, while the \texttt{aspect\_names} attribute keeps track of all aspect expressions in the taxonomy.
+The \texttt{Taxonomy} class represents the taxonomy created in chapter \ref{sec:ae}. The class is initiated only once, when the taxonomy is loaded from the JSON file in which it was saved during the taxonomy generation phase. The \texttt{aspects} attribute is a python dictionary which follows the same structure as the JSON (see Figure \ref{lst:json_tax_m}).  For simplicity of other operations, such as finding aspect expressions in a sentence, the \texttt{criteria} attributes keeps a list of all the main criteria/metrics, while the \texttt{aspect\_names} attribute keeps track of all aspect expressions in the taxonomy.
 
 There are two method in the class, the method \texttt{get\_aspects} accepts a list of tokens in a sentence, finds if any of the tokens are aspect expressions and if so, returns a list of the \texttt{Aspect} class objects that correspond to them. The second method \texttt{aspect\_words\_overlap} accepts a string as an argument and returns \textit{True} if the string overlaps with a string of an aspect expression and \textit{False} otherwise.
 
@@ -147,19 +148,19 @@ There are two method in the class, the method \texttt{get\_aspects} accepts a li
 
 The \texttt{Aspect} class simply represents an aspect expression, the name of which is saved in the \texttt{name} attribute. It also keeps the name of the criterion/metric under which the aspect expression belongs in the \texttt{criterion} attribute, in the form of a string. 
 
-If the aspect is an adjective the \texttt{adjective} attribute is set to \textit{True} to enable some special handling of these expressions. The value of \texttt{adjective} is determined by finding the wordnet synsets of the expression and if the POS tag of any of the synsets is that of an adjective (in NLTK's wordnet implementation that means the tag is either \textit{a} for an adjective or \textit{s} for satellite adjectives).
+If the aspect expression is an adjective the \texttt{adjective} attribute is set to \textit{True} to enable some special handling of these expressions. The value of \texttt{adjective} is determined by finding the WordNet synsets of the expression and if the POS tag of any of the synsets is that of an adjective. In NLTK's wordnet implementation that means the tag is either \textit{a} for adjectives or \textit{s} for satellite adjectives which are adjectives without a direct antonym.
 
 \section{Description of the algorithm}
 \begin{figure}[htbp!]
 \begin{algorithm}[H]
 % Set Function Names
-  \SetKwFunction{FMain}{opinion\_orientation}
+  \SetKwFunction{FMain}{opinion\_orientation(review)}
 
 
 
   \SetKwProg{Fn}{Function}{:}{\KwRet}
   \Fn{\FMain}{
-       \For{each sentence $s_{i}$ that contains a set of aspect expressions}    
+       \For{each sentence $s_{i}$ in $review$ that contains a set of aspect expressions}    
         { 
         	\If{the number of aspect expressions in $s_{i}$ > 5}
     			{
@@ -167,64 +168,55 @@ If the aspect is an adjective the \texttt{adjective} attribute is set to \textit
     			}
     		\For{each aspect $a_{j}$ in $s_{i}$}
     		{
-    			$orienation$ = 0\;
+    			$orientation$ = 0\;
     			\For{each opinion word $ow_{k}$ in $s_{i}$}
     			{
+    				\If{\textbf{adversative\_between\_ow\_and\_aspect}($ow_{k}$, $a_{j}$, $s_{i}$)}
+    				{
+    					continue\;
+    				}
     				$distance$ = \textbf{distance\_betweeen\_words}($ow_{k}$, $a_{j}$, $s_{i}$)\;
     				$orientation$ += $\frac{ow_{k}.sentiment\_score}{distance}$\;
     				
     			}
     			
-    			\eIf{$orientation$ > 0}
-    		{ 
-    			$orientation$ = 1\;
-    		}
+    			 $orientation$ = \textbf{orientation\_to\_interval}($orientation$)\;
+    			\eIf{$orientation$ != 0 }
     		{
-    		\eIf{$orientation$ < 0}
-    		{
-    		$orientation$ = -1\;
+				$a_{j}$'s criterion orientation in $s_{i}$ += $orientation$\;
+    			\textbf{review.add\_score}($a_{j}$'s criterion, orientation)\;
     		}
-    		{
-    		$orientation$ = 0\;
-    		}
-    		}
-    			\eIf{$orientation$ = 0 and $a_{j}$ is an adjective}
-    		{
-				$orientation$ = 1\;   
-    		}
-    		
     		{
     			add $a_{j}$ to $s_{i}$'s unoriented\_aspects\;
     		}
-    			$a_{j}$'s criterion orientation in $s_{i}$ += $orientation$\;
-    			\textbf{review.add\_score}($a_{j}$'s criterion, orientation)
+    			
     		}
     		\For{aspect $a_{l}$ in $s_{i}$'s unoriented aspects}
     		{
-    		$orientation$ = \textbf{apply\_intra\_sentence\_rules}($s_{i}$, $a_{l}$)\;
-    		\If{$orientation$ = 0}
-    		{
-    			$sentiment$ = \textbf{find\_opinion\_words\_sentiment}($a_{l}$)\;
+    			$orientation$ = 0\;
+    		    $opinion\_words$ = \textbf{find\_opinion\_words\_sentiment}($a_{l}$)\;
+    		 	\For{$ow_{i}$,$pol$ in $opinion\_words$}
+    		 	{
+    		 	 	\If{$ow_{i}$==$a_{l}.name$ and $a_{l}$ is an adjective}
+    		 	 	{
+    		 	 	$orientation$ = $pol$\;
+    		 	 	break\;
+    		 	 	}
+    		 	}
+    		 	\If{$orientation$==0}
+    		 	{
+    		 	    $orientation$ = \textbf{apply\_intra\_sentence\_rules}($s_{i}$, $a_{l}$)\;
+				}
+				 $orientation$ = \textbf{orientation\_to\_interval}($orientation$)\;
+				$a_{l}$'s criterion orientation in $s_{i}$ += $orientation$\;
+				\If{$orientation$!=0}
+				{    			
+    				\textbf{review.add\_score}($a_{l}$'s criterion, orientation)
+    		    }
     		}
     		
+    		}
     		
-    		\eIf{$orientation$ > 0}
-    		{ 
-    			$orientation$ = 1\;
-    		}
-    		{
-    		\eIf{$orientation$ < 0}
-    		{
-    		$orientation$ = -1\;
-    		}
-    		{
-    		$orientation$ = 0\;
-    		}
-    		}
-    		$a_{l}$'s criterion orientation in $s_{i}$ += $orientation$\;
-    		\textbf{review.add\_score}($a_{l}$'s criterion, orientation)
-    		}
-    		}
   }
 \end{algorithm}
 \caption{opinion\_orientation algorithm}
@@ -235,20 +227,23 @@ If the aspect is an adjective the \texttt{adjective} attribute is set to \textit
 \begin{figure}[h]
 \begin{algorithm}[H]
 % Set Function Names
-  \SetKwFunction{ISR}{apply\_intra\_sentence\_rules}
+  \SetKwFunction{ISR}{apply\_intra\_sentence\_rules(s, aspect)}
 
 
 
   \SetKwProg{Fn}{Function}{:}{\KwRet}
   \Fn{\ISR}{
-	\For{each opinion word $ow_{i}$ in the sentence}
+	$ow$= opinion word closest to $aspect$ in $sentence$\;
+	$words\_between$= a list of words between $ow$ and $aspect$\;
+	$distance$=\textbf{distance\_betweeen\_words}($ow$, $aspect$, $sentence$)\;
+	\eIf{adversative in $words\_between$}
 	{
-		$words\_between$ = words between $aspect$ and $ow_{i}$\;
-		\If{adversative in $words\_between$}
-		{
-			\Return{$-1\times ow_{i}.sentiment\_score$}
-		}
+		\Return{$-1 \times \frac{ow.sentiment\_score}{distance}$}\;
 	}
+	{
+			\Return{$\frac{ow.sentiment\_score}{distance}$}\;
+
+	} 
 }
 \end{algorithm}
 \caption{apply\_intra\_sentence\_rules algorithm}
@@ -258,28 +253,29 @@ If the aspect is an adjective the \texttt{adjective} attribute is set to \textit
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-The aspect-based sentiment algorithm that I have created for the task of extracting criteria orientations from a text is loosely based on the algorithm mentioned in section INSERT, but I have made some changes. The main part of the algorithm is shown on figure \ref{img:opinion_orientation}. 
+The aspect-based sentiment algorithm that was created for the task of extracting criteria orientations from a text is loosely based on the algorithm mentioned in section \ref{sec:holistic_approach}, but some changes were made. The main part of the algorithm is shown in Figure \ref{img:opinion_orientation}. 
 
 \subsection{Determining opinion orientation using aspect expressions and sentiment words in a sentence}
 
-For each review we iterate through its sentences (which are here objects of class \texttt{Sentence}). If the number of aspect expressions in the sentence is more than 5 the sentence is not evaluated. That is because if the number of aspects is that high in a single sentence it would be hard to evaluate which opinion words belong to which aspect. It is especially an issue with the numerical evaluations at the beginning of reviews, which are sometimes not structured by newlines or any other separator.
+For each review its sentences (which are here objects of class \texttt{Sentence}) are iterated through. If the number of aspect expressions in the sentence is more than 5 the sentence is not evaluated. That is because if the number of aspects is that high in a single sentence it would be hard to evaluate which opinion words belong to which aspect. It is especially an issue with the numerical evaluations at the beginning of reviews, which are sometimes not structured by newlines or any other separator.
 
-Given a sentence $s_{i}$ that contains a set of aspect expression we compute a sentiment polarity score for the expression. Given a set of sentiment words in the sentence, we calculate their influence based on the sentiment score given by the sentimentr algorithm which is divided by the distance of the sentiment word from the aspect expression. These scores are then aggregated by a sum function for each aspect expression.
+Given a sentence $s_{i}$ that contains a set of aspect expressions, a sentiment polarity score is calculated for each expression. Given a set of sentiment words in the sentence, their collective influence is calculated based on the sentiment score given by the sentimentr algorithm which is divided by the distance of the sentiment word from the aspect expression. These scores are then aggregated by a sum function for each aspect expression.
 
-An expression is assigned the sentiment polarity of +1 if it is positive and -1 if it is negative, 0 if the polarity was not determined. If the polarity is 0, it is added to the list of unoriented aspects of a sentence for further processing, but if we succeeded in determining the polarity, the score for an criterion under which the aspect expression belongs in the taxonomy is adjusted in the review as well as the sentence.
+An expression is assigned the sentiment polarity using the \texttt{orientation\_to\_interval} function. Its default functionality is to return -1 or +1 if the orientation sent as an argument is positive or negative, 0 otherwise. If the optional second argument is set to \texttt{False}, it can also return -0.5 or +0.5  if the orientation is in the $\left]-0.5, 0\right[$ or $\left]0, +0.5\right[$ 
+intervals respectively.
+
+If the polarity is 0, it is added to the list of unoriented aspects of a sentence for further processing, but if the algorithm succeeded in determining the polarity, the score for a criterion under which the aspect expression belongs in the taxonomy is adjusted in the review as well as the sentence.
 \subsection{Adjectives as aspect expressions}
-When for some aspect expressions the orientation is unknown after aggregating polarities of nearby opinion words they are added to $s_{i}$'s list of unoriented aspects. These aspect expressions are then first evaluated using the adjective rule, where if the aspect expression is an adjective, it may be used as an opinion word itself. That is the case in sentences such as ``This paper is highly relevant to the conference'', where the adjective \textit{relevant} points to the relevance criterion, but also expresses a positive polarity on said criterion. 
-
+When for some aspect expressions the orientation is unknown after aggregating polarities of nearby opinion words, they are added to $s_{i}$'s list of unoriented aspects. These aspect expressions are then first evaluated using the adjective rule, where if the aspect expression is an adjective, it may be used as an opinion word itself. That is the case in sentences such as \textit{``This paper is highly relevant to the conference''}, where the adjective \textit{relevant} points to the relevance criterion, but also expresses a positive polarity on said criterion. 
 In cases when the aspect expression is an adjective, its polarity is determined using the sentimentr algorithm as if it was an opinion word, to cover cases such as negation.
 
 \subsection{Intra sentence rules}
-If the aspect expression orientation is still unknown after the use of the adjective rule it is evaluated using the intra sentence rules, which rely on the fact that a sentence only expresses one polarity unless it includes an adversative conjunction.
-
-For each so far unoriented aspect expression we find the closest opinion word and all the words between the aspect and the opinion word. If there is a adversative conjunction in between the opinion word and the aspect expression, that likely means the sentiment polarity was inverted by the conjunction and therefore the aspect expression should be given the opposite polarity of the opinion word. This should help in sentences such as ``The evaluation shows great results but the dataset was small.'' in which \textit{dataset} might be an aspect expression pointing to the evaluation criterion but \textit{small} might not be in the sentiment lexicon (for a human, it is easy to point to small as a negative word here based on the context, but that is not always the case, like in a phrase \textit{small error} it would be positive). The closest identified opinion word in this sentence would be \textit{great}, with a positive polarity, but given the fact that there is \textit{but} in between \textit{great} and \textit{dataset}, the polarity assigned would be negated.
-
+If the aspect expression orientation is still unknown after the use of the adjective rule it is evaluated using the intra sentence rules (see Figure \ref{img:intra_sentence}), which rely on the fact that a sentence only expresses one polarity unless it includes an adversative conjunction.
+For each so far unoriented aspect expression the closest opinion word is found as well as all the words between the aspect and the opinion word. If there is an adversative conjunction in between the opinion word and the aspect expression, that likely means the sentiment polarity was inverted by the conjunction and therefore the aspect expression should be given the opposite polarity of the opinion word. This should help in sentences such as \textit{``The evaluation shows great results but the dataset was small.''} in which \textit{dataset} might be an aspect expression pointing to the evaluation criterion but \textit{small} might not be in the sentiment lexicon. For a human, it is easy to point to small as a negative word here based on the context, but that is not always the case, for example in a phrase \textit{small error} it would be positive. The closest identified opinion word in this sentence would be \textit{great}, with a positive polarity, but given the fact that there is \textit{but} in between \textit{great} and \textit{dataset}, the polarity assigned would be negated.
 If no adversative conjunction is found, the aspect expression is given the polarity of the closest opinion word without any changes, following the \textit{one sentence -- one polarity} idea. 
 
+
 \subsection{Sentences with neutral sentiment}
-If the orientation of an aspect expression is still 0 after the application of all rules, it is finally evaluated as neutral. Sometimes, this might mean that the sentiment was present but expressed in a way that the algorithm did not recognize. It might also mean a false positive for an aspect identified within a sentence. That is because there might be an overlap between aspect expressions and expression that are often used within the field for describing an idea presented in a paper . Take the sentence ``In this paper authors investigate how state-of-the-art language technologies can be ported to the historical ecology domain.'' in which the algorithm would think that the \textit{state-of-the-art} expression points to the state of the art criterion but here it is simply a statement about the objective of the paper. 
+If the orientation of an aspect expression is still 0 after the application of all rules, it is finally evaluated as neutral. Sometimes, this might mean that the sentiment was present but expressed in a way that the algorithm did not recognize. It might also mean a false positive for an aspect identified within a sentence. That is because there might be an overlap between aspect expressions and expression that are often used within the field for describing an idea presented in a paper. Take the sentence \textit{``In this paper authors investigate how state-of-the-art language technologies can be ported to the historical ecology domain.''} in which the algorithm would think that the \textit{state-of-the-art} expression points to the state of the art criterion but here it is simply a statement about the objective of the paper. 
 
 These aspect expression do not influence the numerical scores of a review, the aspects with neutral orientation are however still shown in the algorithm's output at a sentence level.

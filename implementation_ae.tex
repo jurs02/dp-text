@@ -1,12 +1,11 @@
 \chapter{Implementation of aspect extraction}
-In order to create a lexicon of terms that represent the chosen set of criteria, to be used for identifying aspect expressions in the reviews, I have decided to use two main approaches. One is the taxonomy extraction mentioned in \ref{sec:taxonomy} and the second one is extraction of frequent words used by the reviewers for different criteria in a text that is already divided by headers into sections for the respective criterion.
+\label{sec:ae}
+In order to create a lexicon of terms that represent the chosen set of criteria, to be used for identifying aspect expressions in the reviews, it was decided to use two main approaches. One is the taxonomy extraction mentioned in \ref{sec:taxonomy} and the second one is extraction of frequent words used by the reviewers for different criteria in a text that is already divided by headers into sections for the respective criterion.
 \section{Manually created taxonomy}
-As described in section \ref{sec:taxonomy}, in order to perform taxonomy extraction, we need to manually
-create a user defined taxonomy. 
+As described in section \ref{sec:taxonomy}, in order to perform taxonomy extraction, first a user defined taxonomy needs to be created.
+The original idea is that the taxonomy is a hierarchical representation where the top level of the hierarchy represents the feature of an object and the following levels represent the aspects of that feature. Since in this case, it was not necessary to separate the chosen criteria any further this representation was used to have the main criteria in the top level and only have one level underneath the top level, to specify possible aspect expressions for each criterion. These terms serve as a seed for future expansion of the taxonomy by including extracted crude features with enough similarity to these expressions. 
 
-The original idea is that the taxonomy is a hierarchical representation where the top level of the hierarchy represents the feature of an object and the following levels represent the aspects of that feature. Because in my case, I do not need to separate the chosen criteria any further I have used this representation to have the main criteria in the top level and only have one level underneath the top level, to specify possible aspect expressions for each criterion, which serves as a seed for future expansion of the taxonomy by including extracted crude features with enough similarity to the these expressions. 
-
-You can see this taxonomy here \ref{lst:json_tax_m}.
+You can see this taxonomy in Listing \ref{lst:json_tax_m}.
 
 \begin{lstlisting}[language=json,firstnumber=1, caption={Manually created taxonomy for aspect extraction},label={lst:json_tax_m},float,floatplacement=H]
 {
@@ -15,7 +14,8 @@ You can see this taxonomy here \ref{lst:json_tax_m}.
     },
     'novelty': {
         'originality', 'innovativeness', 'innovation', 
-        'novelty of contribution', 'novelty', 'impact', 'significance'
+        'novelty of contribution', 'novelty', 'impact', 
+        'significance'
     },
     'technical quality': {
         'scientific quality', 'implementation', 'soundness',
@@ -26,25 +26,27 @@ You can see this taxonomy here \ref{lst:json_tax_m}.
         'state of the art'
     },
     'evaluation': {
-    	'reproducibility', 'evaluation'
+    	'reproducibility', 'evaluation', 'evaluate', 'evaluating'
     },
     'presentation': {
-    	'clarity', 'quality of writing', 'presentation'
+    	'clarity', 'quality of writing', 'presentation',
+    	'typo', 'description', 'describe', 'written'
     },
 }
 \end{lstlisting}
-\section{Crude Features extraction}
-The next step of taxonomy based extraction is to obtain a set of crude features. The next two subsections describe the extraction algorithms based on Bings method of aspect extraction.
+
+\section{Crude features extraction}
+The next step of taxonomy based extraction is to obtain a set of crude features. The next two subsections describe the extraction algorithms inspired by the frequency-based method of aspect extraction (see section \ref{sec:freq_extr_t}).
 
 \subsection{Extraction of frequent nouns and noun phrases}
-The first method of extracting terms that are likely to represent an aspect is to extract frequent nouns and noun phrases. For that the content of the file is tokenized and each token is assigned a Part-of-Speech (POS) tag. Then, to get the nouns and noun phrases, the extracted tuples (token, pos\_tag) are parsed to determine the multi-token sequences which represent nouns and NNPs. 
+The first method of extracting terms that are likely to represent a criterion is to extract frequent nouns and noun phrases (NP). For that the content of the file (representing a single review) is tokenized and each token is assigned a Part-of-Speech (POS) tag. Then, to get the nouns and noun phrases, the extracted tuples (token, pos\_tag) are parsed to determine the multi-token sequences which represent nouns and noun phrases. 
 
-For the parsing I've used the RegexpParser from the nltk library, which utilizes a user defined grammar, consisting of labeled regular expression rules, describing the sequence of POS tags we want to assign the label to. The result of the parsing is a tree structure, where each sequence corresponding to the regular expression is labeled accordingly, so this allows us to pick the subtrees labeled by the parser as noun phrases. 
+The RegexpParser from the NLTK library was used for the parsing, which utilizes a user defined grammar, consisting of labeled regular expression rules, describing the sequence of POS tags we want to assign the label to. The result of the parsing is a tree structure, where each sequence corresponding to the regular expression is labeled accordingly, so this allows us to pick the subtrees labeled by the parser as noun phrases. 
 
-The code snippet which shows the defined grammar for NP extraction can be seen on listing \ref{lst:np_grammar}. 
-The grammar uses POS tags, so NN are nouns, IN are prepositions and JJ are adjectives. The first regular expression, labeled NBAR, searches for nouns and adjectives, terminated with nouns, allowing us to discover phrases like ``black box'', where the meaning changes when we consider both of these words separately. The second regular expression, labeled NP, looks for NBAR expressions connected with prepositions such as ``of'', ``in'' etc.. \cite{nltk_np}
+The code snippet which shows the defined grammar for NP extraction can be seen in Listing~\ref{lst:np_grammar}. 
+The grammar uses POS tags, so NN are nouns, IN are prepositions and JJ are adjectives. The first regular expression, labeled NBAR, searches for nouns and adjectives, terminated with nouns, allowing us to discover phrases like \textit{black box}, where the meaning changes when we consider both of these words separately. The second regular expression, labeled NP, looks for NBAR expressions connected with prepositions such as \textit{of}, \textit{in} etc. \cite{nltk_np}
 
-\begin{lstlisting}[language=python,caption={Grammar for the extraction of noun phrases.}, label={lst:np_grammar}]
+\begin{lstlisting}[language=python,caption={Grammar for the extraction of noun phrases.}, label={lst:np_grammar}, xleftmargin=.2\textwidth, xrightmargin=.2\textwidth],float,floatplacement=H]
 RegexpParser("""
         NBAR:
             {<NN.*|JJ>*<NN.*>} 
@@ -55,27 +57,27 @@ RegexpParser("""
         """)
 \end{lstlisting}
 
-In order to then extract only the wanted noun phrase sequences, I traverse the tree, and for each subtree, labeled as NP, I lemmatize each token of the sequence, check if its length is at least two characters, but less than 20 characters, and if so, I join the lemmatized tokens into a single string and append it to the list of NPs in the file.
+In order to then extract only the wanted noun phrase sequences, the tree is traversed. For each subtree, labeled as NP,  each token of the sequence is lemmatized, it is checked for if its length is at least two characters, but less than 20 characters, and if so, the lemmatized tokens are joined into a single string and appended to the list of NPs in the file.
 
-By performing this extraction with each file, I get a list of lists, where each list represents the extracted nouns and noun phrases from one file. To then obtain the ones that are frequent enough across all the reviews, and may therefore represent aspects, I calculate the support of a noun phrase across the reviews. The following equation represents the calculation of the support metric for a word $w_{i}$ where $N_{w_{i}}$ is the number of reviews containing the word $w_{i}$ and $N$ is the total number of reviews:
+By performing this extraction with each file, the result is a list of lists, where each list represents the extracted nouns and noun phrases from one file. To then obtain the ones that are frequent enough across all the reviews, and may therefore represent the criteria, the support of a noun phrase across the reviews is calculated. The following equation represents the calculation of the support metric for a word $w_{i}$ where $N_{w_{i}}$ is the number of reviews containing the word $w_{i}$ and $N$ is the total number of reviews:
 
+\begin{equation}
+support(w_{i})=\frac{N_{w_{i}}}{N}
+\end{equation}
 
-$$support(w_{i})=\frac{N_{w_{i}}}{N}$$
-
-In order to perform this calculation I transform the data into a matrix, where each row represents one review, each column represents an aspect candidate and the values of an element in row-i and column-j is 1 if the aspect candidate j is present in review i or 0 if it is not. To get the support of an aspect candidate j, I than divide the sum of column-j by the total number of rows. If the support is greater than the minimum support, the aspect candidate is kept, if not, it is discarded. Through various experiment I found that the best value for minimum support is 2 \%, which gives us reasonable candidates for aspect expressions, but does not include too many candidates to make the process of manually confirming them too tedious. It may seem like a very ``minimal'' minimal support, however the number of reviews I had to my disposal to extract frequent noun phrases was fairly small, so a small support was necessary to account for that fact. It should not be too big of an issue though, considering that the aspect candidates are further tested to determine their similarity to the manually created taxonomy, which reduces the number of aspect candidates the user has to go through.
+In order to perform this calculation the data is transformed into a matrix, where each row represents one review, each column represents a criterion expression candidate. The values of an element in \textit{row-i} and \textit{column-j} is 1 if the criterion expression candidate \textit{j} is present in review \textit{i} or 0 if it is not. To get the support of a criterion expression candidate \textit{j}, the sum of \textit{column-j} is divided by the total number of rows. If the support is greater than the minimum support, the criterion expression candidate is kept, if not, it is discarded. Through various experiments it was found that the best value for minimum support is 2~\%, which gives us reasonable candidates for criterion expressions, but does not include too many candidates to make the process of manually confirming them too tedious. It may seem like a very ``minimal'' minimal support, however the number of reviews that were at disposal to extract frequent noun phrases was fairly small, so a small support was necessary to account for that fact. It should not be too big of an issue though, considering that the candidates are further tested to determine their similarity to the manually created taxonomy, which reduces the number of criterion expression candidates the user has to go through.
 
 \subsection{Extraction of frequent adjectives}
-Although Bing only focuses on nouns and noun phrases, by going through the training data, I have discovered that fairly often, the aspect expression found in the reviews take the form of adjectives. 
+Although the original frequency-based algorithm (see section \ref{sec:freq_extr_t}) only focuses on nouns and noun phrases, by going through the training data, it was discovered that fairly often, the criterion expression found in the reviews take the form of adjectives. 
 
-Consider the phrase ``The topic addressed by the paper relevant to the conference.''. Here, the adjective \textit{relevant} evidently corresponds to the aspect \textit{relevance}. Because of that, I have decided to extract frequent adjectives from the reviews as well and again calculate the support of each adjective across the reviews with the same technique as I have used with the noun phrase extraction. 
+Consider the phrase \textit{``The topic addressed by the paper relevant to the conference.''}. Here, the adjective \textit{relevant} evidently corresponds to the criterion \textit{relevance}. Because of that, it was decided to extract frequent adjectives from the reviews as well and again calculate the support of each adjective across the reviews with the same technique as was used with the noun phrase extraction. 
 \section{Extraction by review structure}
-The data from the 2018 ESWC conference I have obtained had the review text divided into sections where the different sections represented the different criteria. The structure of these reviews can be seen on figure \ref{img:eswc_2018}, where in bold are the structural part of the review format which stays the same across all reviews. 
+The data from the 2018 ESWC conference that was obtained had the review text divided into sections where the different sections represented the different criteria. The structure of these reviews can be seen in Figure \ref{img:eswc_2018}, where in bold are the structural part of the review format which stays the same across all reviews. 
 
-I have decided to leverage this data to extract frequent words from each one these sections across the reviews. 
+It was decided to leverage this data to extract frequent words from each one these sections across the reviews. 
+The frequent words of each section are included in the new aspect expression taxonomy directly, they do not go through the same process of similarity matching against the manually created taxonomy as the candidates that were chosen purely on their frequency. This is useful because it allows to extract new possible criterion terms that would not match with any of the terms in the taxonomy, which were originally not thought to be included.
 
-The frequent word of each section are included in the new aspect expression taxonomy directly, they do not go through the same process of similarity matching against the manually created taxonomy as the candidates that were chosen purely on their frequency. This is useful because it allows to extract new possible aspect terms that would not match with any of the terms in the taxonomy, which I originally did not think to  include.
-
-Each term frequent enough in an aspect section across all the reviews is included in the taxonomy based on a match between the ESWC set of aspect and my set of metrics. The mapping between the two sets of metrics was done according to table \ref{table:conf}.
+Each term frequent enough in a criterion section across all the reviews is included in the taxonomy based on a match between the ESWC set of criteria and the chosen set of metrics. The mapping between the two sets of metrics was done according to Table \ref{table:conf}.
 
 The aspect expression candidates created by this method are still evaluated by the user as explained in section \ref{sec:user_val}.
 \begin{figure}[htb]
@@ -162,18 +164,17 @@ reviewer's comment
 \end{figure}
 
 \section{Similarity matching against the manually created taxonomy}
-After we obtain a set of crude features, the next step is to map these features to the user defined taxonomy. As previously described, we need to calculate the similarity of a crude feature to the aspects in the taxonomy. If the feature is similar enough, it is passed to the final step of the taxonomy extraction, which is an interactive revision process. This process is described in more detail in the next section.
+After a set of crude features is obtained, the next step is to map these features to the user defined taxonomy. As previously described, the similarity of a crude feature to the aspect expression in the taxonomy needs to be calculated. If the feature is similar enough, it is passed to the final step of the taxonomy extraction, which is an interactive revision process. This process is described in more detail in the next section.
 
-For measuring the similarity between two terms, I have decided to use the wordnet tool and its path\_similarity metric which returns a score denoting how similar two word senses are, based on the shortest path that connects the senses in the hypernym hierarchy. The score is in the range 0 to 1 where 1 denotes identity (when word is compared to itself). \cite{nltk_ps}
+For measuring the similarity between two terms, it was determined to use the WordNet tool and its \texttt{path\_similarity} metric which returns a score denoting how similar two word senses are, based on the shortest path that connects the senses in the hypernym hierarchy. The score is in the range 0 to 1 where 1 denotes identity (when word is compared to itself). \cite{nltk_ps}
 
-The main obstacle of using this metric is that it does not work well with adjectives. That is because all nouns are part of one big hierarchy, but that is not the case for other parts of speech such as adjective, adverb etc.. So for example the similarity for the words ``relevance'' and ``relevant'' is zero, even though the words are closely related. Because the extracted crude features may contain adjectives (in the case of noun phrases) or be adjectives themselves (in the case of frequent adjectives extraction), I have decided to implement a workaround by transforming the adjectives to their closest related noun, and perform the similarity measurement on these nouns. If the similarity of these nouns is greater than the similarity threshold, the original (albeit lemmatized) word is passed on. 
+The main obstacle of using this metric is that it does not work well with adjectives. That is because all nouns are part of one big hierarchy, but that is not the case for other parts of speech such as an adjective, an adverb etc. So for example the similarity for the words ``relevance'' and ``relevant'' is zero, even though the words are closely related. Because the extracted crude features may contain adjectives (in the case of noun phrases) or be adjectives themselves (in the case of frequent adjectives extraction),  a workaround was implemented by transforming the adjectives to their closest related noun, and perform the similarity measurement on these nouns. If the similarity of these nouns is greater than the similarity threshold, the original (albeit lemmatized) word is passed on. 
 
-Another issue is measuring similarity with terms consisting of multiple words. Certain multi-token terms are already present in the wordnet thesaurus (such as \textit{state of the art}), and getting their synsets to perform similarity matching is as simple as replacing the spaces between words with underscores. However some multi-token words included both in the user defined taxonomy and in the crude features cannot be found in wordnet directly.
+Another issue is measuring similarity with terms consisting of multiple words. Certain multi-token terms are already present in the WordNet thesaurus (such as \textit{state of the art}), and getting their synsets to perform similarity matching is as simple as replacing the spaces between words with underscores. However, some multi-token words included both in the user defined taxonomy and in the crude features cannot be found in WordNet directly.
+It was solved by calculating the maximum similarity between each token of one term to all the tokens of the other term. Of these similarities the maximal one is chosen.
 
-To solve this issue I have decided to calculate the maximum similarity between each token of one term to all the tokens of the other term. Of these similarities I then choose the maximal one.
-
-The final pseudocode for similarity measuring between two terms is on figure \ref{img:sim_alg}. When comparing frequent adjectives to the taxonomy, the part-of-speech argument is set accordingly.
-\begin{figure}
+The final pseudocode for similarity measuring between two terms is in Figure \ref{img:sim_alg}. When comparing frequent adjectives to the taxonomy, the part-of-speech argument is set accordingly.
+\begin{figure}[!htb]
 
 \begin{algorithm}[H]
 \KwData{term 1, term 2, part-of-speech}
@@ -184,7 +185,7 @@ The final pseudocode for similarity measuring between two terms is on figure \re
 		{
 		term\_synsets = find all synsets of the term \;
 		\If{the part-of-speech is adjectives}
-			{term\_synsets += find all sysets of the closest related noun}
+			{term\_synsets += find all synsets of the closest related noun}
 	}
 
 	\Else
@@ -205,22 +206,22 @@ score = maximum similarity between all term\_synsets of term1 and term\_synsets 
 	\label{img:sim_alg}
 \end{figure}
 
-Another issue of wordnet's path\_similarity is that it is asymmetrical. So sometimes path\_similarity(x,y) returns None or 0 while path\_similarity(y,x) returns a non-zero value. This is because for some words, a fake root in the hierarchy may be added to find a path between to two words, but this depends on the order in which the two words are supplied to the path\_similarity function. 
 
+Another issue of wordnet's \texttt{path\_similarity} is that it is asymmetrical. So sometimes \texttt{path\_similarity(x,y)} returns \texttt{None} or 0 while \texttt{path\_similarity(y,x)} returns a non-zero value. This is because for some words, a fake root in the hierarchy may be added to find a path between to two words, but this depends on the order in which the two words are supplied to the \texttt{path\_similarity} function. 
 Therefore the final calculation of similarity between two terms term1 and term2 is defined as the maximum between similarity(term1,term2) and similarity(term2,term1).
 
-The threshold for similarity of a term to the taxonomy was set to 0.3. Therefore every term with a similarity to any term in the manually created taxonomy equal or greater than the threshold will become an aspect expression candidate under the same aspect as the term it was most similar to.
+The threshold for similarity of a term to the taxonomy was set to 0.3. Therefore every term with a similarity to any term in the manually created taxonomy equal or greater than the threshold will become a criterion expression candidate under the same criterion as the term it was most similar to.
 \section{User validation of final taxonomy}
 \label{sec:user_val}
-When aspect expression candidates are generated and sorted by the aspect they most likely represent they have to pass the final validation. This validation is a manual process, where a user goes through every aspect candidate and decides between three options:
+When aspect expression candidates are generated and sorted by the criterion they most likely represent they have to pass the final validation. This validation is a manual process, where a user goes through every criterion expression candidate and decides between three options:
 \begin{itemize}
-\item The aspect expression candidate is added under the aspect which was algorithmically determined as the most probable.
-\item The user disagrees with the most probable aspect aspect and sorts the aspect expression candidate under a different aspect.
-\item The user decides not to include the aspect expression candidate in the taxonomy at all.
+\item The criterion expression candidate is added under the criterion which was algorithmically determined as the most probable.
+\item The user disagrees with the most probable criterion  and sorts the criterion expression candidate under a different criterion.
+\item The user decides not to include the criterion expression candidate in the taxonomy at all.
 \end{itemize}
 
-The interactive process of the user validation of the final taxonomy can be seen on figure \ref{img:user_tax}.
-\begin{figure}[htbp!]
+The interactive process of the user validation of the final taxonomy can be seen in Figure \ref{img:user_tax}.
+\begin{figure}[!htb]
 
 \begin{commandshell}
 Does the term "topic" belong under aspect "relevance" ? [y/n]
@@ -254,3 +255,17 @@ none of the above        [n]
 \label{img:user_tax}
 \end{figure}
 \section{Resulting taxonomy of aspects}
+The entire process of aspect expressions extraction and user validation (carried out by the thesis' author) resulted in 57 new terms in the taxonomy. The new terms added under each criterion are showcased in Table \ref{tab:ae_results} along the original terms from the manually created taxonomy.
+\begin{table}[!htbp]
+\caption{Result of the aspect expression extraction}
+\label{tab:ae_results}
+\begin{tabular}{l|ll}
+\textbf{criterion} & \textbf{aspect expressions - old}                                                                                                               & \textbf{aspect expressions - new}                                                                                                                                                                                                                                              \\ \hline
+relevance          & appropriateness, relevance                                                                                                                      & \begin{tabular}[c]{@{}l@{}}important topic, relevant, \\ contribution, topic\end{tabular}                                                                                                                                                                                      \\ \hline
+novelty            & \begin{tabular}[c]{@{}l@{}}originality, innovativeness,\\ innovation, novelty, \\ novelty of contribution, \\ impact, significance\end{tabular} & \begin{tabular}[c]{@{}l@{}}originality innovativeness,\\ scientific contribution,\\ improvement, novel, idea\end{tabular}                                                                                                                                                      \\ \hline
+technical quality  & \begin{tabular}[c]{@{}l@{}}scientific quality, \\ implementation, soundness, \\ technical quality\end{tabular}                                  & \begin{tabular}[c]{@{}l@{}}running example,  scalability,  code, \\ design, usability,\\ implementation and soundness, \\ technical detail\end{tabular}                                                                                                                        \\ \hline
+state of the art   & \begin{tabular}[c]{@{}l@{}}scholarship, references,  \\ related work, \\ state of the ar\end{tabular}                                           & \begin{tabular}[c]{@{}l@{}}reference, \\ related work section,\\ references, benchmark, comparison, \\ previous work, related research\end{tabular}                                                                                                                            \\ \hline
+evaluation         & \begin{tabular}[c]{@{}l@{}}reproducibility,  evaluation, \\ evaluating, evaluate\end{tabular}                                                   & \begin{tabular}[c]{@{}l@{}}evaluation section, coverage, \\ experimentation, score,\\ experimental result, experimental, \\ experimental evaluation, support,  \\ empirical evaluation, accuracy, \\ assessment, evaluation result, \\ recall, metric, experiment\end{tabular} \\ \hline
+presentation       & \begin{tabular}[c]{@{}l@{}}clarity, quality of writing, \\ presentation, typo,\\ written, describe,\\ description\end{tabular}                  & \begin{tabular}[c]{@{}l@{}}english, scientific paper, notation, text,\\ last sentence, sec, write, figure, \\ introduction, document, explained, \\ current form, reading, writing, \\ first paragraph, intro, readability, \\ format, paragraph\end{tabular}                 
+\end{tabular}
+\end{table}

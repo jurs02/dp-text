@@ -1,52 +1,56 @@
 \chapter{Analyzed data}
+This chapter explains how the data analyzed in this thesis were gathered and shows the composition of the resulting dataset. It also describes the preprocessing steps which were taken for each specific purpose -- the aspect expressions extraction, the creation of sentiment lexicon and the evaluation of the created system.
 \section{Source of data}
 As was previously mentioned, the data analyzed in this work are reviews of submissions to conferences focused on semantic technology. Namely from five different conferences --  EKAW 2018, ESWC 2018, ESWC 2019, ISWC 2017 and ISWC 2018.
 
-The data for each conference was sourced differently, mainly because with the exception of the ESWC 2019 conference, these reviews are not publicly available.
+The data for each conference were sourced differently, mainly because with the exception of the ESWC 2019 conference, these reviews are not publicly available. All but the ESWC 2019 data were anonymized by their respective providers.
 
-Data from EKAW 2018 ware gathered with the help of the programme committee co-chair Chiara Ghidini and my supervisor. The reviewers were asked to give consent to the use of their reviews, being able to choose between two levels of consent:
+Data from EKAW 2018 were gathered with the help of the programme committee co-chair Chiara Ghidini and the thesis' supervisor. The reviewers were asked to give consent to the use of their reviews, being able to choose between two levels of consent:
 \begin{itemize}
 \item \textbf{Level 1}: I am giving a consent to using my EKAW 2018 review text/score in an anonymized form for the purposes of a sentiment analysis study      YES / NO
 \item \textbf{Level 2}: I am giving a consent to using my EKAW 2018 text in a snippet published for illustrative purposes, after the elimination of potentially identity-revealing named entities      YES / NO
 \end{itemize}
 
-As a result I was able to obtain 247 review, where only 17 reviewers gave permission on level 1, the rest gave permission on both levels.
+As a result  247 review were obtained, where only 17 reviewers gave permission on level 1, the rest gave permission on both levels.
 
 The data from the ISWC 2017 and ISWC 2018 were gathered in a similar manner, resulting in 11 and 20 reviews respectively.
 
-I also was provided with a small dataset of the ESWC 2018 reviews by Vojtěch Svátek, consisting of a total of 6 reviews of two different papers.
+A small dataset of the ESWC 2018 reviews was also provided by the thesis' supervisor Vojtěch Svátek, consisting of a total of 6 reviews of two different papers.
 
-The ESWC 2019 data was publicly available through a SPARQL endpoint at \url{https://metadata.2019.eswc-conferences.org/sparql}. The server hosting the SPARQL endpoint recently went down and apparently will not be made available anytime soon, but I have managed to gather some data when the server was still functional. 
+The ESWC 2019 data was publicly available through a SPARQL endpoint at \url{https://metadata.2019.eswc-conferences.org/sparql}. The server hosting the SPARQL endpoint recently went down and apparently will not be made available anytime soon, some data was gathered when the server was still functional. 
 
 
 \section{Data preprocessing}
+As the preprocessing of the data differs for different tasks of the entire process and often does not follow the traditional steps, this section explains how the preprocessing was carried out during the individual steps of the research.
 \subsection{Data preprocessing for aspect vocabulary extraction}
-Fist I tokenize each review into sentences. Then, each sentence goes through word tokenzation using the \texttt{word\_tokenize} function from NLTK and each token is assigned a POS tag with the \texttt{pos\_tag} function.
+First each review is tokenized into sentences. Then, each sentence goes through word tokenization using the \texttt{word\_tokenize} function from NLTK and each token is assigned a POS tag with the \texttt{pos\_tag} function.
 
-Because the reviews are sometimes not formatted correctly the tokenization might lead to a wrong output. For example there might not be a space after a punctuation symbol (like a period) and as a result the tokenizer does not separate the punctuation symbol from the next word. For that reason all characters which are not alphanumerical or are not a hyphen are replaced by an empty string in each token.
+Because the reviews are sometimes not correctly formatted the tokenization might lead to a wrong output. For example, there might not be a space after a punctuation symbol (like a period) and as a result the tokenizer does not separate the punctuation symbol from the next word. For that reason all characters which are not alphanumerical or are not a hyphen are replaced by an empty string in each token.
 
-All tokens are then lemmatized using the \texttt{WordNetLemmatizer}. No stopwords are removed in the preprocessing, as only nouns, noun phrases and adjectives are extracted, so there is no significant overlap with any traditional stopwords and some stopwords, such as prepositions are necessary for noun phrase identification.
+All tokens are then lemmatized using the \texttt{WordNetLemmatizer}. No stop words are removed in the preprocessing. As only nouns, noun phrases and adjectives are extracted, there is no significant overlap with any traditional stop words. Also, some stop words, such as prepositions, are necessary for noun phrase identification.
 \subsection{Data preprocessing for sentiment vocabulary extraction}
-Because I am using the Na\"ive Bayes classifier for sentiment vocabulary extraction, a dataset consisting of 1000 review sentences (taken from the ESWC 2019 dataset) was created. Because reviewers often express two different sentiments in a single sentence, such as ``Overall it is a very good paper, but there are some limitations.'', sentences like these had to be split in two -- the positive and the negative part. As was described in section INSERT, the Na\"ive Bayes classifier treats a text as a bag of words with an assigned label, there is no syntactic or semantic analysis applied and so a dual polarity in a single example would not be appropriately handled.
+\label{sec:data_sl}
+Given the use of the Na\"ive Bayes classifier for sentiment vocabulary extraction, a dataset consisting of 1000 review sentences (taken from the ESWC 2019 dataset) was created. Because reviewers often express two different sentiments in a single sentence, such as \textit{``Overall it is a very good paper, but there are some limitations.''}, sentences like these had to be split in two -- the positive and the negative part. As was described in section \ref{sec:NBC}, the Na\"ive Bayes classifier treats a text as a bag of words with an assigned label, there is no syntactic or semantic analysis applied and so a dual polarity in a single example would not be appropriately handled.
 
-Each sentence was labeled with either positive or negative sentiment by me as well as another annotator (independently as to not influence each other). 
-The results of the two sets of annotations were then compared and it was found that the label did not match for 8 sentences. This was firstly because some sentences described both positive and negative sentiment and were not split correctly which led to each annotator choosing a different sentiment for the entire sentence. This was corrected by only keeping a part of the sentence expressing a single opinion polarity. Secondly, the opposing annotations were in some cases a result of a lack of context for the sentence when each sentence is annotated separately. This was fixed by looking at the original review and choosing the appropriate polarity based on the context. Finally some sentences were labeled incorrectly due to a simple mistake of the annotator.
+Each sentence was labeled with either positive or negative sentiment by the author as well as another annotator (independently as to not influence each other). 
+The results of the two sets of annotations were then compared and it was found that the label did not match for 8 sentences. This was firstly because some sentences described both positive and negative sentiment and were not split correctly which led to each annotator choosing a different sentiment for the entire sentence. It was corrected by only keeping a part of the sentence expressing a single opinion polarity. Secondly, the opposing annotations were in some cases a result of a lack of context for the sentence when each sentence is annotated separately. This was fixed by looking at the original review and choosing the appropriate polarity based on the context. Finally, some sentences were labeled incorrectly due to a simple mistake of the annotator.
 
-When creating the lexicon, first all contractions are expanded, then the review is tokenized into words and assigned a POS tag. Because only words with a high enough frequency are kept, I have also decided to remove stopwords, based on my own stopword list. The NLTK corpus also includes a dictionary of stopwords, however it  includes words that I expected to have a noticeable influence on the polarity of a sentence such as ``should'' which rarely points to a positive sentiment in reviews. The list of stopwords that were used is:
+The resulting dataset consists of 743 negative and 257 positive sentences, as negative sentences tend to be present far more in reviews.
+
+When creating the lexicon, first all contractions are expanded, then the review is tokenized into words and assigned a POS tag. Because only words with a high enough frequency are kept, it was also decided to remove stop words, based on a custom stop word list. The NLTK corpus also includes a dictionary of stop words, however it  includes words that were expected to have a noticeable influence on the polarity of a sentence such as \textit{should} which rarely points to a positive sentiment in reviews. The list of stop words that were used is:
 \begin{lstlisting}
-["the", "be", "of", "a", "to", "and", "in", "it", "i", "this", 
- "that", "do", "for", "on", "have"]
+[`the', `be', `of', `a', `to', `and', `in', `it', `i', `this', 
+ `that', `do', `for', `on', `have']
 \end{lstlisting}
 
-The tokens were again lemmatized, with the exception of adjectives. In this task especially adjectives needed to be kept in the same form as they were originally written in the review, as the distinction between for example ``good'' and ``better'' might be important for the polarity of the adjective. 
+The tokens were again lemmatized, with the exception of adjectives. In this task especially adjectives needed to be kept in the same form as they were originally written in the review. For example, the distinction between  \textit{good} and \textit{better} might be important for the polarity of the adjective as \textit{better} is more likely to be used in a negative comment such as \textit{``it would be better if you\ldots''} while \textit{good} mostly keeps its positive polarity.
 
-It is important to note that the \texttt{WordNetLemmatizer} that is used for lemmatization is based on the WordNet POS tag set, which is significantly smaller that the Treebank tag set that is used for POS tagging. Because the POS tagger uses the Treebank tag set, all POS tags are transformed into WordNet tags using the function on figure \ref{img:tb_wn}. For example all Treebank tags that refer to verbs begin with ``V'' and they all get transformed into the single tag that WordNet has for verbs.
-\begin{figure}
-\centering
+It is important to note that the \texttt{WordNetLemmatizer} that is used for lemmatization is based on the WordNet POS tag set, which is significantly smaller that the Treebank tag set that is used for POS tagging. Because the POS tagger uses the Treebank tag set, all POS tags are transformed into WordNet tags using the function in Listing \ref{img:tb_wn}. For example, all Treebank tags that refer to verbs begin with ``V'' and they all get transformed into the single tag that WordNet has for verbs.
 
-\begin{tabular}{c}
 
-\begin{lstlisting}
+\begin{lstlisting}[caption=Transformation between Treebank and WordNet POS tag sets,
+  language=python, label={img:tb_wn},
+  xleftmargin=.2\textwidth, xrightmargin=.2\textwidth]
 def get_wordnet_pos(pos_tag):
 
     if pos_tag.startswith('J'):
@@ -60,8 +64,27 @@ def get_wordnet_pos(pos_tag):
     else:
         return wn.NOUN
 \end{lstlisting}
+
+
+
+\subsection{Data preprocessing for evaluation of results}
+\label{sec:preprocessing_eval}
+In order to gain understanding of the accuracy of the sentiment analysis method over conference paper reviews, the output of criterion-sentiment tuples found in each sentence is compared with an annotated dataset of 15 reviews from 3 different conferences (5 from each), namely ESWC 2019, ISWC 2018 and EKAW 2018. 
+
+The reviews were labeled by two annotators, with criteria and sentiment polarities found in each review comment (instead of each sentence, as often multiple sentence were part of a single comment or idea and labeling them separately would not be a good approach).
+
+Because the labels of a criterion to which the reviewer points to in a comment very often differed across the two sets of annotations (while both annotators mostly agreed about the sentiment), a discussion between the annotators ensued to attempt a consensus. The results of the process can be seen in Table \ref{tab:ann_eval}. It shows the number of comments that were labeled with some criterion by either annotator, how many times the annotations  for a criterion or an aspect did not match a how many times the annotators did not reach a consensus during the discussion phase. Out of 136 annotated comments the annotators did not originally agree in 49 cases when it came to the criteria, which is over one third. In 14 out of those 49 cases the annotators did not reach a consensus even after the discussion. For example, regarding the comment \textit{``Then it will be beneficial to provide a justification of the number of entities\ldots used in the experiment.''} one annotator argued it should be labeled with the \textit{evaluation} criterion, as the reviewer questions the small data sample used in the evaluation of the work. The other annotator however insisted on the \textit{presentation} label, based on the fact that the reviewer asks for a clarification on the sample size without outright criticizing it.  The number of such disagreements is an interesting outcome, as it shows that the comments are often ambiguous in regards to the specific criteria they comment on, even for human annotators. 
+
+
+\begin{table}[!htb]
+\caption{Results of the annotation process for evaluation}
+\label{tab:ann_eval}
+\begin{tabular}{l|rrrrr}
+\textbf{conference} & \multicolumn{1}{l}{\textbf{\begin{tabular}[c]{@{}l@{}}number of \\ comments\end{tabular}}} & \multicolumn{1}{l}{\textbf{\begin{tabular}[c]{@{}l@{}}criterion \\ disagreem.\end{tabular}}} & \multicolumn{1}{l}{\textbf{\begin{tabular}[c]{@{}l@{}}consensus \\ on criterion \\ not reached\end{tabular}}} & \multicolumn{1}{l}{\textbf{\begin{tabular}[c]{@{}l@{}}sentiment \\ disagreem.\end{tabular}}} & \multicolumn{1}{l}{\textbf{\begin{tabular}[c]{@{}l@{}}consensus \\ on sentiment \\ not reached\end{tabular}}} \\ \hline
+ESWC 19             & 38                                                                                         & 18                                                                                             & 4                                                                                                             & 1                                                                                              & 1                                                                                                             \\
+ISWC 18             & 33                                                                                         & 9                                                                                             & 4                                                                                                             & 1                                                                                              & 0                                                                                                            \\
+EKAW 18             & 65                                                                                         & 22                                                                                             & 6                                                                                                             & 0                                                                                              & 0                                                                                                             \\ \hline
+Total               & 136                                                                                        & 49                                                                                             & 14                                                                                                            & 1
+ & 1                                                                                                            
 \end{tabular}
-\caption{Transformation between Treebank and WordNet POS tag sets}\label{img:tb_wn}
-\end{figure}
-
-
+\end{table}

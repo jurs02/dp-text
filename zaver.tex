@@ -1,8 +1,23 @@
 \chapter*{Conclusion}
 \addcontentsline{toc}{chapter}{Conclusion}
+The aim of this thesis was to try to build a system for extracting opinions and sentiment from conference paper reviews. The objective was to determine if there is a way to successfully detect perceived value of a paper, based on sentiment analysis of its reviews.
+The results of this work show that the creation of an aspect-based sentiment analysis system focused on the domain of conference paper reviews is indeed possible. 
 
-Závěr je povinnou částí bakalářské/diplomové práce. Obsahuje shrnutí práce a vyjadřuje se k míře splnění cíle, který byl v práci stanoven, případně shrnuje odpovědi na otázky, které byly položeny v úvodu práce. 
+In the practical part of this thesis a system was implemented, that analyzes a review following these steps: First an identification of which aspect of a paper each sentence of a review is commenting on. This is done by using a dictionary of aspect expressions, where each expression falls under one of the six chosen criteria -- \textit{relevance}, \textit{novelty}, \textit{technical quality}, \textit{state of the art}, \textit{presentation} and \textit{evaluation}. Then it applies a dictionary-based method of sentiment analysis using a custom-built domain specific sentiment lexicon to determine the sentiment polarity of the criterion expression. By grouping the aspect expression polarities by the criteria to which they belong the system outputs numerical scores for each criterion on a scale from 1 to 5. It also lists all sentences of a review in which an aspect expression was identified, stating the respective criterion and its sentiment polarity in the sentence.
 
-Závěr k diplomové práci musí být propracovanější -- podrobněji to je uvedeno v Náležitostech diplomové práce v rámci Intranetu pro studenty FIS.
+To evaluate the precision of such a system the numerical evaluation output of the reviews created by the algorithm was then compared to the original numerical scores from a set of reviews and the results were also evaluated in more detail by calculating the precision and recall of criterion identification on a sentence level. Based on the results of the evaluation a set of recommendations was given for future improvements, one of which being an acquirement of a significantly larger training dataset. Most conferences do not make their reviews publicly available and this was a considerable limitation of the implementation. In this aspect the secondary and unexpected objective of this thesis is to serve as a motivation for an easier accessibility of this kind of data. 
 
-Závěr je vnímán jako kapitola (chapter), která začíná na samostatné stránce a která má název Závěr.  Název Závěr se nečísluje. Samotný text závěru je členěn do odstavců.
+The evaluation of sentiment analysis accuracy shows an improvement on the results of similar existing research and so with indicated improvements the system is going to be a valuable tool for helping to facilitate the meta-reviewing process. It can also help with the unification of criteria scores across different conferences and reviewers using the numerical scores outputted by the system.
+
+All the algorithms created in this work -- the aspect expression identification, sentiment lexicon compiler and aspect-based sentiment analysis -- are implemented in a way which would require slight adjustments for application on a number of different domains of conferences. The main change that would be required is to manually create a new taxonomy of aspect expressions serving as a base for identification of other aspect expressions, helping to define the set of the domain-specific criteria. Allowing for minor adjustments, the practical use of the system in other domains is clear,  providing the appropriate datasets to retrain the algorithm for the new application.
+
+I am currently taking part in a project aimed at creating a generator of pictorial metaphors of reviews to simplify the difficult task of meta-reviewing by mapping the numerical scores of criteria to different parts of an image of a car \cite{pictoreview_iswc}. The developed system has the potential to eventually work as an extension of this tool by allowing its use for reviews where the numerical scores are missing. This is just one of the many examples of future use of the system described in this thesis.
+
+\sloppy
+Should the reader of this thesis be inclined to find out more,
+the implementation is publicly available at \url{https://github.com/jurs02/aspect-based-sentiment-analysis-of-conference-submission-reviews}.
+
+\fussy
+
+
+

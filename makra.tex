@@ -10,13 +10,14 @@
   ,style=iso-numeric
   ,sortlocale=cs_CZ
   ,bibencoding=UTF8
-  %,block=ragged
+  ,block=space
 ]{biblatex}
 \let\cite\parencite
 \bibliography{literatura}
+\def\UrlBreaks{\do\/\do-}
 
 %% Přepneme na českou sazbu, fonty Latin Modern a kódování češtiny
-\usepackage[british,UKenglish,USenglish,english,american]{babel}
+\usepackage[czech, british,UKenglish,USenglish,english,american]{babel}
 \usepackage{lmodern}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
@@ -37,6 +38,9 @@
 \usepackage{xcolor}
 \usepackage{float}
 \usepackage{tabularx}
+\usepackage{makecell}
+\renewcommand\theadalign{bl}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
 \usepackage[vlined, boxed]{algorithm2e}
 \usepackage[most]{tcolorbox}
@@ -45,12 +49,22 @@
   language=sh,
   emptylines=1,
   breaklines=true,
-  basicstyle=\small\ttfamily\color{white},
-  moredelim=**[is][\color{green}]{@}{@},
+  basicstyle=\small\ttfamily\color{black},
+  moredelim=**[is][\color{green!60!black}]{@}{@},
 }
-\newtcblisting{commandshell}{colback=black,colupper=white,colframe=gray!75!black,
+\newtcblisting{commandshell}{colback=white,colupper=black,colframe=gray!75!black,
 listing only,listing options={language=sh,style=base}}
 
+
+\def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
+  \hbox{}\nobreak\hfil#1%
+  \parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+
+\newsavebox\mybox
+\newenvironment{aquote}[1]
+  {\savebox\mybox{#1}\begin{quote}}
+  {\signed{\usebox\mybox}\end{quote}}
+  
 \makeatletter
 \@ifpackageloaded{xcolor}{
    \@ifpackagewith{xcolor}{usenames}{}{\PassOptionsToPackage{usenames}{xcolor}}
@@ -64,6 +78,10 @@ listing only,listing options={language=sh,style=base}}
 \setlist[itemize]{noitemsep, topsep=0pt, partopsep=0pt}
 \setlist[enumerate]{noitemsep, topsep=0pt, partopsep=0pt}
 \setlist[description]{noitemsep, topsep=0pt, partopsep=0pt}
+\usepackage{pgfplots}
+\pgfplotsset{width=7cm,compat=1.9}
+\usepackage{diagbox}
+
 
 \usepackage{tocloft}
 \setlength\cftparskip{0pt}
@@ -137,6 +155,8 @@ listing only,listing options={language=sh,style=base}}
 \hypersetup{unicode}
 \hypersetup{breaklinks=true}
 \hypersetup{hidelinks}
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
 
 %%% Prostředí pro sazbu kódu, případně vstupu/výstupu počítačových
 %%% programů. (Vyžaduje balíček fancyvrb -- fancy verbatim.)
@@ -174,3 +194,10 @@ listing only,listing options={language=sh,style=base}}
          {8}{{{\color{numb}8}}}{1}
          {9}{{{\color{numb}9}}}{1}
 }
+
+
+\let\myRef\ref
+\renewcommand\ref{\unskip~\myRef}
+
+\let\myCite\cite
+\renewcommand\cite{\unskip~\myCite}
